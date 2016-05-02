@@ -1,0 +1,157 @@
+/**
+ * BUTTONS
+ */
+
+%button
+{
+	margin: (10/18) * 1em;
+	border: none;
+	background-color: transparent;
+	cursor: pointer;
+	font-size: 1.8rem;
+	line-height: (35/18) * 1em;
+	outline: none;
+}
+
+.btn
+{
+	@extend %button;
+	height: (40/18) * 1em;
+	padding: 0 (20/18) * 1em;
+	border: 1px solid currentColor;
+	border-radius: (20/18) * 1em;
+	
+	
+	&--header,
+	&--validate,
+	&--order
+	{
+		position: relative;
+		font-weight: $medium;
+		overflow: hidden;
+		
+		span
+		{
+			display: block;
+			height: 100%;
+			transform: translate(0, -100%);
+			transition: 0.3s ease;
+		}
+
+		&::before
+		{
+			display: block;
+			// padding: 0 20px;
+			height: 100%;
+			// position: absolute;
+			// left: 0;
+			// right: 0;
+			// top: 0;
+			content: attr(data-content-after);
+			transform: translate(0, -100%);
+			transition: 0.3s ease;
+		}
+		
+		// HOVER
+		&:hover
+		{
+			& span
+			{
+				transform: translate(0, 100%);
+			}
+
+			&::before
+			{
+				transform: translate(0, 0);
+			}
+		}
+		
+	}
+
+	&--validate
+	{
+		display: inline-block;
+		background-color: $black;
+		border-color: $black;
+		color: $white;
+		font-weight: $light;
+		vertical-align: middle;
+
+		@include at('xs')
+		{
+			margin: (10/18) * 1em 0;
+			min-width: 100%;
+		}
+	}
+
+	&--dot
+	{
+		@include size((20/18) * 1em);
+		margin: 0 (4/18) * 1em;
+		padding: 0;
+		background-color: $light-gray;
+		border-color: transparent;
+		border-radius: (10/18) * 1em;
+
+		&--current
+		{
+			background-color: $black;
+		}
+	}
+
+	&--block
+	{
+		height: (46/18) * 1em;
+		margin-left: 0;
+		margin-right: 0;
+		position: relative;
+		background-color: $black;
+		border-color: transparent;
+		border-radius: (23/18) * 1em;
+		box-shadow: 0 0 0 (10/18) * 1em rgba($black, 0.1);
+		color: $white;
+		font-weight: $light;
+		
+
+		b
+		{
+			font-weight: $bold;
+		}
+
+		span
+		{
+			position: relative;
+			z-index: 1;
+		}
+
+		&::before
+		{
+			display: block;
+			@extend %position-absolute;
+			background-color: $black;
+			border: 1px solid $black;
+			border-radius: (20/18) * 1em;
+			content: '';
+			transition: 0.3s ease;
+			z-index: 0;
+		}
+
+		&:hover::before
+		{
+			bottom: (10/18) * -1em;
+			left: (10/18) * -1em;
+			right: (10/18) * -1em;
+			top: (10/18) * -1em;
+			border-radius: (30/18) * 1em;
+		}
+	}
+
+	&--order
+	{
+		@include size(100%, (50/18) * 1em);
+		margin: 0;
+		background-color: $black;
+		border-radius: (25/18) * 1em;
+		color: $white;
+	}
+}

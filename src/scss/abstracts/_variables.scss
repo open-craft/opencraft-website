@@ -1,0 +1,67 @@
+/**
+ * VARIABLES
+ */
+
+
+$black: #000;
+$white: #fff;
+$light-gray: #d6d6d6;
+$very-light-gray: #ececec;
+
+$dark-gray: #535353;
+$very-dark-gray: #1d1d1b;
+
+// YELLOW
+$main-color: #ffd701;
+$vivid-yellow: #e7c305;
+
+$very-dark-blue: #1f2022;
+
+// Brands colors 
+$facebook: #3b5998;
+$twitter: #55acee;
+$instagram: #3f729b;
+$linkedin: #0077b5;
+
+// FONT
+$font-family: "sofia-pro-soft", sans-serif;
+$base-font-size: 22px;
+$base-line-height: (35/22);
+
+// $extralight: 100;
+$light: 300;
+// $book: 300;
+$regular: 400;
+$medium: 500;
+// $semibold: 600;
+$bold: 700;
+// $extrabold: 800;
+// $extrablack: 900;
+
+// LAYOUT
+
+$psd-width: 1596px;
+$container-width: 1260px;
+// $container-width-m: 1040px;
+// $header-size-lg: 9rem;
+// $header-size-sm: 6rem;
+
+// TRANSITION
+
+// $ease-transition: width 0.3s ease;
+
+// MISCELLANEOUS
+// $fonts-dir: "../../fonts/";
+$img-dir: "../../img/";
+$svg-dir: "../../img/svg/";
+$jpg-dir: "../../img/jpg/";
+$png-dir: "../../img/png/";
+
+// RESPONSIVE
+
+// Breakpoint slicer https://github.com/lolmaus/breakpoint-slicer
+$slicer-breakpoints: 0 768px 992px 1200px 1400px;
+$slicer-breakpoint-names: 'xs' 'sm' 'md' 'lg' 'hd';
+$slicer-anti-overlap-corrections: -1px;
+
+// GRID

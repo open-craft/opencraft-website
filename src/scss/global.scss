@@ -1,0 +1,47 @@
+/**
+ * GLOBAL
+ */
+
+// http://sass-guidelin.es/#the-7-1-pattern
+
+// VENDORS
+@import 'breakpoint';
+@import 'breakpoint-slicer';
+@import 'normalize';
+
+// ABSTRACTS
+@import 'abstracts/variables';
+@import 'abstracts/animations';
+@import 'abstracts/mixins';
+@import 'abstracts/functions';
+@import 'abstracts/placeholders';
+
+
+// BASE
+@import 'base/base';
+// @import 'base/webfonts';
+// @import 'base/default-editor.scss';
+// @import 'base/reset';
+@import 'base/typography';
+
+// UTILITIES
+@import 'utilities/utilities';
+@import 'utilities/size-system';
+@import 'utilities/text-align-system';
+
+// COMPONENTS
+@import 'components/buttons';
+@import 'components/forms';
+@import 'components/slider';
+@import 'components/icons';
+@import 'components/components';
+
+// LAYOUT
+@import 'layout/header';
+@import 'layout/layout';
+@import 'layout/footer';
+
+// PAGES
+@import 'pages/home';
+
+// THEMES

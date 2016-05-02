@@ -1,0 +1,57 @@
+/**
+ * TYPOGRAPHIE
+ */
+
+%dash
+{
+	display: block;
+	margin: 0 auto;
+	height: 6px;
+	width: 12rem;
+	background-color: currentColor;
+	border-radius: 3px;
+	content: '';
+}
+
+ h1, .h1
+ {
+ 	margin-bottom: 0;
+ 	margin-top: 0;
+	font-size: 3.5rem;
+	line-height: (46/35);
+	font-weight: $light;
+
+	b
+	{
+		font-weight: $bold;
+	}
+
+	&.has-dash
+	{
+		position: relative;
+
+		&::after
+		{
+			@extend %dash;
+			margin-top: 18px;
+		}
+
+		&::before
+		{
+			@extend %dash;
+			margin-bottom: 18px;
+		}
+	}
+ }
+
+ h2, .h2
+ {
+	font-size: 3rem;
+	line-height: (60/30);
+	font-weight: $light;
+
+	b
+	{
+		font-weight: $bold;
+	}
+ }

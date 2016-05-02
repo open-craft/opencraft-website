@@ -1,0 +1,59 @@
+/**
+ * BASE
+ */
+
+html,
+body
+{
+    height: 100%;
+}
+
+html
+{
+    $original-font-size: 62.5%;
+
+    box-sizing: border-box;
+    background: $white;
+    font-family: $font-family;
+	font-size: $original-font-size;
+
+    @include to('lg')
+    {
+        font-size: ($original-font-size * 3/4);
+    }
+}
+
+body
+{
+    font-size: (($base-font-size / 10px) * 1rem);
+    line-height: $base-line-height;
+    font-weight: $light;
+}
+
+*, 
+*::after, 
+*::before
+{
+    box-sizing: inherit;
+}
+
+a
+{
+	color: currentColor;
+	text-decoration: none;
+}
+
+p
+{
+    margin: 1em 0;
+}
+
+ul, ol
+{
+    margin: 0;
+    padding: 0;
+}
+ul
+{
+    list-style: none;
+}

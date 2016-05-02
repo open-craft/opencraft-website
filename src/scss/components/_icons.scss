@@ -1,0 +1,98 @@
+/**
+ * ICONS
+ */
+
+.icon
+{
+	font-size: 0;
+	text-align: center;
+
+	&-mail,
+	&-phone,
+	&-facebook,
+	&-twitter
+	{
+		height: 100%;
+		width: 45px;
+		opacity: 1;
+		transition: 0.3s ease;
+	}
+	
+	&-mail,
+	&-phone,
+	&-facebook,
+	&-twitter
+	{
+		&-hover
+		{
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			top: 0;
+			height: 100%;
+			width: 45px;
+			opacity: 0;
+			transform: translate(0, 100%);
+			transition: 0.3s ease;
+		}
+	}
+
+	&-wrapper
+	{
+		display: inline-block;
+		position: relative;
+		height: 45px;
+		width: 45px;
+		margin: 0 1.6rem;
+		overflow: hidden;
+		
+		@include to('xs')
+		{
+			margin: 0 1rem;
+		}
+
+		&:first-child
+		{
+			margin-left: 0;
+		}
+
+		&:last-child
+		{
+			margin-right: 0;
+		}
+
+		&__link
+		{
+			// position: relative;
+		}
+
+		&:hover
+		{
+			.icon-mail,
+			.icon-phone,
+			.icon-twitter,
+			.icon-facebook
+			{
+				opacity: 0;
+				transform: translate(0, -100%);
+			}
+
+			.icon
+			{
+				&-mail,
+				&-phone,
+				&-facebook,
+				&-twitter
+				{
+					&-hover
+					{
+						opacity: 1;
+						transform: translate(0, 0);
+					}
+				}
+			}	
+		}
+	}
+
+}

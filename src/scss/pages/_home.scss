@@ -1,0 +1,115 @@
+/**
+ * HOME
+ */
+
+.introduction
+{
+	position: relative;
+	
+	&-text
+	{
+		margin-bottom: 8rem;
+		max-width: 44rem;
+		font-size: 2.2rem;
+	}
+
+	&-paper
+	{
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		top: 0;
+		margin: 0;
+		font-size: 3rem;
+		font-weight: $light;
+		text-transform: uppercase;
+		z-index: 2;
+
+		&__inner
+		{
+			display: block;
+			width: 100%;
+			position: absolute;
+			top: 50%;
+			transform: translate(7.4%,42%) rotate(3deg);
+		}
+
+		&__title
+		{
+			position: relative;
+			font-size: 5.2rem;
+
+			b
+			{
+				font-weight: $bold;
+			}
+
+			&::before
+			{
+				position: absolute;
+				bottom: 100%;
+				left: 0;
+				right: 0;
+				height: 2px;
+				background-color: $black;
+				content: '';
+			}
+
+			&::after
+			{
+				position: absolute;
+				left: 0;
+				right: 0;
+				top: 100%;
+				height: 2px;
+				background-color: $black;
+				content: '';
+			}
+
+		}
+		
+		&__text
+		{
+			display: block;
+		    margin-top: 8.5rem;
+			font-size: 6rem;
+			line-height: 1;
+		}
+	}
+
+	&-background
+	{
+		background:
+		{
+			image: url('#{$jpg-dir}/robeenbox-paper-text.jpg');
+			position: 0 0;
+			repeat: no-repeat;
+			size: 65.5rem 85.5rem;
+		}
+
+		@include to('lg')
+		{
+			background-position: 150px 0;
+		}
+
+		.shape__background &
+		{
+			background-position: left bottom;
+
+			@include to('lg')
+			{
+				background-position: 150px bottom;
+			}
+		}
+	}
+
+	&-svg
+	{
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		top: 0;
+	}
+}

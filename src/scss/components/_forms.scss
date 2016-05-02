@@ -1,0 +1,115 @@
+/**
+ * FORMS
+ */
+
+
+.form
+{
+	@include to('xs')
+	{
+		margin: 0;
+	}
+
+	&--phonenumber
+	{
+		margin: 10px;
+		// Prevent whitespace from display inline block
+		font-size: 0;
+		
+		// Make sure that imput overlap button
+		.input--phonenumber
+		{
+			padding-right: 40px;
+
+			@include to('xs')
+			{
+				padding-right: 20px;
+			}
+		}
+
+		.btn
+		{
+			margin-left: -25px;
+
+			@include to('xs')
+			{
+				margin-left: 0;
+			}
+		}
+	}
+
+	.label
+	{
+		display: block;
+		margin: 0 auto 2rem auto;
+		cursor: pointer;
+		font-size: 2rem;
+		font-weight: $medium;
+	}
+}
+
+$font-size-input: 18;
+
+%input
+{
+	@include reset-placeholder($black);
+	height: (40/$font-size-input) * 1em;
+	margin: 0;
+	padding: 0;
+	background-color: $white;
+	border: ((1/$font-size-input) * 1em) solid $white;
+	font-size: 1.8rem;
+	font-weight: $light;
+	outline: none;
+	-webkit-appearance: none;
+}
+
+.input
+{
+	@extend %input;
+	
+
+	&--phonenumber
+	{
+		display: inline-block;
+		padding-left: (20/$font-size-input) * 1em;
+		// Value from PSD
+		min-width: (290/$font-size-input) * 1em;
+ 		border-bottom-left-radius: (20/$font-size-input) * 1em;
+		border-top-left-radius: (20/$font-size-input) * 1em;
+		vertical-align: middle;
+
+		@include to('xs')
+		{
+			border-radius: (20/$font-size-input) * 1em;
+			min-width: 100%;
+			text-align: center;
+		}
+ 	}
+
+ 	&--order
+ 	{
+ 		display: inline-block;
+ 		max-width: (230/$font-size-input) * 1em;
+ 		padding: (20/$font-size-input) * 1em;
+ 		width: 100%;
+ 		// padding-left: 20px;
+		// Value from PSD
+		min-width: 29rem;
+		border: ((1/$font-size-input) * 1em) solid $black;
+ 		border-radius: (20/$font-size-input) * 1em;
+
+ 		@include to('sm')
+ 		{
+ 			// width: 90%;
+ 			// max-width: none;
+ 			// float: left;
+ 		}
+
+ 		@include at('xs')
+ 		{
+ 			width: 100%;
+ 			max-width: none;
+ 		}
+ 	}
+ }
