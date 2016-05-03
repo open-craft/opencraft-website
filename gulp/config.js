@@ -22,7 +22,7 @@ module.exports = {
         ],
 
         deps: [
-            // './node_modules/bootstrap-sass/assets/stylesheets',
+            './node_modules/bootstrap-sass/assets/stylesheets',
             './node_modules/typesettings',
             './node_modules/node-normalize-scss',
             './node_modules/breakpoint-sass/stylesheets',

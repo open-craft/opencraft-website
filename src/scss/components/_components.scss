@@ -2,197 +2,81 @@
  * COMPONENTS
  */
 
-// PRICE BOX
-.insert
+// SQUARE
+.square
 {
-	display: inline-block;
-	margin: 5rem 5rem 5rem 7rem;
 	position: relative;
-	z-index: 1;
+	padding-bottom: 100%;
 
-	@include to('md')
+
+	// &::after
+	// {
+	// 	display: block;
+	// 	position: absolute;
+	// 	padding-bottom: 100%;
+	// 	content:'';
+	// }
+
+	&__inner
 	{
-		margin-right: 7rem;
-	}
-
-	@include to('xs')
-	{
-		margin-bottom: 0;
-		margin-left: 0;
-		margin-right: 0;
-	}
-
-	&__box
-	{
-		position: relative;
-		padding: 7rem 4.5rem 6.5rem;
-		max-width: 44.6rem;
-		border-radius: 20px;
-		background-color: $white;
-		// - See more at: http://www.melanieceraso.com/psd-to-css3/#sthash.ftRLV2RU.dpuf
-		box-shadow: 0px 1px 9.5px 0.5px rgba(0, 0, 0, 0.16); 
-		text-align: center;
-		z-index: 1;
-
-		@include to('md')
-		{
-			
-			max-width: inherit;
-		}
-
-		@include at('xs')
-		{
-			padding: 4.75rem 2.5rem 5rem 2.5rem;
-		}
-
-		&__price
-		{
-			margin: 0 0 0 0;
-			text-align: center;
-			font-size: 7.5rem;
-			font-weight: $regular;
-			line-height: 0.75;
-
-		}
-
-		&__text
-		{
-			margin: 2rem 0 0 0;
-			font-size: 2rem;
-		}
-
-		&__list
-		{
-			margin: 5.5rem 0 5rem 0;
-			padding: 0;
-			color: $dark-gray;
-			font-size: 2rem;
-			font-weight: $regular;
-
-			@include at('xs')
-			{
-				margin: 2.75rem 0 2.5rem 0;
-			}
-
-			&__item
-			{
-				display: inline-block;
-				position: relative;
-				width: 100%;
-				margin: 1.5rem 0 0 0;	
-				padding: 0 0 1.5rem 0;
-				line-height: 1;
-				text-align: center;
-
-				&::after
-				{
-					position: absolute;
-					display: block;
-					width: 26rem;
-					height: 1px;
-					top: 100%;
-					left: 0;
-					right: 0;
-					margin: 0 auto;
-					background-color: $light-gray;
-					content: '';
-				}
-
-				&:last-child::after
-	 			{
-	 				content: none;
-	 			}
-			}
-		}
-
-	}
-
-	&__watermark
-	{
-		position: absolute;
-		left: 4rem;
+		@extend %position-absolute;
 		top: 50%;
-		color: $vivid-yellow;
-		font-size: 9rem;
-		font-weight: $light;
-		text-transform: uppercase;
-		// I don't know why, but the -100% is working
-		// I'm not proud of this
-		transform: translate(-50%, -100%) rotate(-90deg);
-		transform-origin: bottom center;
-		z-index: 0;
+		text-align: center;
+		transform: translate(0, -50%);
+	}
 
-		b
-		{
-			font-weight: $bold;
-		}
+}
 
-		@include to('xs')
+// PARAGRAPH
+.paragraph-container
+{
+	margin-bottom:8rem;
+	margin-top: 4.5rem;
+
+	.paragraph
+	{
+		font:
 		{
-			display: none;
+			weight: $regular;
 		}
 	}
 }
 
-// CIRCLE
-.circle
+// SECTION TITLE
+.section-title
 {
-	$circle-size: 104rem;
-	$node-size: 7rem;
-	$nb-nodes: 6;
-
-	$angle: (180deg / ($nb-nodes + 1));
-	$radius: ($circle-size / 2);
-	$x-mid: $radius;
-	$y-mid: $x-mid;
-
-	display: block;
-	position: relative;
-	@include size($circle-size);
-	margin: 14rem auto ((4rem + 36.8rem) * -1);
-	padding: 22.8rem;
-	border-radius: 50%;
-
-	&__node
+ 	position: relative;
+ 	padding: (20/60) * 1em 0;
+	
+	&::before
 	{
 		display: block;
 		position: absolute;
-		margin:
+		bottom: 0;
+		right: 100%;
+		height: 5.5rem;
+		color: $black;
+    	content: counter(section-title, decimal-leading-zero);
+		counter-increment: section-title;
+		font:
 		{
-			top: ($node-size / -2);
-			left: ($node-size / -2);
+			family: $font-body-family;
+			size: 5.5rem;
 		}
-
-		@for $i from 1 through $nb-nodes {
-			&:nth-child(#{$i})
-			{
-				top: ($y-mid - ($radius * sin(($angle * $i))));
-				left: ($x-mid - ($radius * cos(($angle * $i))));
-			}
-		}
-
-		&__icon
-		{
-			@include size($node-size);
-			background-color: $very-dark-gray;
-			border-radius: 50%;
-			color: $main-color;
-
-			[class^="icon-"]
-			{
-				@include size(100%);
-				fill: currentColor;
-			}
-		}
-
-		&__text
-		{
-			position: absolute;
-			left: 50%;
-			width: 200%;
-			margin-top: 1em;
-			margin-left: -100%;
-			font-size: 1.5rem;
-		}
+		line-height: 1;
+		opacity: 0.2;
+		transform: rotate(-90deg);
 	}
+
+ 	&::after
+ 	{
+ 		display:block;
+		position: absolute;
+		bottom: -0.6rem;
+		height: 0.6rem;
+		width: 9rem;
+		background-color: currentColor;
+		border-radius: 0.3rem;
+		content: '';
+ 	}   
 }

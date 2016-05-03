@@ -8,4 +8,49 @@
 
 .site-section
 {
+	margin-top: 20rem;
+}
+
+// BACKGROUND COLUMN
+.site-background
+{
+	position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    // Ensure that it always be behind the content
+    z-index: -100;
+
+	&__inner
+	{
+		height: 100%;
+	}
+
+	&__column
+	{
+		$border-column: 1px solid rgba($black, 0.1);
+
+		height: 0;
+		border-right: $border-column;
+    	transition: height .6s linear;
+    	
+
+
+		&:first-child
+		{
+			border-left: $border-column;
+		}
+		
+		// When DOM is ready
+		@at-root
+		{
+			.is-ready &
+			{
+				height: 100%;
+			}
+		}
+	}
+
 }

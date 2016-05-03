@@ -2,20 +2,18 @@
  * VARIABLES
  */
 
+$black: #1c1c1c;
+$white: #fcfbf9;
 
-$black: #000;
-$white: #fff;
-$light-gray: #d6d6d6;
-$very-light-gray: #ececec;
+// CYAN
+$cyan-moderate: #62b6ce;
+$cyan-very-dark-grayish: #3d4b4e;
+$cyan-very-dark-desaturated: #24454f;
+$cyan-grayish: #a5cbd7;
+$cyan-dark-moderate: #47899c;
 
-$dark-gray: #535353;
-$very-dark-gray: #1d1d1b;
-
-// YELLOW
-$main-color: #ffd701;
-$vivid-yellow: #e7c305;
-
-$very-dark-blue: #1f2022;
+// GRAY
+$gray-very-light: #ececec;
 
 // Brands colors 
 $facebook: #3b5998;
@@ -24,9 +22,11 @@ $instagram: #3f729b;
 $linkedin: #0077b5;
 
 // FONT
-$font-family: "sofia-pro-soft", sans-serif;
-$base-font-size: 22px;
-$base-line-height: (35/22);
+$font-body-family: "Roboto Mono", sans-serif;
+// $font-body-family
+$font-title-family: "Playfair Display", serif;
+$base-font-size: 15px;
+$base-line-height: (26/15);
 
 // $extralight: 100;
 $light: 300;
@@ -40,8 +40,8 @@ $bold: 700;
 
 // LAYOUT
 
-$psd-width: 1596px;
-$container-width: 1260px;
+$psd-width: 1600px;
+$container-width: 1200px;
 // $container-width-m: 1040px;
 // $header-size-lg: 9rem;
 // $header-size-sm: 6rem;

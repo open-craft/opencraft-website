@@ -8,58 +8,6 @@
 	text-transform: uppercase;
 }
 
-.font
-{
-    // 100    $extralight   Extra Light or Ultra Light
-    // 200    $light        Light or Thin
-    &-light
-    {
-        font-weight: $light;
-    }
-	
-    // 300    $book         Book or Demi
-    // 400    $regular      Normal or Regular
-    &-regular
-	{
-		font-weight: $regular;
-	}
-
-    // 500    $medium       Medium
-    &-medium
-    {
-    	font-weight: $medium;
-    }
-    
-    // 600    $semibold     Semibold, Demibold
-    // 700    $bold         Bold
-    &-bold
-    {
-    	font-weight: $bold;
-    }
-
-    // 800    $extrabold    Black, Extra Bold or Heavy
-    // 900    $extrablack   Extra Black, Fat, Poster or Ultra Black
-}
-
-.color
-{
-    // THEME COLOR
-    &-main-color
-    {
-        color: $main-color;
-    }
-
-    &-white
-    {
-    	color: $white;
-    }
-
-    &-black
-    {
-    	color: $black;
-    }
-}
-
 // AFFICHAGE
 .display
 {
@@ -71,7 +19,11 @@
     &-table-cell
     {
     	display: table-cell;
-    	vertical-align: middle;
+        
+     	&.vertical-align-middle
+        {
+            vertical-align: middle;
+        }
 
         &.vertical-align-bottom
         {
@@ -110,6 +62,11 @@
 .valign-middle
 {
     vertical-align: middle;
+}
+
+.valign-bottom
+{
+    vertical-align: bottom;
 }
 
 .overflow-hidden
@@ -194,16 +151,6 @@
 .background-white
 {
     background-color: $white;
-}
-
-.background-dark
-{
-    background-color: $very-dark-blue;
-}
-
-.background-main-color
-{
-    background-color: $main-color;
 }
 
 .background-cover

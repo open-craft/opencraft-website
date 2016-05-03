@@ -9,5 +9,28 @@
 
 .site-header
 {
+	position: relative;
+	height: 100%;
 
+	&__inner
+	{
+		&__title
+		{
+			@extend %position-absolute;
+		}
+
+		&__table
+		{
+			@include size(100%);
+			display: table;
+
+			&--cell
+			{
+				@include size(100%);
+				display: table-cell;
+				vertical-align: middle;
+			}
+
+		}
+	}
 }

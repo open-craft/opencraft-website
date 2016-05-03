@@ -2,12 +2,29 @@
  * FOOTER
  */
 
-.copyright
-{
-
-}
 
 .site-footer
 {
+	&__logo
+	{
+		@include size(14rem, 7rem);
+		margin: 5rem auto 3rem auto;
+	}
+
+	&__copyright
+	{
+		$font-size-copyright-unitless: 12;
+
+		margin: (35/$font-size-copyright-unitless) * 1em 0;
+		font:
+		{
+			size: ($font-size-copyright-unitless/10) * 1rem;
+		}
+
+		p
+		{
+			margin: 0;
+		}
+	}
 
 }

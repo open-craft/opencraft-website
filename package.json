@@ -9,6 +9,7 @@
   "author": "Poignée de main virile",
   "license": "ISC",
   "devDependencies": {
+    "bootstrap-sass": "^3.3.6",
     "breakpoint-sass": "^2.7.0",
     "breakpoint-slicer": "^2.0.0",
     "feature.js": "^1.0.0",

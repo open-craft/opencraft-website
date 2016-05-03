@@ -80,14 +80,6 @@
 
 	&-background
 	{
-		background:
-		{
-			image: url('#{$jpg-dir}/robeenbox-paper-text.jpg');
-			position: 0 0;
-			repeat: no-repeat;
-			size: 65.5rem 85.5rem;
-		}
-
 		@include to('lg')
 		{
 			background-position: 150px 0;

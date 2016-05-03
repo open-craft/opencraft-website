@@ -5,6 +5,7 @@
 // http://sass-guidelin.es/#the-7-1-pattern
 
 // VENDORS
+@import 'vendors/bootstrap-custom';
 @import 'breakpoint';
 @import 'breakpoint-slicer';
 @import 'normalize';
@@ -21,11 +22,13 @@
 @import 'base/base';
 // @import 'base/webfonts';
 // @import 'base/default-editor.scss';
-// @import 'base/reset';
+@import 'base/reset';
 @import 'base/typography';
 
 // UTILITIES
 @import 'utilities/utilities';
+@import 'utilities/color-system';
+@import 'utilities/font-system';
 @import 'utilities/size-system';
 @import 'utilities/text-align-system';
 
