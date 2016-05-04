@@ -19,7 +19,7 @@
     &-table-cell
     {
     	display: table-cell;
-        
+
      	&.vertical-align-middle
         {
             vertical-align: middle;
@@ -148,11 +148,6 @@
 }
 
 // BACKGROUND
-.background-white
-{
-    background-color: $white;
-}
-
 .background-cover
 {
 	background:
@@ -160,11 +155,6 @@
 	    position: center;
         size: cover;
     }
-}
-
-.border-white
-{
-    border-color: $white;
 }
 
 // MENU

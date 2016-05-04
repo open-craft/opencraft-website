@@ -14,40 +14,45 @@
 
 	</head>
 	<body>
+		<main class="site-content">
+			<header class="site-header">
 
-		<header class="site-header background-cyan-moderate">
-			<div class="container">
-				<div class="row">
-					<div class="site-header__logo col-xs-2">
-						<svg class="icon__logo icon__logo--header" role="img">
-							<use xlink:href="dist/svg/svg.svg#opencraft_logo"/>
-						</svg>
+			
+					<div class="row">
+						<div class="site-header__logo col-xs-2 text-xs-center">
+							<svg class="icon__logo icon__logo--header" role="img">
+								<use xlink:href="dist/svg/svg.svg#opencraft_logo"/>
+							</svg>
+						</div>
+						<nav class="site-menu col-xs-10 text-xs-right">
+							
+						</nav>
 					</div>
-					<nav class="site-menu col-xs-10 text-xs-right">
-						
-					</nav>
-				</div>
-			</div>
+				
 
-			<div class="site-header__inner container">
-				<div class="container site-header__inner__title">
-					<div class="row h-xs-100">
-						<div class="site-header__inner__table">
-							<div class="site-header__inner__table--cell text-xs-center">
-								<h1 class="color-white">
-									Deliver online courses on Open edX.<br>
-									Get a team of proven experts<br>
-									to host it and customize it for you.
-								</h1>
-								<button class="btn btn--header color-white">Get started</button>
+				<div class="site-header__inner container">
+					<div class="container site-header__inner__title">
+						<div class="row h-xs-100">
+							<div class="site-header__inner__table">
+								<div class="site-header__inner__table--cell text-xs-center">
+									<h1 class="color-white">
+										Deliver online courses on Open edX.<br>
+										Get a team of proven experts<br>
+										to host it and customize it for you.
+									</h1>
+									<button class="btn btn--header is-animated">Get started</button>
+								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-			</div>
-		</header>
 
-		<main class="site-content">
+				<!-- CANVAS -->
+				<canvas class="canvas" id="nCanvasRender"></canvas>
+
+			</header>
+
+		
 
 			<div class="container site-section">
 				<div class="row">
@@ -58,7 +63,7 @@
 							works with
 						</h2>
 					</div>
-
+					
 				</div>
 
 				<div class="row">
@@ -71,76 +76,132 @@
 
 				<div class="row">
 					<div class="col-xs-6 col-xs-offset-3">
-
-
 						<div class="display-table w-xs-100">
-						
 							<div class="w-xs-25 display-table-cell">
-								
 								<div class="square background-cyan-very-dark-desaturated">
 									<div class="square__inner">
-										<p>
-											1
-										</p>
+										<div class="square__table">
+											<div class="square__table__cell">
+												<img class="square__img" src="img/png/opencraft_client_mckinsey-academy.png" height="15" width="133" 	alt="">
+											</div>
+										</div>
 									</div>
 								</div>
-								
 							</div>
-
 							<div class="w-xs-25 display-table-cell valign-middle">
-								
 								<div class="square background-cyan-grayish">
 									<div class="square__inner">
-										<p>
-											2
-										</p>
+										<div class="square__table">
+											<div class="square__table__cell">
+												<img class="square__img" src="img/png/opencraft_client_havardx.png" height="22" width="140" alt="">
+											</div>
+										</div>
 									</div>
 								</div>
-								
 							</div>
-
-							<div class="w-xs-25 display-table-cell">
-								
+							<div class="w-xs-25 display-table-cell">	
 								<div class="square background-cyan-moderate">
 									<div class="square__inner">
-										<p>
-											3
-										</p>
+										<div class="square__table">
+											<div class="square__table__cell">
+										
+												<img class="square__img" src="img/png/opencraft_client_edx.png" height="44" width="94" alt="">
+
+											</div>
+										</div>
 									</div>
 								</div>
 								<div class="square background-cyan-dark-moderate">
 									<div class="square__inner">
-										<p>
-											4
-										</p>
+										<div class="square__table">
+											<div class="square__table__cell">
+										
+												<img class="square__img" src="img/png/opencraft_client_education-national.png" height="54" width="160" alt="">
+											</div>
+										</div>
 									</div>
 								</div>
-								
 							</div>
 
 							<div class="w-xs-25 display-table-cell valign-middle">
-								
 								<div class="square background-cyan-very-dark-grayish">
 									<div class="square__inner">
-										<p>
-											5
-										</p>
+										<div class="square__table">
+											<div class="square__table__cell">
+										
+												<img class="square__img" src="img/png/opencraft_client_havard.png" height="75" width="124" alt="">
+
+											</div>
+										</div>
 									</div>
 								</div>
-								
 							</div>
-
 						</div>
 					</div>
 				</div>
 			</div>
+			<div class="container has-overlap">
+			
+				<div class="row">
+					<div class="col-xs-10 col-xs-offset-1 background-gray-very-light">
+						<div class="container__inner">
+							<img class="section-img__header" src="img/png/opencraft_img_need.png" alt="" height="400" width="801">
+							<h2 class="section-title">
+								Your need<br>
+								with Open edX
+							</h2>
+						</div>
+
+						<div class="container__table">
+							<div class="container__table__cell background-cyan-moderate color-white text-xs-center">
+								<div class="container__table__cell__img">
+									<svg class="icon__table" role="img">
+										<use xlink:href="dist/svg/svg.svg#opencraft_icon_table-01"/>
+									</svg>
+								</div>
+								<h3>Host</h3>
+								<p class="container__table__cell__text">
+									Setup your own production instance.<br>
+									Self-service and enterprise offerings
+								</p>
+								<button class="btn btn--table color-white">Launch your site</button>
+							</div>
+							<div class="container__table__cell background-cyan-dark-moderate color-white text-xs-center">
+								<div class="container__table__cell__img">
+									<svg class="icon__table" role="img">
+										<use xlink:href="dist/svg/svg.svg#opencraft_icon_table-02"/>
+									</svg>
+								</div>
+								<h3>Customize & Extend</h3>
+								<p class="container__table__cell__text">
+									Custom development<br>
+									Theme, custom interactive exercises
+								</p>
+								<button class="btn btn--table color-white">Get a quote</button>
+							</div>
+							<div class="container__table__cell background-cyan-very-dark-grayish color-white text-xs-center">
+								<div class="container__table__cell__img">
+									<svg class="icon__table" role="img">
+										<use xlink:href="dist/svg/svg.svg#opencraft_icon_table-03"/>
+									</svg>
+								</div>
+								<h3>Get Help</h3>
+								<p class="container__table__cell__text">
+									Get in-depth answers<br>
+									Suport, guidance & code reviews
+								</p>
+								<button class="btn btn--table color-white">Ask a question</button>
+							</div>
+						</div>
+	
+					</div>
+				</div>
+					
+			</div>
 
 			<div class="container site-section">
 				<div class="row">
-					<h2 class="section-title">
-						Your need<br>
-						with Open edX
-					</h2>
+					
 					<h2 class="section-title">
 						Our projects
 					</h2>
@@ -157,10 +218,9 @@
 			</div>
 
 
-		</main>
 
-		<footer class="site-footer background-cyan-very-dark-desaturated text-xs-center">
-			<div class="container">
+
+			<footer class="site-footer background-cyan-very-dark-desaturated text-xs-center">
 				<div class="row">
 					<div class="col-xs-12">
 
@@ -178,12 +238,12 @@
 
 					</div>
 				</div>
-			</div>
-		</footer>
+			</footer>
+		</main>
 
 		<!-- BACKGROUND SITE -->
 		<div class="site-background background-white">
-			<div class="container h-xs-100">
+			<div class="h-xs-100">
 				<div class="row site-background__inner">
 					<div class="col-xs-3 site-background__column"></div>
 					<div class="col-xs-3 site-background__column"></div>
@@ -194,6 +254,9 @@
 		</div>
 
 		<script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+		<!-- <script src="http://cdnjs.cloudflare.com/ajax/libs/stats.js/r11/Stats.js"></script> -->
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.5/dat.gui.min.js"></script>
 		<script type="text/javascript" src="dist/js/min/functions.min.js"></script>
+		<script type="text/javascript" src="dist/js/min/canvas.min.js"></script>
 	</body>
 </html>

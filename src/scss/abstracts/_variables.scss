@@ -7,10 +7,10 @@ $white: #fcfbf9;
 
 // CYAN
 $cyan-moderate: #62b6ce;
-$cyan-very-dark-grayish: #3d4b4e;
+$cyan-very-dark-grayish: #334A4D;
 $cyan-very-dark-desaturated: #24454f;
 $cyan-grayish: #a5cbd7;
-$cyan-dark-moderate: #47899c;
+$cyan-dark-moderate: #008A9E;
 
 // GRAY
 $gray-very-light: #ececec;
@@ -21,6 +21,21 @@ $twitter: #55acee;
 $instagram: #3f729b;
 $linkedin: #0077b5;
 
+// COLORS
+$colors: 
+	('black', $black), 
+	('white', $white), 
+	('cyan-moderate', $cyan-moderate),
+	('cyan-very-dark-desaturated', $cyan-very-dark-desaturated),
+	('cyan-very-dark-grayish', $cyan-very-dark-grayish),
+	('cyan-grayish', $cyan-grayish),
+	('gray-very-light', $gray-very-light),
+    ('cyan-dark-moderate', $cyan-dark-moderate),
+	('facebook', $facebook),
+	('twitter', $twitter),
+	('instagram', $instagram),
+	('linkedin', $linkedin);
+		
 // FONT
 $font-body-family: "Roboto Mono", sans-serif;
 // $font-body-family

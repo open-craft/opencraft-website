@@ -26,12 +26,22 @@ h1, .h1
 
 h2, .h2
 {
-    font:{
+    font:
+    {
         family: 'Playfair Display';
         size: 6rem;
         weight: $regular;
     }
     line-height: 7rem;
+}
+
+h3, .h3
+{
+    font: 
+    {
+        family: 'Roboto Mono';
+        size: 2.5rem;
+    }
 }
 
 a

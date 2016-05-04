@@ -16,13 +16,28 @@
 	// 	padding-bottom: 100%;
 	// 	content:'';
 	// }
-
 	&__inner
 	{
 		@extend %position-absolute;
-		top: 50%;
-		text-align: center;
-		transform: translate(0, -50%);
+	}
+
+	&__table
+	{
+		display: table;
+		@include size(100%);
+
+		&__cell
+		{
+			display: table-cell;
+			text-align: center;
+			vertical-align: middle;
+		}
+	}
+
+	&__img
+	{
+		max-width: percentage(160/200);
+		height: auto;
 	}
 
 }
@@ -79,4 +94,12 @@
 		border-radius: 0.3rem;
 		content: '';
  	}   
+}
+
+// CANVAS
+.canvas
+{
+	@extend %position-absolute;
+	z-index: -1;
+
 }

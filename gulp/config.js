@@ -7,6 +7,7 @@ var src                     =   './src',
 // NAMES OF FILES
     fileCSS                 =   'global.css',
     fileJS                  =   'functions.js',
+    fileCoffee              =   'canvas.js',
 
 // DESTINATION OF FILES
     dest                    =   "./dist",
@@ -43,7 +44,7 @@ module.exports = {
 
     javascript: {
         // Source to watch
-        srcWatch : src + '/js/*.js',
+        srcWatch: src + '/js/*.js',
         // Destination
         dest: dest + '/js',
         // Source of Javascript files
@@ -62,12 +63,25 @@ module.exports = {
                     './node_modules/jquery/dist/jquery.min.js',
                     './node_modules/wallop/js/Wallop.min.js',
                     src + '/js/app.js',
-                    src + '/js/slider.js'
+                    // src + '/js/canvas.js'
                     // src + '/js/form.js',
                     // src + '/js/page.js',
                     // src + '/js/home.js'
                 ],
                 file: fileJS
+            }
+        ]
+    },
+
+    coffee: {
+        srcWatch: src + '/coffee/*.coffee',
+        dest: dest + '/js',
+        sources: [
+            {
+                src: [
+                   src + '/coffee/canvas.coffee', 
+                ],
+                file: fileCoffee
             }
         ]
     },

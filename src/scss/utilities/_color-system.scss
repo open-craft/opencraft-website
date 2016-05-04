@@ -1,22 +1,6 @@
 /**
- * UTILITIES: FONT SYSTEM
+ * UTILITIES: COLOR SYSTEM
  */
-
-
-$colors: 
-    	('black', $black), 
-    	('white', $white), 
-    	('cyan-moderate', $cyan-moderate),
-    	('cyan-very-dark-desaturated', $cyan-very-dark-desaturated),
-		('cyan-very-dark-grayish', $cyan-very-dark-grayish),
-		('cyan-grayish', $cyan-grayish),
-		('gray-very-light', $gray-very-light),
-        ('cyan-dark-moderate', $cyan-dark-moderate),
-		('facebook', $facebook),
-		('twitter', $twitter),
-		('instagram', $instagram),
-		('linkedin', $linkedin);
-
 
 @each $name, $value in $colors {
     .background-#{$name} 
@@ -27,5 +11,10 @@ $colors:
     .color-#{$name} 
     { 
     	color: $value; 
+    }
+
+    .border-#{$name}
+    {
+        border-color: $value;
     }
 }

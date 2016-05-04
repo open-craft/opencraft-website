@@ -21,6 +21,51 @@ $base-font-size-unitless: 15;
 
 	&--header
 	{
-		margin-top: (180/$base-font-size-unitless) * 1em;
+		position:absolute;
+		border-color: $white;
+		color: $white;
+		left: 50%;
+		bottom: percentage(180/1600);
+		// margin-top: (180/$base-font-size-unitless) * 1em;
+		transform: translate(-50%, 0);
+	}
+	
+	&.is-animated
+	{
+		// position: relative;
+		overflow: hidden;
+		transition: 0.3s ease;
+		// z-index: 2;
+
+		&::before
+		{
+			@extend %position-absolute;
+			display: block;
+			background-color: $white;
+			border-radius: 25%;
+			content: '';
+			opacity: 0;
+			transform: translate(-100%, 0);
+			transition: 0.3s ease;
+			z-index: 1;
+
+		}
+
+		&:hover
+		{
+			color: $black;
+
+			&::after
+			{
+				border-radius: 0;
+				opacity: 1;
+				transform: translate(0, 0);
+			}
+		}
+	}
+
+	&--table
+	{
+		
 	}
 }

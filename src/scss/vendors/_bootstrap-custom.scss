@@ -7,7 +7,14 @@
 // DISABLE GUTTER
 $grid-gutter-width: 0;
 
+// Change max-value
 $container-lg: 1600px;
+
+// Add rules to .container
+.container
+{
+	max-width: 100%;
+}
 
 // Core variables and mixins
 @import "bootstrap/variables";

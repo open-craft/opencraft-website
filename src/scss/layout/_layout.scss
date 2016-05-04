@@ -2,13 +2,87 @@
  * LAYOUT
  */
 
+$overlap: 8.6rem;
+
+.container
+{
+	display: inline-block;
+	margin: 17.5rem 0;
+
+	&__inner
+	{
+		// FROM PSD
+		$margin-left: 266px;
+		$width: 1333px;
+
+		display: inline-block;
+		// padding: $overlap 0 0 0;
+		margin: - $overlap percentage($margin-left/$width) $overlap;
+		width: (100 - (percentage($margin-left * 2 /$width)));
+	}
+
+	&.has-overlap
+	{
+		margin-top: 17.5 + $overlap;
+	}
+
+	&__table
+	{
+		display: table;
+		table-layout: fixed;
+
+		&__cell
+		{
+			display: table-cell;
+			width: percentage(3/100);
+			padding: 8rem 2rem 7rem 2rem;
+
+			&__text
+			{
+				max-height: 15rem;
+				min-height: 15rem;
+			}
+
+			&__img
+			{
+				margin: 0 0 7rem 0;
+				
+				.icon__table
+				{
+					height: 6.2rem;
+					width: 9.4rem;
+					fill: $white;
+				}
+			}
+		}
+	}
+}
+
 .site-content
 {
+	height: 100%;
 }
 
 .site-section
 {
-	margin-top: 20rem;
+	margin-top: 17.5rem;
+}
+
+// TITLE
+.section-title
+{
+
+}
+
+// IMAGE
+.section-img
+{
+	&__header
+	{
+		height: auto;
+		max-width: 100%;
+		// margin-top: - $overlap;
+	}
 }
 
 // BACKGROUND COLUMN

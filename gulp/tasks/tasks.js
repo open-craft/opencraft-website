@@ -2,7 +2,7 @@ var gulp = require('gulp');
 
 // BUILD
 
-gulp.task( 'build', [ 'sass', 'javascript', 'svg'/*, 'minify'*/] );
+gulp.task( 'build', [ 'sass', 'javascript', 'coffee', 'svg'/*, 'minify'*/] );
 
 // DEFAULT
 
