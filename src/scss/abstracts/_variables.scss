@@ -2,39 +2,28 @@
  * VARIABLES
  */
 
-$black: #1c1c1c;
-$white: #fcfbf9;
-
-// CYAN
-$cyan-moderate: #62b6ce;
-$cyan-very-dark-grayish: #334A4D;
-$cyan-very-dark-desaturated: #24454f;
-$cyan-grayish: #a5cbd7;
-$cyan-dark-moderate: #008A9E;
-
-// GRAY
-$gray-very-light: #ececec;
-
-// Brands colors 
-$facebook: #3b5998;
-$twitter: #55acee;
-$instagram: #3f729b;
-$linkedin: #0077b5;
-
+// To use var from map: map-get($map, $key)
 // COLORS
-$colors: 
-	('black', $black), 
-	('white', $white), 
-	('cyan-moderate', $cyan-moderate),
-	('cyan-very-dark-desaturated', $cyan-very-dark-desaturated),
-	('cyan-very-dark-grayish', $cyan-very-dark-grayish),
-	('cyan-grayish', $cyan-grayish),
-	('gray-very-light', $gray-very-light),
-    ('cyan-dark-moderate', $cyan-dark-moderate),
-	('facebook', $facebook),
-	('twitter', $twitter),
-	('instagram', $instagram),
-	('linkedin', $linkedin);
+$colors: (
+	black: #1c1c1c,
+	white: #fcfbf9,
+
+	// CYAN
+	cyan-moderate: #62b6ce,
+	cyan-very-dark-grayish: #334A4D,
+	cyan-very-dark-desaturated: #003A45,
+	cyan-grayish: #a5cbd7,
+	cyan-dark-moderate: #008A9E,
+
+	// GRAY
+	gray-very-light: #ececec,
+
+	// Brands colors 
+	facebook: #3b5998,
+	twitter: #55acee,
+	instagram: #3f729b,
+	linkedin: #0077b5,
+);
 		
 // FONT
 $font-body-family: "Roboto Mono", sans-serif;
@@ -43,15 +32,18 @@ $font-title-family: "Playfair Display", serif;
 $base-font-size: 15px;
 $base-line-height: (26/15);
 
-// $extralight: 100;
-$light: 300;
-// $book: 300;
-$regular: 400;
-$medium: 500;
-// $semibold: 600;
-$bold: 700;
-// $extrabold: 800;
-// $extrablack: 900;
+$font-weight: 
+(
+	extralight: 100,
+	light: 300,
+	book: 300,
+	regular: 400,
+	medium: 500,
+	semibold: 600,
+	bold: 700,
+	extrabold: 800,
+	extrablack: 900
+);
 
 // LAYOUT
 

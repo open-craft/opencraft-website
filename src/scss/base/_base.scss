@@ -19,7 +19,7 @@ h1, .h1
     {
         family: 'Playfair Display';
         size: 5rem;
-        weight: $regular;
+        weight: map-get($font-weight, regular);
     }    
     line-height: 7rem;
 }
@@ -30,7 +30,7 @@ h2, .h2
     {
         family: 'Playfair Display';
         size: 6rem;
-        weight: $regular;
+        weight: map-get($font-weight, regular);
     }
     line-height: 7rem;
 }

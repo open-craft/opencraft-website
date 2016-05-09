@@ -22,8 +22,8 @@ $base-font-size-unitless: 15;
 	&--header
 	{
 		position:absolute;
-		border-color: $white;
-		color: $white;
+		border-color: map-get($colors, white);
+		color: map-get($colors, white);
 		left: 50%;
 		bottom: percentage(180/1600);
 		// margin-top: (180/$base-font-size-unitless) * 1em;
@@ -41,7 +41,7 @@ $base-font-size-unitless: 15;
 		{
 			@extend %position-absolute;
 			display: block;
-			background-color: $white;
+			background-color: map-get($colors, white);
 			border-radius: 25%;
 			content: '';
 			opacity: 0;
@@ -53,7 +53,7 @@ $base-font-size-unitless: 15;
 
 		&:hover
 		{
-			color: $black;
+			color: map-get($colors, black);
 
 			&::after
 			{

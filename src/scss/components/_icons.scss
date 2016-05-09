@@ -7,7 +7,7 @@
 	&__logo
 	{
 		@include size(100%);
-		fill: $white;
+		fill: map-get($colors, white);
 
 		&--header
 		{

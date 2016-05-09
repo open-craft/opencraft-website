@@ -4,33 +4,12 @@
 
 .font
 {
-    // 100    $extralight   Extra Light or Ultra Light
-    // 200    $light        Light or Thin
-    &-light
+    @each $name, $value in $font-weight
     {
-        font-weight: $light;
-    }
-	
-    // 300    $book         Book or Demi
-    // 400    $regular      Normal or Regular
-    &-regular
-	{
-		font-weight: $regular;
-	}
 
-    // 500    $medium       Medium
-    &-medium
-    {
-    	font-weight: $medium;
+        &-#{$name}
+        {
+            font-weight: $value;
+        }
     }
-    
-    // 600    $semibold     Semibold, Demibold
-    // 700    $bold         Bold
-    &-bold
-    {
-    	font-weight: $bold;
-    }
-
-    // 800    $extrabold    Black, Extra Bold or Heavy
-    // 900    $extrablack   Extra Black, Fat, Poster or Ultra Black
 }

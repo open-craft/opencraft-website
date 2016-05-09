@@ -14,11 +14,18 @@ $overlap: 8.6rem;
 		// FROM PSD
 		$margin-left: 266px;
 		$width: 1333px;
-
+		
 		display: inline-block;
-		// padding: $overlap 0 0 0;
-		margin: - $overlap percentage($margin-left/$width) $overlap;
-		width: (100 - (percentage($margin-left * 2 /$width)));
+		margin: $overlap percentage($margin-left/$width);
+
+		&.is-overlap
+		{
+
+			
+			// padding: $overlap 0 0 0;
+			margin: - $overlap percentage($margin-left/$width) $overlap;
+			width: (100 - (percentage($margin-left * 2 /$width)));
+		}
 	}
 
 	&.has-overlap
@@ -51,7 +58,7 @@ $overlap: 8.6rem;
 				{
 					height: 6.2rem;
 					width: 9.4rem;
-					fill: $white;
+					fill: map-get($colors, white);
 				}
 			}
 		}
@@ -104,7 +111,7 @@ $overlap: 8.6rem;
 
 	&__column
 	{
-		$border-column: 1px solid rgba($black, 0.1);
+		$border-column: 1px solid rgba(map-get($colors, black), 0.1);
 
 		height: 0;
 		border-right: $border-column;
@@ -127,4 +134,38 @@ $overlap: 8.6rem;
 		}
 	}
 
+}
+
+// TESTIMONIALS
+.testimonials
+{
+	padding-bottom: 33rem;
+
+	&__inner
+	{
+		position: relative;
+		margin:
+		{
+			bottom: 12rem;
+			top: 12rem;		
+		}
+		padding: 7rem 9rem;
+		z-index: 1;
+	}
+
+	&__background
+	{
+		@extend %position-absolute;
+		background:
+		{
+			position: center;
+			size: cover;
+		}
+		z-index: 0;
+
+		&__inner
+		{
+			background-image: url('#{$jpg-dir}opencraft_background_testimonials.jpg');
+		}
+	}
 }
