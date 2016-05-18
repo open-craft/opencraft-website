@@ -196,6 +196,8 @@ $overlap: 8.6rem;
 	{
 		padding-top: 3.2rem;
 		@extend %box-shadow;
+		width: 100%;
+		min-height: 35.3rem;
 		max-width: 100%;
 	}
 
