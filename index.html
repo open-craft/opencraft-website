@@ -348,7 +348,7 @@
 			<!--  -->
 			
 			<!-- CONTACT -->
-			<section class="section-contacts site-section row background-cyan-very-dark-desaturated color-white position-relative">
+			<section class="section-contacts site-section row background-cyan-very-dark-desaturated color-white position-relative clearfix">
 					<div class="col-xs-8 col-xs-offset-2">
 						<div class="section-contacts__inner">
 							<h2 class="section-title">
@@ -448,11 +448,19 @@
 					<form action="">
 						<div class="col-xs-4 col-xs-offset-2">
       						
-      						<label for="name">Name</label>
-							<input class="input" type="text" name="name" id="name" value="" />
+      						<label class="label label--contact label--contact--left" for="name">Name</label>
+							<input class="input input--contact input--contact--left color-white" type="text" name="name" id="name" value="" />
+
+							<label class="label label--contact label--contact--left" for="email">Email Address</label>
+							<input class="input input--contact input--contact--left color-white" type="email" name="email" id="email" value="" />
 
 						</div>
 						<div class="col-xs-4">
+							
+							<label class="label label--contact label--contact--right" for="message">Your message</label>
+							<textarea class="textarea textarea--contact" name="message" id="message" cols="30" rows="10"></textarea>
+
+							<button class="btn color-white btn--contact" type="submit">Submit</button>
 							
 						</div>
 					</form>
