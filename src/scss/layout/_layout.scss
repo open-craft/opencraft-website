@@ -283,3 +283,47 @@ $overlap: 8.6rem;
     	}
     }
 }
+
+.testimonials
+{
+	&__list
+	{
+		&__item
+		{
+			padding-left: 2.2rem;
+			// From PSD: margin is 100px, parent width is 600px
+			margin-left: percentage(100/600);
+
+			&__button
+			{
+				@extend %button-reset;
+				color: map-get($colors, cyan-slightly-desaturated);
+				font:
+				{
+					size: 1.8rem;
+				}
+
+				&--is-current
+				{
+					position: relative;
+					color: map-get($colors, white);
+
+					&::before
+					{
+						position: absolute;
+						right: 100%;
+						top: 50%;
+						height: 1px;
+						width: 200%;
+						background: 
+						{
+							color: map-get($colors, white);
+						}
+						content:'';
+						transform: translate(-2.2rem, -50%);
+					}
+				}
+			}
+		}
+	}
+}

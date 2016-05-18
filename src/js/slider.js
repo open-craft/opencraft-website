@@ -14,7 +14,7 @@ var slider = {
 
 	// DOM private elements
 	_$currentSlide: null,
-	_buttonCurrent: '',
+	_buttonCurrent: 'screen__list__item__button--is-current',
 	_dotCurrent: 'screen__nav__item--is-current',
 
 	// FUNCTIONS
@@ -146,17 +146,30 @@ var slider = {
 			    slider.goTo($(this).index());
 			});
 
+			// BUTTON
+			var $paginationButtons = $('.js-slide-button', slider_container);
+			var $paginationButtonsWrapper = $('.js-slide-button-wrapper', slider_container);
+
+			$paginationButtonsWrapper.on('click', function() {
+
+				console.log($(this).index());
+			    slider.goTo($(this).index());
+			});
+
 
 			// CHANGE
 			slider.on('change', function(event, callback) {
 
 				_autoplay(true);
 
+				$('.' + _this._buttonCurrent, slider_container).removeClass(_this._buttonCurrent);
 				$('.' + _this._dotCurrent, slider_container).removeClass(_this._dotCurrent);
 
 				// https://api.jquery.com/eq/
 				// Reduce the set of matched elements to the one at the specified index.
 	  			$paginationDots.eq(event.detail.currentItemIndex).addClass(_this._dotCurrent);
+
+	  			$paginationButtons.eq(event.detail.currentItemIndex).addClass(_this._buttonCurrent);
 
 			});
 		});

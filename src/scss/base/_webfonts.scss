@@ -27,7 +27,7 @@
     font-family: 'Circular';
     src: url('#{$fonts-dir}/circular/circularstd-book.eot');
     src: url('#{$fonts-dir}/circular/circularstd-book.eot?#iefix') format('embedded-opentype'), 
-         url('#{$fonts-dir}/circular/circularstd-book.woff2') format('woff2'),
+         // url('#{$fonts-dir}/circular/circularstd-book.woff2') format('woff2'),
          url('#{$fonts-dir}/circular/circularstd-book.woff') format('woff'),
          url('#{$fonts-dir}/circular/circularstd-book.ttf') format('truetype'), 
          url('#{$fonts-dir}/circular/circularstd-book.svg#NeutrafaceDisplay-Thin') format('svg');

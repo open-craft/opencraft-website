@@ -3,19 +3,32 @@
  */
 
 // http://sass-guidelin.es/#the-7-1-pattern
+// 
+
 
 // VENDORS
-@import 'vendors/bootstrap-custom';
 @import 'breakpoint';
 @import 'breakpoint-slicer';
-@import 'normalize';
 
 // ABSTRACTS
 @import 'abstracts/variables';
+
+
+// FONTS
+@import 'base/webfonts';
+
+// NORMALIZE (RESET)
+@import 'normalize';
+
+// BOOTSTRAP
+@import 'vendors/bootstrap-custom';
+
+// ABSTRACTS
 @import 'abstracts/animations';
 @import 'abstracts/mixins';
 @import 'abstracts/functions';
 @import 'abstracts/placeholders';
+
 
 // BASE
 @import 'base/base';
