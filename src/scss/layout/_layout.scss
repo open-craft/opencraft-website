@@ -16,8 +16,8 @@ $overlap: 8.6rem;
 		// $width: 800px;
 		
 		// width: percentage($width/$container-width);
-		// max-width: $width;
-		// margin: $overlap auto;
+		max-width: $container-width;
+		margin: 0 auto;
 
 		&.is-overlap
 		{
@@ -124,17 +124,22 @@ $overlap: 8.6rem;
 .site-section
 {
 	margin-top: 17.5rem;
+	max-width: $container-inner-width;
+	margin-right: auto; 
+	margin-left: auto;
 }
 
 // BACKGROUND COLUMN
 .site-background
 {
+	margin: 0 auto;
 	position: fixed;
     left: 0;
     right: 0;
     top: 0;
     height: 100%;
     width: 100%;
+    max-width: $container-width;
     // Ensure that it always be behind the content
     z-index: -100;
 
@@ -286,6 +291,19 @@ $overlap: 8.6rem;
 
 .testimonials
 {
+	&__slide
+	{	
+		&__wrapper
+		{
+			&__inner
+			{
+				padding: 8rem 7rem;
+				margin-right: percentage(130/1000);
+			}
+		}
+
+	}
+
 	&__list
 	{
 		&__item
@@ -312,7 +330,9 @@ $overlap: 8.6rem;
 					{
 						position: absolute;
 						right: 100%;
-						top: 50%;
+						bottom: 0;
+						top: 0;
+						margin: 0 auto;
 						height: 1px;
 						width: 200%;
 						background: 
