@@ -45,6 +45,13 @@ fnAddEventListener = (o, sEvent, fn) ->
     o['on' + sEvent] = fn
   return
 
+# DOM ready
+fnReady = (fn) ->
+  if document.readyState != 'loading'
+    fn
+  else
+    fnAddEventListener(document, 'DOMContentLoaded', fn)
+
 canvas = () ->
 
   # oStats = new Stats()
@@ -316,7 +323,7 @@ canvas = () ->
   @.pause = () ->
     fnStop() 
 
-  @.play()
+  # @.play()
 
   # Gui is an interface that you can use to modify variables
   # gui = new dat.GUI();
@@ -340,4 +347,4 @@ canvas = () ->
   window.canvas = @
   return
   
-fnAddEventListener(window, 'load', canvas)
+fnReady canvas
