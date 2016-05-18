@@ -16,7 +16,9 @@ $colors: (
 	cyan-dark-moderate: #008A9E,
 
 	// GRAY
+	gray: #b3b3b3,
 	gray-very-light: #ececec,
+	gray-dark: #818181,
 
 	// Brands colors 
 	facebook: #3b5998,
@@ -26,11 +28,11 @@ $colors: (
 );
 		
 // FONT
-$font-body-family: "Roboto Mono", sans-serif;
-// $font-body-family
+$font-body-family: "Circular", sans-serif;
 $font-title-family: "Playfair Display", serif;
-$base-font-size: 15px;
-$base-line-height: (26/15);
+$font-watermark-family: "Roboto Mono";
+$base-font-size: 16px;
+$base-line-height: 26/16;
 
 $font-weight: 
 (
@@ -43,6 +45,14 @@ $font-weight:
 	bold: 700,
 	extrabold: 800,
 	extrablack: 900
+);
+
+$font-size-title:
+(
+	h1: 5rem,
+	h2: 6rem,
+	h3: 3rem,
+	h4: 2.5rem
 );
 
 // LAYOUT
@@ -58,7 +68,7 @@ $container-width: 1200px;
 // $ease-transition: width 0.3s ease;
 
 // MISCELLANEOUS
-// $fonts-dir: "../../fonts/";
+$fonts-dir: "../../fonts/";
 $img-dir: "../../img/";
 $svg-dir: "../../img/svg/";
 $jpg-dir: "../../img/jpg/";

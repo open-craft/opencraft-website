@@ -17,19 +17,19 @@ h1, .h1
 {
     font:
     {
-        family: 'Playfair Display';
-        size: 5rem;
+        family: $font-title-family;
+        size: map-get($font-size-title, h1);
         weight: map-get($font-weight, regular);
     }    
-    line-height: 7rem;
+    line-height: 6rem;
 }
 
 h2, .h2
 {
     font:
     {
-        family: 'Playfair Display';
-        size: 6rem;
+        family: $font-title-family;
+        size: map-get($font-size-title, h2);
         weight: map-get($font-weight, regular);
     }
     line-height: 7rem;
@@ -39,8 +39,19 @@ h3, .h3
 {
     font: 
     {
-        family: 'Roboto Mono';
-        size: 2.5rem;
+        family: $font-body-family;
+        size: map-get($font-size-title, h3);
+        weight: map-get($font-weight, regular);
+    }
+}
+
+h4, .h4
+{
+    font: 
+    {
+        family: $font-body-family;
+        size: map-get($font-size-title, h4);
+        weight: map-get($font-weight, regular);
     }
 }
 

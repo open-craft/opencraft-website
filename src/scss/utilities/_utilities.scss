@@ -113,14 +113,23 @@
     }
 }
 
-.float-left
+// FLOAT
+.float
 {
-	float: left;
-}
+    &-left
+    {
+    	float: left;
+    }
 
-.float-right
-{
-    float: right;
+    &-right
+    {
+        float: right;
+    }
+
+    &-none
+    {
+        float: none;
+    }
 }
 
 // POSITION
@@ -140,6 +149,13 @@
     {
     	position: absolute;
     }
+}
+
+// MARGIN
+
+.no-margin
+{
+    margin: 0;
 }
 
 .margin-center

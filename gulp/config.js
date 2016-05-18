@@ -65,7 +65,7 @@ module.exports = {
                     src + '/js/app.js',
                     // src + '/js/canvas.js'
                     // src + '/js/form.js',
-                    // src + '/js/page.js',
+                    src + '/js/slider.js',
                     // src + '/js/home.js'
                 ],
                 file: fileJS

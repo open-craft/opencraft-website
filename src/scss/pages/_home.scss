@@ -1,3 +1,59 @@
 /**
  * HOME
  */
+
+// ROW BACKGROUND
+.row__background
+{
+	@extend %position-absolute;
+	z-index: -1;
+
+	&__testimonials
+	{
+		background:
+		{
+			image: url('#{$jpg-dir}opencraft_background_testimonials.jpg');
+			position: center;
+			size: cover;
+		}	
+	}
+}
+
+// NEED
+.section-need
+{
+	$overlap: 20rem;
+
+	margin-top: $overlap + 23rem;
+
+	&__img-header
+	{
+
+		@include size(100%, auto);
+		margin-bottom: 11rem;
+		margin-top: -$overlap;
+		@extend %box-shadow;
+	}
+}
+
+// PROJECTS
+.section-projects
+{
+	// display: inline-block;
+	padding-top: 20.5rem;
+	margin-bottom: -17.5rem;
+	margin-top: -9rem;
+	z-index: -1;
+}
+
+// TESTIMONIALS
+.section-testimonials
+{
+	padding-bottom: 33rem;
+}
+
+// CONTACTS
+.section-contacts
+{
+	margin-top: -23rem;
+}

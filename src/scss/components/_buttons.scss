@@ -1,17 +1,16 @@
 /**
  * BUTTONS
  */
-
-$base-font-size-unitless: 15;
-
+ 
 %button
 {
-	padding: (15/$base-font-size-unitless) * 1em;
+	padding: (16/strip-unit($base-font-size)) * 1em;
 	width: 20rem;
 	background-color: transparent;
 	border: 1px solid currentColor;
+	border-radius: (5/strip-unit($base-font-size)) * 1em;
 	cursor: pointer;
-	line-height: (23/$base-font-size-unitless) * 1em;
+	line-height: (23/strip-unit($base-font-size)) * 1em;
 	outline: none;
 }
 
