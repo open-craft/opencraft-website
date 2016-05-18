@@ -19,6 +19,12 @@
 	}
 }
 
+// INTRODUCTION
+.section-introduction
+{
+	margin-top: 12rem;
+}
+
 // NEED
 .section-need
 {
@@ -49,11 +55,23 @@
 // TESTIMONIALS
 .section-testimonials
 {
-	padding-bottom: 33rem;
+	padding-top: 12rem;
+	padding-bottom: 34rem;
 }
 
 // CONTACTS
 .section-contacts
 {
 	margin-top: -23rem;
+
+	&__inner
+	{
+		margin-top: 12rem;
+	}
+}
+
+// INFORMATIONS
+.section-informations
+{
+	margin-top: 34rem;
 }
