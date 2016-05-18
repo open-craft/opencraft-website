@@ -12,5 +12,5 @@
 
 .input
 {
-	@extend %input;
+	@extend %input !optional;
 }

@@ -44,8 +44,10 @@
 // CANVAS
 .canvas
 {
+	display: block;
 	@extend %position-absolute;
 	z-index: -1;
+	@include size(100%);
 }
 
 // MAP MARKERS
