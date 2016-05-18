@@ -14,8 +14,8 @@ var slider = {
 
 	// DOM private elements
 	_$currentSlide: null,
-	_buttonCurrent: 'screen__list__item__button--is-current',
-	_dotCurrent: 'screen__nav__item--is-current',
+	_buttonCurrent: 'slider__button--is-current',
+	_dotCurrent: 'slider__dot--is-current',
 
 	// FUNCTIONS
 	init: function() {
@@ -52,12 +52,12 @@ var slider = {
 		{ 
 			buttonPreviousClass: 'slider__button-previous',
 	      	buttonNextClass: 'slider__button-next',
-	      	itemClass: 'screen__slide',
-	      	currentItemClass: 'screen__slide--is-current',
-	      	showPreviousClass: 'screen__slide--show-previous',
-	      	showNextClass: 'screen__slide--show-next',
-	      	hidePreviousClass: 'screen__slide--hide-previous',
-	      	hideNextClass: 'screen__slide--hide-next', 
+	      	itemClass: 'slider',
+	      	currentItemClass: 'slider--is-current',
+	      	showPreviousClass: 'slider--show-previous',
+	      	showNextClass: 'slider--show-next',
+	      	hidePreviousClass: 'slider--hide-previous',
+	      	hideNextClass: 'slider--hide-next', 
 			// Carousel option is for a loop in slide
 			carousel: true
 		};

@@ -189,17 +189,6 @@ $overlap: 8.6rem;
 		&__list
 		{
 			margin: 7.5rem 0;
-
-		}
-	}
-
-	&__slide
-	{
-		display: none;
-
-		&--is-current
-		{
-			display: block;
 		}
 	}
 
@@ -258,7 +247,7 @@ $overlap: 8.6rem;
 				color: map-get($colors, gray);
 				text-align: left;
 
-	    		&--is-current
+	    		&.slider__button--is-current
 	    		{
 	    			color: map-get($colors, black);
 	    		}
@@ -280,7 +269,7 @@ $overlap: 8.6rem;
     		border-radius: 9px;
     		vertical-align: middle;
 
-    		&--is-current
+    		&.slider__dot--is-current
     		{
     			background-color: map-get($colors, black);
     		}
@@ -293,12 +282,6 @@ $overlap: 8.6rem;
 {
 	&__slide
 	{	
-		display: none;
-
-		&--is-current
-		{
-			display: block;
-		}
 
 		&__text
 		{
@@ -385,7 +368,7 @@ $overlap: 8.6rem;
 				}
 				text-align: left;
 
-				&--is-current
+				&.slider__button--is-current
 				{
 					position: relative;
 					color: map-get($colors, white);

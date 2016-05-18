@@ -1,3 +1,21 @@
 /**
  * SLIDER
  */
+
+.slider
+{	
+	display: none;
+
+	&--is-current
+	{
+		display: block;
+	}
+
+	&__button
+	{
+		&--is-current
+		{
+
+		}
+	}
+}
