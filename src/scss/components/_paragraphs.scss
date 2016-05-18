@@ -13,4 +13,9 @@
 .paragraph
 {
 	margin: 0 0 4rem 0;
+
+	&--contact
+	{
+		line-height: (25/strip-unit($base-font-size)) * 1em;
+	}
 }

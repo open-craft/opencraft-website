@@ -298,23 +298,23 @@ app = () ->
   fnNextFrame()  
 
   # Gui is an interface that you can use to modify variables
-  gui = new dat.GUI();
-  gui.add(window, 'fGrowDuration').min(10).max(500).step(1)
-  gui.add(window, 'fWaitDuration').min(10).max(500).step(1)
-  gui.add(window, 'fShrinkDuration').min(10).max(500).step(1)
-  gui.add(window, 'iPerspective').min(150).max(1000).step(1)
-  gui.add(window, 'iNewParticlePerFrame').min(1).max(20).step(1)
-  gui.add(window, 'iFramesToRotate').min(50).max(2500).step(50).onChange(() ->
-    fVX = (2.0 * fPI) / window.iFramesToRotate
-  )
-  gui.addColor(window, 'aColor').onChange(() ->
-    window.aColor[0] = ~~window.aColor[0]
-    window.aColor[1] = ~~window.aColor[1]
-    window.aColor[2] = ~~window.aColor[2]
-  )
-  if window.innerWidth < 1000
-    gui.close()
-    window.iNewParticlePerFrame = 5
+  # gui = new dat.GUI();
+  # gui.add(window, 'fGrowDuration').min(10).max(500).step(1)
+  # gui.add(window, 'fWaitDuration').min(10).max(500).step(1)
+  # gui.add(window, 'fShrinkDuration').min(10).max(500).step(1)
+  # gui.add(window, 'iPerspective').min(150).max(1000).step(1)
+  # gui.add(window, 'iNewParticlePerFrame').min(1).max(20).step(1)
+  # gui.add(window, 'iFramesToRotate').min(50).max(2500).step(50).onChange(() ->
+  #   fVX = (2.0 * fPI) / window.iFramesToRotate
+  # )
+  # gui.addColor(window, 'aColor').onChange(() ->
+  #   window.aColor[0] = ~~window.aColor[0]
+  #   window.aColor[1] = ~~window.aColor[1]
+  #   window.aColor[2] = ~~window.aColor[2]
+  # )
+  # if window.innerWidth < 1000
+  #   gui.close()
+  #   window.iNewParticlePerFrame = 5
 
   window.app = @
   return
