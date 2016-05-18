@@ -60,16 +60,19 @@ var map = {
     		var $marker = $(this),
     			coordinates = $marker.data('coordinates');
 
-    		if (coordinates === undefined || coordinates.indexOf(',') !== -1) {
+    		if (coordinates === undefined || coordinates.indexOf(',') === -1) {
     			return;
     		}
 
     		coordinates = coordinates.split(',');
 
-    		$marker.css({
-    			'top': coordinates[0],
-    			'left': coordinates[1]
-    		});
+    		// convert coordinates to rem
+    		$marker
+	    		.css({
+	    			top: (parseInt(coordinates[0]) / 10) + 'rem',
+	    			left: (parseInt(coordinates[1]) / 10) + 'rem'
+	    		})
+	    		.addClass('show');
     	});
     }
 };
