@@ -1,7 +1,7 @@
 /**
  * BUTTONS
  */
- 
+
 %button
 {
 	padding: (16/strip-unit($base-font-size)) * 1em;
@@ -66,5 +66,13 @@
 	&--table
 	{
 		
+	}
+
+	&--contact
+	{
+		display: block;
+		margin-bottom: 2.5rem;
+		margin-left: 3.5rem;
+		border-color: rgba( map-get($colors, white), 0.20)
 	}
 }
