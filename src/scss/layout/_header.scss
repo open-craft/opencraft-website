@@ -9,13 +9,24 @@
 
 	&__logo
 	{
+		position: absolute;
+		top: 0;
+		left: 0;
+		padding-top: 1.5rem;
+		padding-left: 4.5rem;
+	}
+
+	&__menu
+	{
+		position: absolute;
+		top: 0;
+		right: 0;
 	}
 
 	&__inner
 	{
 		&__title
 		{
-			@extend %position-absolute;
 		}
 
 		&__table

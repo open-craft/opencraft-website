@@ -4,7 +4,7 @@
 
 %button
 {
-	padding: (20/strip-unit($base-font-size)) * 1em;
+	padding: ((11/strip-unit($base-font-size)) * 1em) ((20/strip-unit($base-font-size)) * 1em);
 	min-width: 20rem;
 	background-color: transparent;
 	border: 2px solid currentColor;

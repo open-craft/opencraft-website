@@ -5,20 +5,46 @@
 
 .site-footer
 {
-	&__logo
+	font-size: 1.2rem;
+
+	&__container
 	{
-		@include size(14rem, 7rem);
-		margin: 5rem auto 3rem auto;
+		padding: 2.5rem;
+
+		@include from('md')
+		{
+			display: table;
+			width: 100%;
+			padding-left: 0;
+			padding-right: 0;
+		}
+	}
+
+	.icon__logo--footer
+	{
+		display: inline-block;
+		vertical-align: middle;
+		@include size(12.3rem, 6.2rem);
+		margin-right: 3.8rem;
+	}
+
+	&__logo,
+	&__copyright
+	{
+		padding: 2rem 0;
+
+		@include from('md')
+		{
+			display: table-cell;
+			vertical-align: middle;
+		}
 	}
 
 	&__copyright
 	{
-		$font-size-copyright-unitless: 12;
-
-		margin: (35/$font-size-copyright-unitless) * 1em 0;
-		font:
+		@include from('md')
 		{
-			size: ($font-size-copyright-unitless/10) * 1rem;
+			padding: 5.7em 0;
 		}
 
 		p

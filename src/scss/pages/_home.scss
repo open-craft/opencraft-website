@@ -36,7 +36,7 @@
 	{
 
 		@include size(100%, auto);
-		margin-bottom: 11rem;
+		margin-bottom: 6rem;
 		margin-top: -$overlap;
 		@extend %box-shadow;
 	}
@@ -63,15 +63,17 @@
 .section-contacts
 {
 	margin-top: -23rem;
+	padding-top: 2.4rem;
+	padding-bottom: 6.8rem;
+}
 
-	&__inner
-	{
-		margin-top: 12rem;
-	}
+.form--contact
+{
+	margin: 5.5rem 0;
 }
 
 // INFORMATIONS
 .section-informations
 {
-	margin-top: 34rem;
+	margin-top: 25.9rem;
 }

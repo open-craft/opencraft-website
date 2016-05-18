@@ -5,9 +5,9 @@
  // PARAGRAPH
 .paragraph-container
 {
-	margin-bottom:8rem;
-	margin-top: 4.5rem;
-
+	margin-top: -4.5rem;
+	margin-bottom: 3.7rem;
+	@include letter-spacing(30);
 }
 
 .paragraph

@@ -17,14 +17,17 @@
 
 		<!-- HEADER -->
 		<header id="js-header" class="site-header color-white">
-			<div class="col-xs-2 site-header__logo text-xs-center">
-				<svg class="icon__logo icon__logo--header" role="img">
-					<use xlink:href="dist/svg/icons.svg#opencraft_logo"/>
-				</svg>
+			<div class="col-xs-2 site-header__logo">
+				<a href="#">
+					<svg class="icon__logo icon__logo--header" role="img">
+						<use xlink:href="dist/svg/icons.svg#opencraft_logo"/>
+					</svg>
+				</a>
 			</div>
-			<nav class="col-xs-10 site-menu text-xs-right"></nav>
 
-			<div class="site-header__inner container">
+			<nav class="col-xs-10 site-header__menu text-xs-right"></nav>
+
+			<div class="site-header__inner container h-xs-100">
 				<div class="site-header__inner__title h-xs-100">
 					
 					<div class="site-header__inner__table">
@@ -154,7 +157,7 @@
 									<use xlink:href="dist/svg/icons.svg#opencraft_icon_table-01"/>
 								</svg>
 							</div>
-							<h3>Host</h3>
+							<h3 class="container__table__cell__title">Host</h3>
 							<p class="container__table__cell__text">
 								Setup your own production instance.<br>
 								Self-service and enterprise offerings
@@ -167,7 +170,7 @@
 									<use xlink:href="dist/svg/icons.svg#opencraft_icon_table-02"/>
 								</svg>
 							</div>
-							<h3>Customize & Extend</h3>
+							<h3 class="container__table__cell__title">Customize & Extend</h3>
 							<p class="container__table__cell__text">
 								Custom development<br>
 								Theme, custom interactive exercises
@@ -180,7 +183,7 @@
 									<use xlink:href="dist/svg/icons.svg#opencraft_icon_table-03"/>
 								</svg>
 							</div>
-							<h3>Get Help</h3>
+							<h3 class="container__table__cell__title">Get Help</h3>
 							<p class="container__table__cell__text">
 								Get in-depth answers<br>
 								Suport, guidance & code reviews
@@ -255,9 +258,9 @@
 				
 					<nav class="screen__nav clearfix">
 						<div class="col-xs-6 col-xs-offset-6">
-							<button class="js-slide-dot screen__nav__item screen__nav__item--is-current"></button>
-							<button class="js-slide-dot screen__nav__item"></button>
-							<button class="js-slide-dot screen__nav__item"></button>
+							<button class="js-slide-dot screen__nav__item screen__nav__item--is-current">
+							</button><button class="js-slide-dot screen__nav__item">
+							</button><button class="js-slide-dot screen__nav__item"></button>
 						</div>
 					</nav>
 
@@ -302,34 +305,40 @@
 									</p>
 									<p class="testimonials__slide__legend">
 										<span class="testimonials__slide__legend__name">Steve Magoun</span>
-										Director of Solutions Engineering edX
+										Director of Solutions Engineering<br>
+										edX
 									</p>
 								</li>
 								<li class="testimonials__slide slider">
 									<p class="testimonials__slide__text">
-										<q>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum, soluta voluptatibus est aspernatur facilis perferendis labore molestias sed hic, culpa expedita minima cumque magnam tenetur nesciunt nulla in incidunt esse.</q>
+										<q>OpenCraft developed two custom products for my team to expand the capabilities of the edX platform. Their performance and attention to customer satisfaction exceeded my expectations. Both tools performed the desired functions and were integrated seamlessly. I would definitely choose to work with OpenCraft again.</q>
 									</p>
+									<p class="testimonials__slide__information">The opinions printed here are the perspectives of the individual(s) quoted and do not represent the views of Harvard University or HarvardX.</p>
 									<p class="testimonials__slide__legend">
-										<span class="testimonials__slide__legend__name">Consectetur adipisicing</span>
-										Voluptatibus est aspernatur
+										<span class="testimonials__slide__legend__name">Stefan Esposito, PhD</span>
+										Manager, Instructional Development<br>
+										HarvardX
 									</p>
 								</li>
 								<li class="testimonials__slide slider">
 									<p class="testimonials__slide__text">
-										<q>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse natus quod deleniti praesentium explicabo omnis saepe? Ullam vel id illo nostrum, quod rerum exercitationem! Odit voluptatem eaque quos ducimus nesciunt.</q>
+										<q>OpenCraft was a pleasure to work with. They helped through every stage of the process – from idea generation, to prototyping, construction, deployment, and testing. They were responsive to my needs and completed the work on time and on budget. OpenCraft knows edX inside out, both technically and organisationally. They are able to reach out to the right person when needed, which was invaluable to get features released on time for our edx.org courses.</q>
 									</p>
+									<p class="testimonials__slide__information">The opinions printed here are the perspectives of the individual(s) quoted and do not represent the views of Harvard University or the Harvard Graduate School of Education.</p>
 									<p class="testimonials__slide__legend">
-										<span class="testimonials__slide__legend__name">Ullam vel</span>
-										Odit voluptatem
+										<span class="testimonials__slide__legend__name">Bill Wisser, PhD</span>
+										Sr. Director, Learning Technologies<br>
+										Harvard Graduate School of Education
 									</p>
 								</li>
 								<li class="testimonials__slide slider">
 									<p class="testimonials__slide__text">
-										<q>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore aliquam voluptatem, totam est culpa magni eos quam omnis maiores nemo molestias quisquam ipsa commodi suscipit alias. Ipsam omnis et culpa.</q>
+										<q>Working with Xavier and team at OpenCraft has been a key part of our development strategy. Their attention to detail and deep knowledge of the edX platform have been instrumental in bringing some of our innovations to market. Perhaps most importantly, OpenCraft’s highly respected, active involvement in the Open edX community is a key benefit to anyone lucky enough to work with them.</q>
 									</p>
 									<p class="testimonials__slide__legend">
-										<span class="testimonials__slide__legend__name">Consectetur adipisicing</span>
-										Consectetur culpa magni eos quam
+										<span class="testimonials__slide__legend__name">Andy Parsons</span>
+										CTO<br>
+										Mckinsey Academy
 									</p>
 								</li>
 							</ul>
@@ -348,127 +357,130 @@
 		
 		<!-- CONTACT -->
 		<section class="section-contacts site-section row background-cyan-very-very-dark-desaturated color-white position-relative clearfix">
-				<div class="col-xs-8 col-xs-offset-2">
-					<div class="section-contacts__inner">
+				<div class="clearfix">
+					<div class="col-xs-8 col-xs-offset-2">
 						<h2 class="section-title">
 							Contact
 						</h2>
 					</div>
-				</div>
-
-				<div class="col-xs-12">
-					<div id="js-map" class="map" data-width="1062" data-height="690">
-						<img class="map__background fluid" src="img/svg/opencraft_map.svg" alt="Opencraft Map" width="900" height="585">
-						<ul>
-							<li class="map__marker js-map-marker" data-coordinates="267,164">
-								<i class="map__marker__dot"></i>
-								<div class="map__marker__info">
-									<p class="map__marker__info__title">Vancouver, Canada</p>
-									<p class="map__marker__info__content">Braden MacDonald</p>
-								</div>
-							</li>
-							<li class="map__marker js-map-marker" data-coordinates="342,243">
-								<i class="map__marker__dot"></i>
-								<div class="map__marker__info">
-									<p class="map__marker__info__title">Houston, USA</p>
-									<p class="map__marker__info__content">Jonathan Piacenti</p>
-								</div>
-							</li>
-							<li class="map__marker js-map-marker" data-coordinates="270,534">
-								<i class="map__marker__dot"></i>
-								<div class="map__marker__info">
-									<p class="map__marker__info__title">Saarbrücken, Germany</p>
-									<p class="map__marker__info__content">Tim Krones</p>
-								</div>
-							</li>
-							<li class="map__marker js-map-marker" data-coordinates="247,548">
-								<i class="map__marker__dot"></i>
-								<div class="map__marker__info">
-									<p class="map__marker__info__title">Kiel, Germany</p>
-									<p class="map__marker__info__content">Sven Marnarch</p>
-								</div>
-							</li>
-							<li class="map__marker js-map-marker" data-coordinates="254,556">
-								<i class="map__marker__dot"></i>
-								<div class="map__marker__info">
-									<p class="map__marker__info__title">Berlin, Germany</p>
-									<p class="map__marker__info__content">Xavier Antoviaque</p>
-								</div>
-							</li>
-							<li class="map__marker js-map-marker" data-coordinates="282,558">
-								<i class="map__marker__dot"></i>
-								<div class="map__marker__info">
-									<p class="map__marker__info__title">Domžale, Slovenia</p>
-									<p class="map__marker__info__content">Matjaz Gregoric</p>
-								</div>
-							</li>								
-							<li class="map__marker js-map-marker" data-coordinates="277,628">
-								<i class="map__marker__dot"></i>
-								<div class="map__marker__info">
-									<p class="map__marker__info__title">Aksay, Russia</p>
-									<p class="map__marker__info__content">Колпаков Евгений</p>
-								</div>
-							</li>
-							<li class="map__marker js-map-marker" data-coordinates="394,806">
-								<i class="map__marker__dot"></i>
-								<div class="map__marker__info">
-									<p class="map__marker__info__title">Bangkok, Thailand</p>
-									<p class="map__marker__info__content">Omar Khan</p>
-								</div>
-							</li>
-							<li class="map__marker js-map-marker" data-coordinates="534,908">
-								<i class="map__marker__dot"></i>
-								<div class="map__marker__info">
-									<p class="map__marker__info__title">Paradise, Australia</p>
-									<p class="map__marker__info__content">Jill Vogel</p>
-								</div>
-							</li>
-						</ul>
+					
+					<div class="col-xs-12">
+						<div id="js-map" class="map" data-width="1062" data-height="690">
+							<img class="map__background fluid" src="img/svg/opencraft_map.svg" alt="Opencraft Map" width="900" height="585">
+							<ul>
+								<li class="map__marker js-map-marker" data-coordinates="267,164">
+									<i class="map__marker__dot"></i>
+									<div class="map__marker__info">
+										<p class="map__marker__info__title">Vancouver, Canada</p>
+										<p class="map__marker__info__content">Braden MacDonald</p>
+									</div>
+								</li>
+								<li class="map__marker js-map-marker" data-coordinates="342,243">
+									<i class="map__marker__dot"></i>
+									<div class="map__marker__info">
+										<p class="map__marker__info__title">Houston, USA</p>
+										<p class="map__marker__info__content">Jonathan Piacenti</p>
+									</div>
+								</li>
+								<li class="map__marker js-map-marker" data-coordinates="270,534">
+									<i class="map__marker__dot"></i>
+									<div class="map__marker__info">
+										<p class="map__marker__info__title">Saarbrücken, Germany</p>
+										<p class="map__marker__info__content">Tim Krones</p>
+									</div>
+								</li>
+								<li class="map__marker js-map-marker" data-coordinates="247,548">
+									<i class="map__marker__dot"></i>
+									<div class="map__marker__info">
+										<p class="map__marker__info__title">Kiel, Germany</p>
+										<p class="map__marker__info__content">Sven Marnarch</p>
+									</div>
+								</li>
+								<li class="map__marker js-map-marker" data-coordinates="254,556">
+									<i class="map__marker__dot"></i>
+									<div class="map__marker__info">
+										<p class="map__marker__info__title">Berlin, Germany</p>
+										<p class="map__marker__info__content">Xavier Antoviaque</p>
+									</div>
+								</li>
+								<li class="map__marker js-map-marker" data-coordinates="282,558">
+									<i class="map__marker__dot"></i>
+									<div class="map__marker__info">
+										<p class="map__marker__info__title">Domžale, Slovenia</p>
+										<p class="map__marker__info__content">Matjaz Gregoric</p>
+									</div>
+								</li>								
+								<li class="map__marker js-map-marker" data-coordinates="277,628">
+									<i class="map__marker__dot"></i>
+									<div class="map__marker__info">
+										<p class="map__marker__info__title">Aksay, Russia</p>
+										<p class="map__marker__info__content">Колпаков Евгений</p>
+									</div>
+								</li>
+								<li class="map__marker js-map-marker" data-coordinates="394,806">
+									<i class="map__marker__dot"></i>
+									<div class="map__marker__info">
+										<p class="map__marker__info__title">Bangkok, Thailand</p>
+										<p class="map__marker__info__content">Omar Khan</p>
+									</div>
+								</li>
+								<li class="map__marker js-map-marker" data-coordinates="534,908">
+									<i class="map__marker__dot"></i>
+									<div class="map__marker__info">
+										<p class="map__marker__info__title">Paradise, Australia</p>
+										<p class="map__marker__info__content">Jill Vogel</p>
+									</div>
+								</li>
+							</ul>
+						</div>
 					</div>
 				</div>
 
-
-				<div class="col-xs-4 col-xs-offset-2 color-white">
-					<p class="paragraph paragraph--contact">
-						OpenCraft GmbH
-						c/o Dr Jan Timmann<br>
-						Unter den Linden 28a<br>
-						10117 Berlin<br>
-						Germany
-					</p>
-				</div>
-
-				<div class="col-xs-4">
-					<button class="btn color-white btn--contact">contact@opencraft.com</button>
-					<button class="btn color-white btn--contact">schedule a meeting</button>
+				<div id="js-map-anchor" class="clearfix">
+					<div class="col-xs-4 col-xs-offset-2 color-white">
+						<p class="paragraph paragraph--contact">
+							OpenCraft GmbH
+							c/o Dr Jan Timmann<br>
+							Unter den Linden 28a<br>
+							10117 Berlin<br>
+							Germany
+						</p>
+					</div>
+					
+					<div class="col-xs-4">
+						<button class="btn color-white btn--contact">contact@opencraft.com</button>
+						<button class="btn color-white btn--contact">schedule a meeting</button>
+					</div>
 				</div>
 
 				<!-- CONTACT FORM -->
-				<form action="">
-					<div class="col-xs-4 col-xs-offset-2">
-  						
-  						<div class="field field--contact field--contact--left">
-  							<label class="label label--required label--contact" for="name">Name</label>
-  							<input class="input input--contact" type="text" name="name" id="name" value="" required />
-  						</div>
-
-						<div class="field field--contact field--contact--left">
-							<label class="label label--required label--contact label--contact--left" for="email">Email Address</label>
-							<input class="input input--contact input--contact--left" type="email" name="email" id="email" value="" required />
+				<div class="form form--contact clearfix">
+					<form action="">
+						<div class="col-xs-4 col-xs-offset-2">
+					  						
+	  						<div class="field field--contact field--contact--left">
+	  							<label class="label label--required label--contact" for="name">Name</label>
+	  							<input class="input input--contact" type="text" name="name" id="name" value="" required />
+	  						</div>
+					
+							<div class="field field--contact field--contact--left">
+								<label class="label label--required label--contact label--contact--left" for="email">Email Address</label>
+								<input class="input input--contact input--contact--left" type="email" name="email" id="email" value="" required />
+							</div>
+					
 						</div>
-
-					</div>
-					<div class="col-xs-4">
-						
-						<div class="field field--contact field--contact--right">
-							<label class="label label--required label--contact" for="message">Your message</label>
-							<textarea class="textarea textarea--contact" name="message" id="message" cols="30" rows="10" required></textarea>
+						<div class="col-xs-4">
+							
+							<div class="field field--contact field--contact--right">
+								<label class="label label--required label--contact" for="message">Your message</label>
+								<textarea class="textarea textarea--contact" name="message" id="message" cols="30" rows="10" required></textarea>
+							</div>
+					
+							<button class="btn color-white btn--contact" type="submit">Submit</button>
+							
 						</div>
-
-						<button class="btn color-white btn--contact" type="submit">Submit</button>
-						
-					</div>
-				</form>
+					</form>
+				</div>
 			</div>
 		</section>
 		<!--  -->
@@ -527,20 +539,20 @@
 		</section>
 		
 		<!-- FOOTER -->
-		<footer class="site-footer background-cyan-very-very-dark-desaturated text-xs-center">
-			<div class="row">
-				<div class="col-xs-12">
-					<div class="site-footer__logo">
+		<footer class="site-footer background-cyan-very-very-dark-desaturated color-white">
+			<div class="container__inner site-footer__container">
+				<div class="site-footer__logo text-xs-center text-md-left">
+					<a href="#">
 						<svg class="icon__logo icon__logo--footer" role="img">
 							<use xlink:href="dist/svg/icons.svg#opencraft_logo"/>
 						</svg>
-					</div>
-					<div class="site-footer__copyright color-white">
-						<p>
-							edX®, the edX logo, Open edX® and the Open edX logo are trademarks or registered trademarks of edX Inc. All Rights Reserved.
-						</p>	
-					</div>
-
+					</a>
+					&copy; OpenCraft 2013-2016
+				</div>
+				<div class="site-footer__copyright text-xs-center text-md-right">
+					<p>
+						edX®, the edX logo, Open edX® and the Open edX logo are trademarks or registered trademarks of edX Inc. All Rights Reserved.
+					</p>	
 				</div>
 			</div>
 		</footer>
@@ -562,7 +574,7 @@
 	<script src="//code.jquery.com/jquery-2.2.3.min.js"></script>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.18.4/TweenMax.min.js"></script>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js"></script>
-	<!-- <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/debug.addIndicators.min.js"></script> -->
+	<script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/debug.addIndicators.min.js"></script>
 	<!-- <script src="//cdnjs.cloudflare.com/ajax/libs/stats.js/r11/Stats.js"></script> -->
 	<!-- <script src="//cdnjs.cloudflare.com/ajax/libs/dat-gui/0.5/dat.gui.min.js"></script> -->
 	<script src="dist/js/min/canvas.min.js"></script>
