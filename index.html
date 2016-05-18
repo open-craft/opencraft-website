@@ -5,560 +5,567 @@
 <!--[if !(IE 9)]><!-->
 <html lang="fr">
 <!--<![endif]-->
-	<head>
+<head>
+	<meta charset="UTF-8">
+	<title>Open Craft</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
 
-		<meta charset="UTF-8">
-		<title>Opencraft</title>
-		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-		<link rel="stylesheet" type="text/css" href="dist/css/global.css">
+	<link rel="stylesheet" type="text/css" href="dist/css/global.css">
+</head>
+<body class="background-white">
+	<main class="site-content">
 
-	</head>
-	<body class="background-white">
-		<main class="site-content">
+		<!-- HEADER -->
+		<header id="js-header" class="site-header color-white">
+			<div class="col-xs-2 site-header__logo text-xs-center">
+				<svg class="icon__logo icon__logo--header" role="img">
+					<use xlink:href="dist/svg/icons.svg#opencraft_logo"/>
+				</svg>
+			</div>
+			<nav class="col-xs-10 site-menu text-xs-right"></nav>
 
-			<!-- HEADER -->
-			<header class="site-header color-white">
-				<div class="col-xs-2 site-header__logo text-xs-center">
-					<svg class="icon__logo icon__logo--header" role="img">
-						<use xlink:href="dist/svg/icons.svg#opencraft_logo"/>
-					</svg>
-				</div>
-				<nav class="col-xs-10 site-menu text-xs-right"></nav>
-
-				<div class="site-header__inner container">
-					<div class="site-header__inner__title h-xs-100">
-						
-						<div class="site-header__inner__table">
-							<div class="site-header__inner__table--cell text-xs-center">
-								<h1>
-									Deliver online courses on Open edX.<br>
-									Get a team of proven experts<br>
-									to host it and customize it for you.
-								</h1>
-								<button class="btn btn--header is-animated">Get started</button>
-							</div>
-						</div>
-						
-					</div>
-				</div>
-
-				<!-- CANVAS -->
-				<canvas class="canvas background-cyan-moderate" id="nCanvasRender"></canvas>
-			</header>
-			<!--  -->
-			
-			<!--  INTRODUCTION -->
-			<section class="site-section row container__inner">
-				
-				<div class="section-introduction col-xs-8 col-xs-offset-2">
-					<h2 class="section-title">
-						OpenCraft<br>
-						works with
-					</h2>
-				</div>
-
-				
-				<div class="col-xs-4 col-xs-offset-6 paragraph-container">
-					<p class="paragraph color-gray-dark">
-						We are the leading development provider on Open edX since its release in 2013, besides edx.org.
-						<br>We have made hundreds of contributions to the platform and its plug-in ecosystem on behalf of our clients.
-					</p>
-				</div>
-				
-
-				<div class="row">
-					<div class="col-xs-8 col-xs-offset-2">
-						
-						<div class="display-table w-xs-100">
-							<div class="display-table-cell w-xs-25 ">
-								<div class="square background-cyan-very-dark-desaturated">
-									<div class="square__inner">
-										<div class="square__table">
-											<div class="square__table__cell">
-												<img class="square__img" src="img/png/opencraft_client_mckinsey-academy.png" height="15" width="133" 	alt="">
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="w-xs-25 display-table-cell valign-middle">
-								<div class="square background-cyan-grayish">
-									<div class="square__inner">
-										<div class="square__table">
-											<div class="square__table__cell">
-												<img class="square__img" src="img/png/opencraft_client_havardx.png" height="22" width="140" alt="">
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="w-xs-25 display-table-cell">	
-								<div class="square background-cyan-moderate">
-									<div class="square__inner">
-										<div class="square__table">
-											<div class="square__table__cell">
-										
-												<img class="square__img" src="img/png/opencraft_client_edx.png" height="44" width="94" alt="">
-
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="square background-cyan-dark-moderate">
-									<div class="square__inner">
-										<div class="square__table">
-											<div class="square__table__cell">
-										
-												<img class="square__img" src="img/png/opencraft_client_education-national.png" height="54" width="160" alt="">
-
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-
-							<div class="w-xs-25 display-table-cell valign-middle">
-								<div class="square background-cyan-very-dark-grayish">
-									<div class="square__inner">
-										<div class="square__table">
-											<div class="square__table__cell">
-										
-												<img class="square__img" src="img/png/opencraft_client_havard.png" height="75" width="124" alt="">
-
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
-			<!--  -->
-			
-			<!-- NEED -->
-			<section class="section-need site-section has-overlap row position-relative">
-			
-					<div class="col-xs-8 col-xs-offset-2">
-						<img class="section-need__img-header "src="img/png/opencraft_img_need.png" alt="" height="400" width="801">
-						<h2 class="section-title your-need">
-							Your need<br>
-							with Open edX
-						</h2>
-					</div>
-
-					<div class="col-xs-12">
-						<div class="container__table">
-							<div class="container__table__cell background-cyan-moderate color-white text-xs-center">
-								<div class="container__table__cell__img">
-									<svg class="icon__table" role="img">
-										<use xlink:href="dist/svg/icons.svg#opencraft_icon_table-01"/>
-									</svg>
-								</div>
-								<h3>Host</h3>
-								<p class="container__table__cell__text">
-									Setup your own production instance.<br>
-									Self-service and enterprise offerings
-								</p>
-								<button class="btn btn--table color-white">Launch your site</button>
-							</div>
-							<div class="container__table__cell background-cyan-dark-moderate color-white text-xs-center">
-								<div class="container__table__cell__img">
-									<svg class="icon__table" role="img">
-										<use xlink:href="dist/svg/icons.svg#opencraft_icon_table-02"/>
-									</svg>
-								</div>
-								<h3>Customize & Extend</h3>
-								<p class="container__table__cell__text">
-									Custom development<br>
-									Theme, custom interactive exercises
-								</p>
-								<button class="btn btn--table color-white">Get a quote</button>
-							</div>
-							<div class="container__table__cell background-cyan-very-dark-grayish color-white text-xs-center">
-								<div class="container__table__cell__img">
-									<svg class="icon__table" role="img">
-										<use xlink:href="dist/svg/icons.svg#opencraft_icon_table-03"/>
-									</svg>
-								</div>
-								<h3>Get Help</h3>
-								<p class="container__table__cell__text">
-									Get in-depth answers<br>
-									Suport, guidance & code reviews
-								</p>
-								<button class="btn btn--table color-white">Ask a question</button>
-							</div>
-						</div>
-					</div>
-					<div class="row__background background-gray-very-light col-xs-12"></div>
-				</div>
-			</section>
-			<!--  -->
-			
-			<!-- PROJECTS -->
-			<section class="clearfix section-projects background-gray-very-light position-relative">
-				
-				<div class="site-section">
-					<h2 class="col-xs-offset-2 col-xs-4 section-title">
-						Our projects
-					</h2>
-
-					<div class="col-xs-12 js-slider">
-						<div class="display-table w-xs-100 screen__wrapper__list">
-							<div class="display-table-cell vertical-align-middle w-xs-50">
-							
-								<ul class="screen__list">
-									<li class="js-slide-button-wrapper screen__list__item">
-										<button class="js-slide-button screen__list__item__button screen__list__item__button--is-current">
-											McKinsey Academy
-										</button>
-									</li>
-									<li class="js-slide-button-wrapper screen__list__item">
-										<button class="js-slide-button screen__list__item__button">
-											Harvard Graduate School of Education, HarvardX
-										</button>
-									</li>
-									<li class="js-slide-button-wrapper screen__list__item">
-										<button class="js-slide-button screen__list__item__button">
-											French Ministry of Higher Education and Research, France
-										</button>
-									</li>
-								</ul>
-							
-							</div>
-							<div class="display-table-cell w-xs-50">
-								
-								<div class="screen__wrapper__slider">
-									<div class="screen">
-											
-										<div class="screen__bar background-cyan-moderate">
-											<span class="screen__bar__button"></span>
-											<span class="screen__bar__button"></span>
-											<span class="screen__bar__button"></span>
-										</div>
-
-										<div class="screen__slide slider slider--is-current">
-											<img class="screen__img" alt="" title="" src="img/jpg/opencraft_screenshot.jpg">
-										</div>
-
-										<div class="screen__slide slider">
-											<img class="screen__img" alt="" title="" src="https://unsplash.it/426/290/?random=1" width="426" height="290">
-										</div>
-
-										<div class="screen__slide slider">
-											<img class="screen__img" alt="" title="" src="https://unsplash.it/426/290/?random=2" width="426" height="290">
-										</div>
-
-									</div>
-								</div>
-							</div>
-						</div>
+			<div class="site-header__inner container">
+				<div class="site-header__inner__title h-xs-100">
 					
-						<nav class="screen__nav clearfix">
-							<div class="col-xs-6 col-xs-offset-6">
-								<button class="js-slide-dot screen__nav__item screen__nav__item--is-current"></button>
-								<button class="js-slide-dot screen__nav__item"></button>
-								<button class="js-slide-dot screen__nav__item"></button>
-							</div>
-						</nav>
+					<div class="site-header__inner__table">
+						<div class="site-header__inner__table--cell text-xs-center">
+							<h1>
+								Deliver online courses on Open edX.<br>
+								Get a team of proven experts<br>
+								to host it and customize it for you.
+							</h1>
+							<button class="btn btn--header is-animated">Get started</button>
+						</div>
+					</div>
+					
+				</div>
+			</div>
 
+			<!-- CANVAS -->
+			<canvas class="canvas background-cyan-light-moderate" id="nCanvasRender"></canvas>
+		</header>
+		<!--  -->
+		
+		<!--  INTRODUCTION -->
+		<section class="site-section row container__inner">
+			
+			<div class="section-introduction col-xs-8 col-xs-offset-2">
+				<h2 class="section-title">
+					OpenCraft<br>
+					works with
+				</h2>
+			</div>
+
+			
+			<div class="col-xs-4 col-xs-offset-6 paragraph-container">
+				<p class="paragraph color-gray-dark">
+					We are the leading development provider on Open edX since its release in 2013, besides edx.org.
+					<br>We have made hundreds of contributions to the platform and its plug-in ecosystem on behalf of our clients.
+				</p>
+			</div>
+			
+
+			<div class="row">
+				<div class="col-xs-8 col-xs-offset-2">
+					
+					<div class="display-table w-xs-100">
+						<div class="display-table-cell w-xs-25 ">
+							<div class="square background-cyan-very-dark-desaturated">
+								<div class="square__inner">
+									<div class="square__table">
+										<div class="square__table__cell">
+											<img class="square__img" src="img/png/opencraft_client_mckinsey-academy.png" width="133" height="15" alt="McKinsey Academy">
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="w-xs-25 display-table-cell valign-middle">
+							<div class="square background-cyan-grayish">
+								<div class="square__inner">
+									<div class="square__table">
+										<div class="square__table__cell">
+											<img class="square__img" src="img/png/opencraft_client_harvardx.png" width="140" height="22" alt="HarvardX">
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="w-xs-25 display-table-cell">	
+							<div class="square background-cyan-moderate">
+								<div class="square__inner">
+									<div class="square__table">
+										<div class="square__table__cell">
+									
+											<img class="square__img" src="img/png/opencraft_client_edx.png" width="94" height="44" alt="edX">
+
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="square background-cyan-dark-moderate">
+								<div class="square__inner">
+									<div class="square__table">
+										<div class="square__table__cell">
+									
+											<img class="square__img" src="img/png/opencraft_client_education-nationale.png" width="144" height="50" alt="Education Nationale">
+
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="w-xs-25 display-table-cell valign-middle">
+							<div class="square background-cyan-very-dark-grayish">
+								<div class="square__inner">
+									<div class="square__table">
+										<div class="square__table__cell">
+									
+											<img class="square__img" src="img/png/opencraft_client_harvard.png" width="118" height="72" alt="Harvard">
+
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
-			</section>
-			<!--  -->
+			</div>
+		</section>
+		<!--  -->
+		
+		<!-- NEED -->
+		<section class="section-need site-section has-overlap row position-relative">
+		
+				<div class="col-xs-8 col-xs-offset-2">
+					<img class="section-need__img-header" src="img/jpg/opencraft_img_need.jpg" alt="" width="800" height="400">
+					<h2 class="section-title your-need">
+						Your need<br>
+						with Open edX
+					</h2>
+				</div>
+
+				<div class="col-xs-12">
+					<div class="container__table">
+						<div class="container__table__cell background-cyan-moderate color-white text-xs-center">
+							<div class="container__table__cell__img">
+								<svg class="icon__table" role="img">
+									<use xlink:href="dist/svg/icons.svg#opencraft_icon_table-01"/>
+								</svg>
+							</div>
+							<h3>Host</h3>
+							<p class="container__table__cell__text">
+								Setup your own production instance.<br>
+								Self-service and enterprise offerings
+							</p>
+							<button class="btn btn--table color-white">Launch your site</button>
+						</div>
+						<div class="container__table__cell background-cyan-dark-moderate color-white text-xs-center">
+							<div class="container__table__cell__img">
+								<svg class="icon__table" role="img">
+									<use xlink:href="dist/svg/icons.svg#opencraft_icon_table-02"/>
+								</svg>
+							</div>
+							<h3>Customize & Extend</h3>
+							<p class="container__table__cell__text">
+								Custom development<br>
+								Theme, custom interactive exercises
+							</p>
+							<button class="btn btn--table color-white">Get a quote</button>
+						</div>
+						<div class="container__table__cell background-cyan-very-dark-grayish color-white text-xs-center">
+							<div class="container__table__cell__img">
+								<svg class="icon__table" role="img">
+									<use xlink:href="dist/svg/icons.svg#opencraft_icon_table-03"/>
+								</svg>
+							</div>
+							<h3>Get Help</h3>
+							<p class="container__table__cell__text">
+								Get in-depth answers<br>
+								Suport, guidance & code reviews
+							</p>
+							<button class="btn btn--table color-white">Ask a question</button>
+						</div>
+					</div>
+				</div>
+				<div class="row__background background-gray-very-light col-xs-12"></div>
+			</div>
+		</section>
+		<!--  -->
+		
+		<!-- PROJECTS -->
+		<section class="clearfix section-projects background-gray-very-light position-relative">
 			
-			<!-- TESTIMONIALS -->
-			<section class="section-testimonials position-relative clearfix">
-				
-				<div class="site-section">
-					<h2 class="col-xs-offset-2 col-xs-4 section-title color-white">
-						Testimonials
-					</h2>		
+			<div class="site-section">
+				<h2 class="col-xs-offset-2 col-xs-4 section-title">
+					Our projects
+				</h2>
+
+				<div class="col-xs-12 js-slider">
+					<div class="display-table w-xs-100 screen__wrapper__list">
+						<div class="display-table-cell vertical-align-middle w-xs-50">
 						
-					<div class="js-slider col-xs-12">
-						<div class="display-table w-xs-100">
-							<div class="display-table-cell vertical-align-middle col-xs-4 float-none">
-								<ul class="testimonials__list">
-									<li class="testimonials__list__item js-slide-button-wrapper">
-										<button class="testimonials__list__item__button js-slide-button slider__button--is-current">Steve Magoun, edX</button>
-									</li>
-									<li class="testimonials__list__item js-slide-button-wrapper">
-										<button class="testimonials__list__item__button js-slide-button">Stefan Esposito, HarvardX</button>
-									</li>
-									<li class="testimonials__list__item js-slide-button-wrapper">
-										<button class="testimonials__list__item__button js-slide-button">Bill Wisser, Harvard Graduate School of Education</button>
-									</li>
-									<li class="testimonials__list__item js-slide-button-wrapper">
-										<button class="testimonials__list__item__button js-slide-button">Andy Parsons, Mckinsey Academy</button>
-									</li>
-								</ul>
-							</div>
+							<ul class="screen__list">
+								<li class="js-slide-button-wrapper screen__list__item">
+									<button class="js-slide-button screen__list__item__button screen__list__item__button--is-current">
+										McKinsey Academy
+									</button>
+								</li>
+								<li class="js-slide-button-wrapper screen__list__item">
+									<button class="js-slide-button screen__list__item__button">
+										Harvard Graduate School of Education, HarvardX
+									</button>
+								</li>
+								<li class="js-slide-button-wrapper screen__list__item">
+									<button class="js-slide-button screen__list__item__button">
+										French Ministry of Higher Education and Research, France
+									</button>
+								</li>
+							</ul>
+						
+						</div>
+						<div class="display-table-cell w-xs-50">
+							
+							<div class="screen__wrapper__slider">
+								<div class="screen">
+										
+									<div class="screen__bar background-cyan-moderate">
+										<span class="screen__bar__button"></span>
+										<span class="screen__bar__button"></span>
+										<span class="screen__bar__button"></span>
+									</div>
 
-							<div class="testimonials__slide__wrapper display-table-cell vertical-align-middle col-xs-8 float-none">
+									<div class="screen__slide slider slider--is-current">
+										<img class="screen__img" alt="" title="" src="img/jpg/opencraft_screenshot.jpg">
+									</div>
 
-								<ul class="testimonials__slide__wrapper__inner background-white">
-									<li class="testimonials__slide slider slider--is-current">
-										<p class="testimonials__slide__text">
-											<q>OpenCraft have been an invaluable partner to edX. They have successfully architected and delivered several complex features in the Open edX platform, and are recognized throughout the Open edX community as experts in development of XBlocks. We count on OpenCraft to develop key parts of our roadmap on time and at a high quality standard.</q>
-										</p>
-										<p class="testimonials__slide__legend">
-											<span class="testimonials__slide__legend__name">Steve Magoun</span>
-											Director of Solutions Engineering edX
-										</p>
-									</li>
-									<li class="testimonials__slide slider">
-										<p class="testimonials__slide__text">
-											<q>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum, soluta voluptatibus est aspernatur facilis perferendis labore molestias sed hic, culpa expedita minima cumque magnam tenetur nesciunt nulla in incidunt esse.</q>
-										</p>
-										<p class="testimonials__slide__legend">
-											<span class="testimonials__slide__legend__name">Consectetur adipisicing</span>
-											Voluptatibus est aspernatur
-										</p>
-									</li>
-									<li class="testimonials__slide slider">
-										<p class="testimonials__slide__text">
-											<q>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse natus quod deleniti praesentium explicabo omnis saepe? Ullam vel id illo nostrum, quod rerum exercitationem! Odit voluptatem eaque quos ducimus nesciunt.</q>
-										</p>
-										<p class="testimonials__slide__legend">
-											<span class="testimonials__slide__legend__name">Ullam vel</span>
-											Odit voluptatem
-										</p>
-									</li>
-									<li class="testimonials__slide slider">
-										<p class="testimonials__slide__text">
-											<q>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore aliquam voluptatem, totam est culpa magni eos quam omnis maiores nemo molestias quisquam ipsa commodi suscipit alias. Ipsam omnis et culpa.</q>
-										</p>
-										<p class="testimonials__slide__legend">
-											<span class="testimonials__slide__legend__name">Consectetur adipisicing</span>
-											Consectetur culpa magni eos quam
-										</p>
-									</li>
-								</ul>
+									<div class="screen__slide slider">
+										<img class="screen__img" alt="" title="" src="https://unsplash.it/426/290/?random=1" width="426" height="290">
+									</div>
+
+									<div class="screen__slide slider">
+										<img class="screen__img" alt="" title="" src="https://unsplash.it/426/290/?random=2" width="426" height="290">
+									</div>
+
+								</div>
 							</div>
 						</div>
 					</div>
-				</div>
 				
-				<!-- TESTIMONIALS BACKGROUND -->
-				<div class="row__background background-cyan-dark-moderate">
-					<div class="col-xs-6 col-xs-offset-6 h-xs-100 row__background__testimonials">
-				</div>
-
-			</section>
-			<!--  -->
-			
-			<!-- CONTACT -->
-			<section class="section-contacts site-section row background-cyan-very-dark-desaturated color-white position-relative clearfix">
-					<div class="col-xs-8 col-xs-offset-2">
-						<div class="section-contacts__inner">
-							<h2 class="section-title">
-								Contact
-							</h2>
+					<nav class="screen__nav clearfix">
+						<div class="col-xs-6 col-xs-offset-6">
+							<button class="js-slide-dot screen__nav__item screen__nav__item--is-current"></button>
+							<button class="js-slide-dot screen__nav__item"></button>
+							<button class="js-slide-dot screen__nav__item"></button>
 						</div>
-					</div>
+					</nav>
 
-					<div class="col-xs-12">
-						<div id="js-map" class="map" data-width="1062" data-height="690">
-							<img class="map__background fluid" src="img/svg/opencraft_map.svg" alt="Opencraft Map" width="900" height="585">
-							<ul>
-								<li class="map__marker js-map-marker" data-coordinates="267,164">
-									<i class="map__marker__dot"></i>
-									<div class="map__marker__info">
-										<p class="map__marker__info__title">Vancouver, Canada</p>
-										<p class="map__marker__info__content">Braden MacDonald</p>
-									</div>
+				</div>
+			</div>
+		</section>
+		<!--  -->
+		
+		<!-- TESTIMONIALS -->
+		<section class="section-testimonials position-relative clearfix">
+			
+			<div class="site-section">
+				<h2 class="col-xs-offset-2 col-xs-4 section-title color-white">
+					Testimonials
+				</h2>		
+					
+				<div class="js-slider col-xs-12">
+					<div class="display-table w-xs-100">
+						<div class="display-table-cell vertical-align-middle col-xs-4 float-none">
+							<ul class="testimonials__list">
+								<li class="testimonials__list__item js-slide-button-wrapper">
+									<button class="testimonials__list__item__button js-slide-button slider__button--is-current">Steve Magoun, edX</button>
 								</li>
-								<li class="map__marker js-map-marker" data-coordinates="342,243">
-									<i class="map__marker__dot"></i>
-									<div class="map__marker__info">
-										<p class="map__marker__info__title">Houston, USA</p>
-										<p class="map__marker__info__content">Jonathan Piacenti</p>
-									</div>
+								<li class="testimonials__list__item js-slide-button-wrapper">
+									<button class="testimonials__list__item__button js-slide-button">Stefan Esposito, HarvardX</button>
 								</li>
-								<li class="map__marker js-map-marker" data-coordinates="270,534">
-									<i class="map__marker__dot"></i>
-									<div class="map__marker__info">
-										<p class="map__marker__info__title">Saarbrücken, Germany</p>
-										<p class="map__marker__info__content">Tim Krones</p>
-									</div>
+								<li class="testimonials__list__item js-slide-button-wrapper">
+									<button class="testimonials__list__item__button js-slide-button">Bill Wisser, Harvard Graduate School of Education</button>
 								</li>
-								<li class="map__marker js-map-marker" data-coordinates="247,548">
-									<i class="map__marker__dot"></i>
-									<div class="map__marker__info">
-										<p class="map__marker__info__title">Kiel, Germany</p>
-										<p class="map__marker__info__content">Sven Marnarch</p>
-									</div>
+								<li class="testimonials__list__item js-slide-button-wrapper">
+									<button class="testimonials__list__item__button js-slide-button">Andy Parsons, Mckinsey Academy</button>
 								</li>
-								<li class="map__marker js-map-marker" data-coordinates="254,556">
-									<i class="map__marker__dot"></i>
-									<div class="map__marker__info">
-										<p class="map__marker__info__title">Berlin, Germany</p>
-										<p class="map__marker__info__content">Xavier Antoviaque</p>
-									</div>
+							</ul>
+						</div>
+
+						<div class="testimonials__slide__wrapper display-table-cell vertical-align-middle col-xs-8 float-none">
+
+							<ul class="testimonials__slide__wrapper__inner background-white">
+								<li class="testimonials__slide slider slider--is-current">
+									<p class="testimonials__slide__text">
+										<q>OpenCraft have been an invaluable partner to edX. They have successfully architected and delivered several complex features in the Open edX platform, and are recognized throughout the Open edX community as experts in development of XBlocks. We count on OpenCraft to develop key parts of our roadmap on time and at a high quality standard.</q>
+									</p>
+									<p class="testimonials__slide__legend">
+										<span class="testimonials__slide__legend__name">Steve Magoun</span>
+										Director of Solutions Engineering edX
+									</p>
 								</li>
-								<li class="map__marker js-map-marker" data-coordinates="282,558">
-									<i class="map__marker__dot"></i>
-									<div class="map__marker__info">
-										<p class="map__marker__info__title">Domžale, Slovenia</p>
-										<p class="map__marker__info__content">Matjaz Gregoric</p>
-									</div>
-								</li>								
-								<li class="map__marker js-map-marker" data-coordinates="277,628">
-									<i class="map__marker__dot"></i>
-									<div class="map__marker__info">
-										<p class="map__marker__info__title">Aksay, Russia</p>
-										<p class="map__marker__info__content">Колпаков Евгений</p>
-									</div>
+								<li class="testimonials__slide slider">
+									<p class="testimonials__slide__text">
+										<q>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum, soluta voluptatibus est aspernatur facilis perferendis labore molestias sed hic, culpa expedita minima cumque magnam tenetur nesciunt nulla in incidunt esse.</q>
+									</p>
+									<p class="testimonials__slide__legend">
+										<span class="testimonials__slide__legend__name">Consectetur adipisicing</span>
+										Voluptatibus est aspernatur
+									</p>
 								</li>
-								<li class="map__marker js-map-marker" data-coordinates="394,806">
-									<i class="map__marker__dot"></i>
-									<div class="map__marker__info">
-										<p class="map__marker__info__title">Bangkok, Thailand</p>
-										<p class="map__marker__info__content">Omar Khan</p>
-									</div>
+								<li class="testimonials__slide slider">
+									<p class="testimonials__slide__text">
+										<q>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse natus quod deleniti praesentium explicabo omnis saepe? Ullam vel id illo nostrum, quod rerum exercitationem! Odit voluptatem eaque quos ducimus nesciunt.</q>
+									</p>
+									<p class="testimonials__slide__legend">
+										<span class="testimonials__slide__legend__name">Ullam vel</span>
+										Odit voluptatem
+									</p>
 								</li>
-								<li class="map__marker js-map-marker" data-coordinates="534,908">
-									<i class="map__marker__dot"></i>
-									<div class="map__marker__info">
-										<p class="map__marker__info__title">Paradise, Australia</p>
-										<p class="map__marker__info__content">Jill Vogel</p>
-									</div>
+								<li class="testimonials__slide slider">
+									<p class="testimonials__slide__text">
+										<q>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore aliquam voluptatem, totam est culpa magni eos quam omnis maiores nemo molestias quisquam ipsa commodi suscipit alias. Ipsam omnis et culpa.</q>
+									</p>
+									<p class="testimonials__slide__legend">
+										<span class="testimonials__slide__legend__name">Consectetur adipisicing</span>
+										Consectetur culpa magni eos quam
+									</p>
 								</li>
 							</ul>
 						</div>
 					</div>
-
-
-					<div class="col-xs-4 col-xs-offset-2 color-white">
-						<p class="paragraph paragraph--contact">
-							OpenCraft GmbH
-							c/o Dr Jan Timmann<br>
-							Unter den Linden 28a<br>
-							10117 Berlin<br>
-							Germany
-						</p>
-					</div>
-
-					<div class="col-xs-4">
-						<button class="btn color-white btn--contact">contact@opencraft.com</button>
-						<button class="btn color-white btn--contact">schedule a meeting</button>
-					</div>
-
-					<!-- CONTACT FORM -->
-					<form action="">
-						<div class="col-xs-4 col-xs-offset-2">
-      						
-      						<label class="label label--contact label--contact--left" for="name">Name</label>
-							<input class="input input--contact input--contact--left color-white" type="text" name="name" id="name" value="" />
-
-							<label class="label label--contact label--contact--left" for="email">Email Address</label>
-							<input class="input input--contact input--contact--left color-white" type="email" name="email" id="email" value="" />
-
-						</div>
-						<div class="col-xs-4">
-							
-							<label class="label label--contact label--contact--right" for="message">Your message</label>
-							<textarea class="textarea textarea--contact" name="message" id="message" cols="30" rows="10"></textarea>
-
-							<button class="btn color-white btn--contact" type="submit">Submit</button>
-							
-						</div>
-					</form>
-				</div>
-			</section>
-			<!--  -->
-			
-			<!-- INFORMATIONS -->
-			<section class="w-xs-100 section-informations site-section">
-				<div class="row">
-					<div class="col-xs-8 col-xs-offset-2">
-						<div class="container__inner">
-							<h2 class="section-title">
-								Informations
-							</h2>						
-							<article class="informations-article">
-								<div class="col-xs-6">
-									<h4 class="no-margin">
-										What are MOOCs and edX?
-									</h4>
-								</div>
-								<div class="col-xs-6">
-									<p class="paragraph">
-										MOOCs are Massive Open Online Courses. These courses can be taken wherever and whenever a learner wants.<br>
-										A MOOC is the ideal way to teach a large global audience of learners.
-									</p>
-									<p class="paragraph">
-										The Open edX platform is the leading open-source MOOC platform, created by edX and its founding partners, MIT and Harvard, with contributions from countless partner universities.
-									</p>
-								</div>
-							</article>	
-							<article class="informations-article">
-								<div class="col-xs-6">
-									<h4 class="no-margin">
-										OpenCraft’s Expertise
-									</h4>
-								</div>
-								<div class="col-xs-6">
-									<p class="paragraph">
-										OpenCraft is one of the Open edX platform's contributors since the very first day the project was released as open source. OpenCraft has made hundreds of contributions to the Open edX platform and its plugin ecosystem (“XBlocks”). The OpenCraft and edX teams know each other and work well together, edX being both a client and a partner for OpenCraft.
-									</p>
-								</div>
-							</article>
-							<article class="informations-article">
-								<div class="col-xs-6">
-									<h4 class="no-margin">
-										OpenCraft’s History
-									</h4>
-								</div>
-								<div class="col-xs-6">
-									<p class="paragraph">
-										The core values of OpenCraft are openness, quality and commitment. All team members are senior developers with extensive experience in Python, Javascript and most of the technologies used by the project. OpenCraft believes in sharing and contributes regularly to open source projects - especially the Open edX platform. The company is decentralized, operating between both North America and Europe - allowing us to recruit the best talent, no matter where they are!
-									</p>
-								</div>
-							</article>
-						</div>
-					</div>
-				</div>
-			</section>
-			
-			<!-- FOOTER -->
-			<footer class="site-footer background-cyan-very-dark-desaturated text-xs-center">
-				<div class="row">
-					<div class="col-xs-12">
-						<div class="site-footer__logo">
-							<svg class="icon__logo icon__logo--footer" role="img">
-								<use xlink:href="dist/svg/icons.svg#opencraft_logo"/>
-							</svg>
-						</div>
-						<div class="site-footer__copyright color-white">
-							<p>
-								edX®, the edX logo, Open edX® and the Open edX logo are trademarks or registered trademarks of edX Inc. All Rights Reserved.
-							</p>	
-						</div>
-
-					</div>
-				</div>
-			</footer>
-
-		</main>
-
-		<!-- BACKGROUND SITE -->
-		<div class="site-background">
-			<div class="h-xs-100">
-				<div class="row site-background__inner">
-					<div class="col-xs-3 site-background__column"></div>
-					<div class="col-xs-3 site-background__column"></div>
-					<div class="col-xs-3 site-background__column"></div>
-					<div class="col-xs-3 site-background__column"></div>
 				</div>
 			</div>
-		</div>
+			
+			<!-- TESTIMONIALS BACKGROUND -->
+			<div class="row__background background-cyan-dark-moderate">
+				<div class="col-xs-6 col-xs-offset-6 h-xs-100 row__background__testimonials">
+			</div>
 
-		<script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
-		<script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.4/TweenMax.min.js"></script>
-		<!-- <script src="http://cdnjs.cloudflare.com/ajax/libs/stats.js/r11/Stats.js"></script> -->
-		<script src="http://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.5/dat.gui.min.js"></script>
-		<script type="text/javascript" src="dist/js/min/functions.min.js"></script>
-		<script type="text/javascript" src="dist/js/min/canvas.min.js"></script>
-	</body>
+		</section>
+		<!--  -->
+		
+		<!-- CONTACT -->
+		<section class="section-contacts site-section row background-cyan-very-very-dark-desaturated color-white position-relative clearfix">
+				<div class="col-xs-8 col-xs-offset-2">
+					<div class="section-contacts__inner">
+						<h2 class="section-title">
+							Contact
+						</h2>
+					</div>
+				</div>
+
+				<div class="col-xs-12">
+					<div id="js-map" class="map" data-width="1062" data-height="690">
+						<img class="map__background fluid" src="img/svg/opencraft_map.svg" alt="Opencraft Map" width="900" height="585">
+						<ul>
+							<li class="map__marker js-map-marker" data-coordinates="267,164">
+								<i class="map__marker__dot"></i>
+								<div class="map__marker__info">
+									<p class="map__marker__info__title">Vancouver, Canada</p>
+									<p class="map__marker__info__content">Braden MacDonald</p>
+								</div>
+							</li>
+							<li class="map__marker js-map-marker" data-coordinates="342,243">
+								<i class="map__marker__dot"></i>
+								<div class="map__marker__info">
+									<p class="map__marker__info__title">Houston, USA</p>
+									<p class="map__marker__info__content">Jonathan Piacenti</p>
+								</div>
+							</li>
+							<li class="map__marker js-map-marker" data-coordinates="270,534">
+								<i class="map__marker__dot"></i>
+								<div class="map__marker__info">
+									<p class="map__marker__info__title">Saarbrücken, Germany</p>
+									<p class="map__marker__info__content">Tim Krones</p>
+								</div>
+							</li>
+							<li class="map__marker js-map-marker" data-coordinates="247,548">
+								<i class="map__marker__dot"></i>
+								<div class="map__marker__info">
+									<p class="map__marker__info__title">Kiel, Germany</p>
+									<p class="map__marker__info__content">Sven Marnarch</p>
+								</div>
+							</li>
+							<li class="map__marker js-map-marker" data-coordinates="254,556">
+								<i class="map__marker__dot"></i>
+								<div class="map__marker__info">
+									<p class="map__marker__info__title">Berlin, Germany</p>
+									<p class="map__marker__info__content">Xavier Antoviaque</p>
+								</div>
+							</li>
+							<li class="map__marker js-map-marker" data-coordinates="282,558">
+								<i class="map__marker__dot"></i>
+								<div class="map__marker__info">
+									<p class="map__marker__info__title">Domžale, Slovenia</p>
+									<p class="map__marker__info__content">Matjaz Gregoric</p>
+								</div>
+							</li>								
+							<li class="map__marker js-map-marker" data-coordinates="277,628">
+								<i class="map__marker__dot"></i>
+								<div class="map__marker__info">
+									<p class="map__marker__info__title">Aksay, Russia</p>
+									<p class="map__marker__info__content">Колпаков Евгений</p>
+								</div>
+							</li>
+							<li class="map__marker js-map-marker" data-coordinates="394,806">
+								<i class="map__marker__dot"></i>
+								<div class="map__marker__info">
+									<p class="map__marker__info__title">Bangkok, Thailand</p>
+									<p class="map__marker__info__content">Omar Khan</p>
+								</div>
+							</li>
+							<li class="map__marker js-map-marker" data-coordinates="534,908">
+								<i class="map__marker__dot"></i>
+								<div class="map__marker__info">
+									<p class="map__marker__info__title">Paradise, Australia</p>
+									<p class="map__marker__info__content">Jill Vogel</p>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+
+
+				<div class="col-xs-4 col-xs-offset-2 color-white">
+					<p class="paragraph paragraph--contact">
+						OpenCraft GmbH
+						c/o Dr Jan Timmann<br>
+						Unter den Linden 28a<br>
+						10117 Berlin<br>
+						Germany
+					</p>
+				</div>
+
+				<div class="col-xs-4">
+					<button class="btn color-white btn--contact">contact@opencraft.com</button>
+					<button class="btn color-white btn--contact">schedule a meeting</button>
+				</div>
+
+				<!-- CONTACT FORM -->
+				<form action="">
+					<div class="col-xs-4 col-xs-offset-2">
+  						
+  						<div class="field field--contact field--contact--left">
+  							<label class="label label--required label--contact" for="name">Name</label>
+  							<input class="input input--contact" type="text" name="name" id="name" value="" required />
+  						</div>
+
+						<div class="field field--contact field--contact--left">
+							<label class="label label--required label--contact label--contact--left" for="email">Email Address</label>
+							<input class="input input--contact input--contact--left" type="email" name="email" id="email" value="" required />
+						</div>
+
+					</div>
+					<div class="col-xs-4">
+						
+						<div class="field field--contact field--contact--right">
+							<label class="label label--required label--contact" for="message">Your message</label>
+							<textarea class="textarea textarea--contact" name="message" id="message" cols="30" rows="10" required></textarea>
+						</div>
+
+						<button class="btn color-white btn--contact" type="submit">Submit</button>
+						
+					</div>
+				</form>
+			</div>
+		</section>
+		<!--  -->
+		
+		<!-- INFORMATIONS -->
+		<section class="w-xs-100 section-informations site-section">
+			<div class="row">
+				<div class="col-xs-8 col-xs-offset-2">
+					<div class="container__inner">
+						<h2 class="section-title">
+							Informations
+						</h2>						
+						<article class="informations-article">
+							<div class="col-xs-6">
+								<h4 class="no-margin">
+									What are MOOCs and edX?
+								</h4>
+							</div>
+							<div class="col-xs-6">
+								<p class="paragraph">
+									MOOCs are Massive Open Online Courses. These courses can be taken wherever and whenever a learner wants.<br>
+									A MOOC is the ideal way to teach a large global audience of learners.
+								</p>
+								<p class="paragraph">
+									The Open edX platform is the leading open-source MOOC platform, created by edX and its founding partners, MIT and Harvard, with contributions from countless partner universities.
+								</p>
+							</div>
+						</article>	
+						<article class="informations-article">
+							<div class="col-xs-6">
+								<h4 class="no-margin">
+									OpenCraft’s Expertise
+								</h4>
+							</div>
+							<div class="col-xs-6">
+								<p class="paragraph">
+									OpenCraft is one of the Open edX platform's contributors since the very first day the project was released as open source. OpenCraft has made hundreds of contributions to the Open edX platform and its plugin ecosystem (“XBlocks”). The OpenCraft and edX teams know each other and work well together, edX being both a client and a partner for OpenCraft.
+								</p>
+							</div>
+						</article>
+						<article class="informations-article">
+							<div class="col-xs-6">
+								<h4 class="no-margin">
+									OpenCraft’s History
+								</h4>
+							</div>
+							<div class="col-xs-6">
+								<p class="paragraph">
+									The core values of OpenCraft are openness, quality and commitment. All team members are senior developers with extensive experience in Python, Javascript and most of the technologies used by the project. OpenCraft believes in sharing and contributes regularly to open source projects - especially the Open edX platform. The company is decentralized, operating between both North America and Europe - allowing us to recruit the best talent, no matter where they are!
+								</p>
+							</div>
+						</article>
+					</div>
+				</div>
+			</div>
+		</section>
+		
+		<!-- FOOTER -->
+		<footer class="site-footer background-cyan-very-very-dark-desaturated text-xs-center">
+			<div class="row">
+				<div class="col-xs-12">
+					<div class="site-footer__logo">
+						<svg class="icon__logo icon__logo--footer" role="img">
+							<use xlink:href="dist/svg/icons.svg#opencraft_logo"/>
+						</svg>
+					</div>
+					<div class="site-footer__copyright color-white">
+						<p>
+							edX®, the edX logo, Open edX® and the Open edX logo are trademarks or registered trademarks of edX Inc. All Rights Reserved.
+						</p>	
+					</div>
+
+				</div>
+			</div>
+		</footer>
+
+	</main>
+
+	<!-- BACKGROUND SITE -->
+	<div class="site-background">
+		<div class="h-xs-100">
+			<div class="row site-background__inner">
+				<div class="col-xs-3 site-background__column"></div>
+				<div class="col-xs-3 site-background__column"></div>
+				<div class="col-xs-3 site-background__column"></div>
+				<div class="col-xs-3 site-background__column"></div>
+			</div>
+		</div>
+	</div>
+
+	<script src="//code.jquery.com/jquery-2.2.3.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.18.4/TweenMax.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js"></script>
+	<!-- <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/debug.addIndicators.min.js"></script> -->
+	<!-- <script src="//cdnjs.cloudflare.com/ajax/libs/stats.js/r11/Stats.js"></script> -->
+	<!-- <script src="//cdnjs.cloudflare.com/ajax/libs/dat-gui/0.5/dat.gui.min.js"></script> -->
+	<script src="dist/js/min/canvas.min.js"></script>
+	<script src="dist/js/min/functions.min.js"></script>
+</body>
 </html>

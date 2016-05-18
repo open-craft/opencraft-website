@@ -4,11 +4,14 @@
 
 %inputs
 {
+	display: block;
+	width: 100%;
 	margin: 0;
 	padding: (20/strip-unit($base-font-size)) * 1em;
 	background-color: transparent;
-	border: 1px solid currentColor;
+	border: 2px solid currentColor;
 	border-radius: (5/strip-unit($base-font-size)) * 1em;
+	color: inherit;
 	line-height: (23/strip-unit($base-font-size));
 	outline: 0;
 }
@@ -16,22 +19,25 @@
 // VALUE FROM PSD
 $contact-margin-size: 35;
 $contact-width-parent: 440;
-$contact-width-size: ($contact-width-parent - $contact-margin-size);
+// $contact-width-size: ($contact-width-parent - $contact-margin-size);
 
-%form-contact
+// FIELD
+.field
 {
-	display:block;
-	width: percentage($contact-width-size/$contact-width-parent);
-}
+	margin-bottom: 2.5rem;
 
-%form-contact-right
-{
-	margin-left: percentage($contact-margin-size/$contact-width-parent);
-}
+	&--contact
+	{
+		&--left
+		{
+			margin-right: percentage($contact-margin-size/$contact-width-parent);
+		}
 
-%form-contact-left
-{
-	margin-right: percentage($contact-margin-size/$contact-width-parent);
+		&--right
+		{
+			margin-left: percentage($contact-margin-size/$contact-width-parent);
+		}
+	}
 }
 
 .input
@@ -40,23 +46,16 @@ $contact-width-size: ($contact-width-parent - $contact-margin-size);
 
 	&--contact
 	{
-		@extend %form-contact;
 		border-color: rgba(map-get($colors, white), 0.2);
-
-		&--right
-		{
-			@extend %form-contact-right;
-		}
-		&--left
-		{
-			@extend %form-contact-left;
-		}
 	}
 }
 
 // LABELS
 %labels
 {
+	display: block;
+	width: 100%;
+	margin-bottom: 1rem;
 	padding: 0;
 	background-color: transparent;
 	line-height: (23/strip-unit($base-font-size));
@@ -67,18 +66,11 @@ $contact-width-size: ($contact-width-parent - $contact-margin-size);
 {
 	@extend %labels;
 
-	&--contact
+	&--required
 	{
-		@extend %form-contact;
-		margin-bottom: 1rem;
-
-		&--right
+		&::after
 		{
-			@extend %form-contact-right;
-		}
-		&--left
-		{
-			@extend %form-contact-left;
+			content: " *";
 		}
 	}
 }
@@ -86,12 +78,8 @@ $contact-width-size: ($contact-width-parent - $contact-margin-size);
 // TEXTAREAS
 %textareas
 {
-	padding: (20/strip-unit($base-font-size)) * 1em;
+	@extend %inputs;
 	max-width: 100%;
-	background-color: transparent;
-	border: 1px solid rgba(map-get($colors, white), 0.2);
-	border-radius: (5/strip-unit($base-font-size)) * 1em;
-	outline: 0;
 }
 
 .textarea
@@ -100,7 +88,6 @@ $contact-width-size: ($contact-width-parent - $contact-margin-size);
 
 	&--contact
 	{
-		@extend %form-contact;
-		@extend %form-contact-right;
+		border-color: rgba(map-get($colors, white), 0.2);
 	}
 }

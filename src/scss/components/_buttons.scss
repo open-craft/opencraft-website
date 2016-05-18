@@ -7,7 +7,7 @@
 	padding: (20/strip-unit($base-font-size)) * 1em;
 	min-width: 20rem;
 	background-color: transparent;
-	border: 1px solid currentColor;
+	border: 2px solid currentColor;
 	border-radius: (5/strip-unit($base-font-size)) * 1em;
 	cursor: pointer;
 	line-height: (23/strip-unit($base-font-size));
