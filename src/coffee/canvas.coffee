@@ -16,17 +16,26 @@
 
 # General Functions
 fnRequestAnimationFrame = (fnCallback) ->
-  fnAnimFrame =
+  fnReqAnimFrame =
     window.requestAnimationFrame or
     window.webkitRequestAnimationFrame or
     window.mozRequestAnimationFrame or
     window.oRequestAnimationFrame or
     window.msRequestAnimationFrame or
     (fnCallback) ->
-      window.setTimeOut(fnCallback, 1000 / 60)
-      return
-  fnAnimFrame fnCallback
-  return
+      return window.setTimeOut(fnCallback, 1000 / 60)
+  return fnReqAnimFrame fnCallback
+
+fnCancelAnimationFrame = (iRequestID) ->
+  fnCanAnimFrame =
+    window.cancelAnimationFrame or
+    window.webkitCancelAnimationFrame or
+    window.mozCancelAnimationFrame or
+    window.oCancelAnimationFrame or
+    window.msCancelAnimationFrame or
+    (iRequestID) ->
+      return window.clearTimeOut(iRequestID)
+  return fnCanAnimFrame iRequestID
 
 # Add Event Listener
 fnAddEventListener = (o, sEvent, fn) ->
@@ -36,7 +45,7 @@ fnAddEventListener = (o, sEvent, fn) ->
     o['on' + sEvent] = fn
   return
 
-app = () ->
+canvas = () ->
 
   # oStats = new Stats()
   # oStats.setMode(0)
@@ -114,6 +123,9 @@ app = () ->
   oBuffer = {pFirst: null}
   
   width = height = 0
+
+  # Will store requestID from RAF
+  iReqID = null
 
   # Gets/sets size
   fnSetSize = () ->
@@ -293,9 +305,18 @@ app = () ->
 
     # oStats.end()
 
-    fnRequestAnimationFrame () -> fnNextFrame() 
+    iReqID = fnRequestAnimationFrame () -> fnNextFrame() 
     
-  fnNextFrame()  
+  @.play = () ->
+    fnNextFrame() 
+
+  fnStop = () ->
+    fnCancelAnimationFrame iReqID
+
+  @.pause = () ->
+    fnStop() 
+
+  @.play()
 
   # Gui is an interface that you can use to modify variables
   # gui = new dat.GUI();
@@ -316,7 +337,7 @@ app = () ->
   #   gui.close()
   #   window.iNewParticlePerFrame = 5
 
-  window.app = @
+  window.canvas = @
   return
   
-fnAddEventListener(window, 'load', app)
+fnAddEventListener(window, 'load', canvas)
