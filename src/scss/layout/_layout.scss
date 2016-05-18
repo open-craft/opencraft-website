@@ -133,12 +133,11 @@ $overlap: 8.6rem;
 {
 	margin: 0 auto;
 	position: fixed;
-    left: 0;
-    right: 0;
+    right: 50%;
     top: 0;
     height: 100%;
-    width: 100%;
-    max-width: $container-width;
+    width: $psd-width;
+    transform: translate(50%, 0);
     // Ensure that it always be behind the content
     z-index: -100;
 
