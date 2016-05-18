@@ -288,19 +288,83 @@ $overlap: 8.6rem;
     }
 }
 
+// TESTIMONIALS
 .testimonials
 {
 	&__slide
 	{	
+		display: none;
+
+		&--is-current
+		{
+			display: block;
+		}
+
+		&__text
+		{
+			position: relative;
+			padding: 2.4rem 4rem;
+			font:
+			{
+				family: $font-title-family;
+				size: 1.9rem;
+				style: italic;
+			}
+			line-height: (39/19);
+
+			&::before, &::after
+			{
+				position: absolute;
+				display: block;
+				color: rgba( map-get($colors, black), 0.2);
+				content: '"';
+				font:
+				{
+					family: "Roboto Mono";
+					size: 5rem;
+				}
+				@include letter-spacing(-300);
+				line-height: (27/50);
+			}
+
+			&::before
+			{
+				bottom: 100%;
+				right: 100%;
+			}
+
+			&::after
+			{
+				left: 100%;
+				top: 100%;
+			}
+		}
+
+		&__legend
+		{
+			padding: 0 4rem;
+			color: map-get($colors, gray-very-dark);
+			text-align: right;
+
+			&__name
+			{
+				display:block;
+				color: map-get($colors, black);
+				font:
+				{
+					size: 1.8rem;
+				}
+			}
+		}
+
 		&__wrapper
 		{
 			&__inner
 			{
-				padding: 8rem 7rem;
+				padding: 8rem 7rem 4rem 7rem;
 				// margin-right: percentage(130/1000);
 			}
 		}
-
 	}
 
 	&__list
@@ -332,7 +396,7 @@ $overlap: 8.6rem;
 						right: 100%;
 						bottom: 0;
 						top: 0;
-						margin: 0 auto;
+						margin: auto;
 						height: 1px;
 						width: 200%;
 						background: 
@@ -340,7 +404,7 @@ $overlap: 8.6rem;
 							color: map-get($colors, white);
 						}
 						content:'';
-						transform: translate(-2.2rem, -50%);
+						transform: translate(-2.2rem, 0);
 					}
 				}
 			}
