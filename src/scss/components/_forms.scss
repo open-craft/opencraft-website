@@ -2,3 +2,105 @@
  * FORMS
  */
 
+%inputs
+{
+	margin: 0;
+	padding: (20/strip-unit($base-font-size)) * 1em;
+	background-color: transparent;
+	border: 1px solid currentColor;
+	border-radius: (5/strip-unit($base-font-size)) * 1em;
+	line-height: (23/strip-unit($base-font-size));
+	outline: 0;
+}
+
+// VALUE FROM PSD
+$contact-margin-size: 35;
+$contact-width-parent: 440;
+$contact-width-size: ($contact-width-parent - $contact-margin-size);
+
+%form-contact
+{
+	display:block;
+	width: percentage($contact-width-size/$contact-width-parent);
+}
+
+%form-contact-right
+{
+	margin-left: percentage($contact-margin-size/$contact-width-parent);
+}
+
+%form-contact-left
+{
+	margin-right: percentage($contact-margin-size/$contact-width-parent);
+}
+
+.input
+{
+	@extend %inputs;
+
+	&--contact
+	{
+		@extend %form-contact;
+		border-color: rgba(map-get($colors, white), 0.2);
+
+		&--right
+		{
+			@extend %form-contact-right;
+		}
+		&--left
+		{
+			@extend %form-contact-left;
+		}
+	}
+}
+
+// LABELS
+%labels
+{
+	padding: 0;
+	background-color: transparent;
+	line-height: (23/strip-unit($base-font-size));
+	outline: 0;
+}
+
+.label
+{
+	@extend %labels;
+
+	&--contact
+	{
+		@extend %form-contact;
+		margin-bottom: 1rem;
+
+		&--right
+		{
+			@extend %form-contact-right;
+		}
+		&--left
+		{
+			@extend %form-contact-left;
+		}
+	}
+}
+
+// TEXTAREAS
+%textareas
+{
+	padding: (20/strip-unit($base-font-size)) * 1em;
+	max-width: 100%;
+	background-color: transparent;
+	border: 1px solid rgba(map-get($colors, white), 0.2);
+	border-radius: (5/strip-unit($base-font-size)) * 1em;
+	outline: 0;
+}
+
+.textarea
+{
+	@extend %textareas;
+
+	&--contact
+	{
+		@extend %form-contact;
+		@extend %form-contact-right;
+	}
+}
