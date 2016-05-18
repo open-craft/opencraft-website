@@ -65,8 +65,8 @@
 
 	&__marker
 	{
-		$circle-size: 4.3rem;
-		$dot-size: 0.5rem;
+		$circle-size: 43px;
+		$dot-size: 5px;
 
 		$circle-offset: ($circle-size / 2 * -1);
 		$dot-offset: ($dot-size / 2 * -1);
@@ -130,7 +130,8 @@
 		{
 			display: block;
 			margin-top: $circle-offset;
-			padding-left: (abs($circle-offset) + 1rem);
+			margin-left: abs($circle-offset);
+			padding-left: 1rem;
 			opacity: 0;
 			visibility: hidden;
 			// transition: all 0.3s ease;
