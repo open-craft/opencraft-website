@@ -288,7 +288,6 @@ $overlap: 8.6rem;
 		&__text
 		{
 			position: relative;
-			padding: 2.4rem 4rem;
 			font:
 			{
 				family: $font-title-family;
@@ -297,31 +296,40 @@ $overlap: 8.6rem;
 			}
 			line-height: (39/19);
 
-			&::before, &::after
+			& > q
 			{
-				position: absolute;
 				display: block;
-				color: rgba( map-get($colors, black), 0.2);
-				content: '"';
-				font:
+				position: relative;
+				padding: 2.4rem 4rem;
+				quotes: "“" "”" "‘" "’";
+
+				&::before, 
+				&::after
 				{
-					family: "Roboto Mono";
-					size: 5rem;
+					display: block;
+					position: absolute;
+					color: rgba( map-get($colors, black), 0.2);
+					font:
+					{
+						family: "Roboto Mono";
+						size: 5rem;
+					}
+					line-height: (27/50);
 				}
-				@include letter-spacing(-300);
-				line-height: (27/50);
-			}
 
-			&::before
-			{
-				bottom: 100%;
-				right: 100%;
-			}
+				&::before
+				{
+					content: open-quote;
+					top: 0;
+					left: 0;
+				}
 
-			&::after
-			{
-				left: 100%;
-				top: 100%;
+				&::after
+				{
+					content: close-quote;
+					bottom: 0;
+					right: 0;
+				}
 			}
 		}
 
@@ -362,11 +370,13 @@ $overlap: 8.6rem;
 
 			&__button
 			{
+				$font-size: 1.8rem;
+
 				@extend %button-reset;
 				color: map-get($colors, cyan-slightly-desaturated);
 				font:
 				{
-					size: 1.8rem;
+					size: $font-size;
 				}
 				text-align: left;
 
@@ -378,18 +388,16 @@ $overlap: 8.6rem;
 					&::before
 					{
 						position: absolute;
+						top: ($font-size * $base-line-height / 2);
 						right: 100%;
-						bottom: 0;
-						top: 0;
-						margin: auto;
+						margin-right: 2.2rem;
 						height: 1px;
-						width: 200%;
+						width: 1000rem;
 						background: 
 						{
 							color: map-get($colors, white);
 						}
-						content:'';
-						transform: translate(-2.2rem, 0);
+						content: '';
 					}
 				}
 			}
