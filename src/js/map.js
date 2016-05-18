@@ -6,6 +6,8 @@ var map = {
     // private
 
     // public
+    width: 0,
+    height: 0,
 
     // DOM public elements
     $el: null,
@@ -19,6 +21,9 @@ var map = {
         this.$el = $('#js-map');
 
         if (!this.$el.length) return;
+
+        this.width = parseInt(this.$el.data('width'));
+        this.height = parseInt(this.$el.data('height'));
 
         this._setMarkers();
 
@@ -50,6 +55,8 @@ var map = {
 
     }*/
     _setMarkers: function() {
+    	var _this = this;
+
     	var $markers = $('.js-map-marker');
     	if (!$markers.length) {
     		return;
@@ -66,11 +73,13 @@ var map = {
 
     		coordinates = coordinates.split(',');
 
-    		// convert coordinates to rem
+    		// y = latitude, first coordinate
+    		// x = longitude, last coordinate
+
     		$marker
 	    		.css({
-	    			top: (parseInt(coordinates[0]) / 10) + 'rem',
-	    			left: (parseInt(coordinates[1]) / 10) + 'rem'
+	    			top: (parseInt(coordinates[0]) / _this.height * 100) + '%',
+	    			left: (parseInt(coordinates[1]) / _this.width * 100) + '%'
 	    		})
 	    		.addClass('show');
     	});
