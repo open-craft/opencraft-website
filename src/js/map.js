@@ -25,7 +25,7 @@ var map = {
         this.width = parseInt(this.$el.data('width'));
         this.height = parseInt(this.$el.data('height'));
 
-        this._setMarkers();
+        this._setMarkers(150);
 
         // this._initPlugins();
         // this._initEvents();
@@ -54,7 +54,13 @@ var map = {
 
 
     }*/
-    _setMarkers: function() {
+    _setMarkers: function(delay) {
+    	if (typeof delay === 'undefined') {
+    		delay = 0;
+    	}
+
+    	delay = parseInt(delay);
+
     	var _this = this;
 
     	var $markers = $('.js-map-marker');
@@ -62,27 +68,37 @@ var map = {
     		return;
     	}
 
-    	// positionate each marker with its given coordinates
-    	$markers.each(function() {
-    		var $marker = $(this),
-    			coordinates = $marker.data('coordinates');
+    	$markers
+    		// shuffle collection before display it
+    		// https://css-tricks.com/snippets/javascript/shuffle-array/#article-header-id-2
+    		.sort(function() {
+    			return 0.5 - Math.random();
+    		})
+    		// positionate each marker with its given coordinates
+    		.each(function(i) {
+	    		var $marker = $(this),
+	    			coordinates = $marker.data('coordinates');
 
-    		if (coordinates === undefined || coordinates.indexOf(',') === -1) {
-    			return;
-    		}
+	    		if (coordinates === undefined || coordinates.indexOf(',') === -1) {
+	    			return;
+	    		}
 
-    		coordinates = coordinates.split(',');
+	    		coordinates = coordinates.split(',');
 
-    		// y = latitude, first coordinate
-    		// x = longitude, last coordinate
+	    		// y = latitude, first coordinate
+	    		// x = longitude, last coordinate
 
-    		$marker
-	    		.css({
-	    			top: (parseInt(coordinates[0]) / _this.height * 100) + '%',
-	    			left: (parseInt(coordinates[1]) / _this.width * 100) + '%'
-	    		})
-	    		.addClass('show');
-    	});
+	    		// add a delay between each markers if set
+	    		setTimeout(function() {
+		    		$marker
+			    		.css({
+			    			top: (parseInt(coordinates[0]) / _this.height * 100) + '%',
+			    			left: (parseInt(coordinates[1]) / _this.width * 100) + '%'
+			    		})
+			    		// do not forget to show the marker
+			    		.addClass('show');
+			    }, (i * delay));
+	    	});
     }
 };
 

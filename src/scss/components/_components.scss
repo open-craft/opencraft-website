@@ -68,7 +68,7 @@
 	&__marker
 	{
 		$circle-size: 43px;
-		$dot-size: 5px;
+		$dot-size: 10px;
 
 		$circle-offset: ($circle-size / 2 * -1);
 		$dot-offset: ($dot-size / 2 * -1);
@@ -80,6 +80,7 @@
 		margin-left: $dot-offset;
 		opacity: 0;
 		visibility: hidden;
+		transition: opacity 0.3s ease, visibility 0.3s ease;
 
 		&.show
 		{
@@ -96,6 +97,9 @@
 			@include size($dot-size);
 			background-color: #fff;
 			border-radius: 50%;
+			transform: scale(0.6);
+			transition: transform 0.3s ease;
+			-webkit-backface-visibility: hidden;
 
 			&::before
 			{
@@ -107,7 +111,7 @@
 				margin-top: $circle-offset;
 				margin-left: $circle-offset;
 				@include size($circle-size);
-				background-color: rgba(#fff,1);
+				background-color: #fff;
 				border-radius: 50%;
 				transform: scale(0);
 			}
@@ -116,16 +120,6 @@
 		&.show &__dot::before
 		{
 			animation: sonar 1.6s ease-out infinite;
-		}
-
-		&:nth-child(3n+1) &__dot::before
-		{
-			animation-delay: 0.25s;
-		}
-
-		&:nth-child(3n+2) &__dot::before
-		{
-			animation-delay: 0.5s;
 		}
 
 		&__info
@@ -152,6 +146,11 @@
 			}
 		}
 
+		&__dot:hover
+		{
+			transform: none;
+		}
+
 		&__dot:hover + &__info
 		{
 			opacity: 1;
@@ -170,6 +169,6 @@
 	to
 	{
 		background-color: rgba(#fff,0);
-		transform: scale(1.2);
+		transform: scale(2.4);
 	}
 }
