@@ -95,8 +95,8 @@ module.exports = {
     },
 
     svg: {
-        src: 'img/svg/*.svg',
-        srcWatch: 'img/svg/*.svg',
+        src: 'img/svg/icons/*.svg',
+        srcWatch: 'img/svg/icons/*.svg',
         dest: dest + '/svg',
     },
 };
