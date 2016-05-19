@@ -38,6 +38,10 @@ $contact-width-parent: 440;
 			margin-left: percentage($contact-margin-size/$contact-width-parent);
 		}
 	}
+
+	&--host
+	{
+	}
 }
 
 .input
@@ -47,6 +51,85 @@ $contact-width-parent: 440;
 	&--contact
 	{
 		border-color: rgba(map-get($colors, white), 0.2);
+	}
+
+	&--host
+	{
+		border-color: rgba(map-get($colors, black), 0.2);
+
+		
+		&--domain-name
+		{
+			display: inline-block;
+			width: percentage(268/502);
+		}
+
+		&__wrapper
+		{
+			display: block;
+			
+			&--domain-name
+			{
+				position: relative;
+
+				&::after
+				{
+					display: inline-block;
+					margin-left: 1rem;
+					// position: absolute;
+					content: attr(data-after-content);
+
+				}
+			}
+
+			&.error
+			{
+				position: relative;
+
+				input
+				{
+					border-color: map-get($colors, red);
+				}
+
+				&::before,
+				{
+					position: absolute;
+					right: calc(100% + 17px);
+					top: 50%;
+					display: block;
+					height: 2.7rem;
+					width: 2.8rem;
+					background:
+					{
+						image: url('#{$svg-dir}forms/opencraft_error.svg');
+						position: center;
+						size: 100% 100%;
+					}
+					content: '';
+					transform: translate(0, -50%);
+				}
+			}
+
+			&.valid
+			{
+				&::before
+				{
+					position: absolute;
+					right: calc(100% + 17px);
+					top: 50%;
+					display: block;
+					@include size(3rem, 2.4rem);
+					background:
+					{
+						image: url('#{$svg-dir}forms/opencraft_valid.svg');
+						position: center;
+						size: 100% 100%;
+					}
+					content: '';
+					transform: translate(0, -50%);
+				}
+			}
+		}
 	}
 }
 
@@ -89,5 +172,73 @@ $contact-width-parent: 440;
 	&--contact
 	{
 		border-color: rgba(map-get($colors, white), 0.2);
+	}
+
+	&--host
+	{
+		border-color: rgba(map-get($colors, black), 0.2);
+	}
+}
+
+.message
+{
+	display: block;
+	
+	&.error
+	{
+		margin-top: 1.5rem;
+		color: map-get($colors, red);
+	}
+}
+
+// CHECKBOX
+.checkbox
+{
+	display: block;
+	float: left;
+	@include size(3.5rem);
+	margin-right: 2.8rem;
+	border: 
+	{
+		color: rgba(map-get($colors, black), 0.2);
+		radius: 0.5rem;
+		style: solid;
+		width: 1px;
+	}
+
+	&--hover{}
+	
+	&--focus{}
+	
+	&--checked
+	{
+		background:
+		{
+			image: url(#{$svg-dir}forms/opencraft_valid.svg);
+			position: center;
+			repeat: no-repeat;
+			size: 2.2rem 1.8rem;
+		}
+	}
+
+	&--active{}
+
+	&--error
+	{
+		border: 
+		{
+			color: map-get($colors, red);
+		}
+	}
+
+	&__wrapper__text
+	{
+		display: block;
+		overflow: hidden;	
+	}
+
+	&__text
+	{
+
 	}
 }

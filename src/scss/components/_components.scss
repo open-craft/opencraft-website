@@ -172,3 +172,35 @@
 		transform: scale(2.4);
 	}
 }
+
+
+// ALERT BOX
+.box-alert
+{
+	border-radius: 0.5rem;
+
+	& > p
+	{
+		position: relative;
+		margin: ((35/16) * 1em) 0 ((35/16) * 1em) 14rem;
+
+		&::before
+		{
+			display: block;
+			position: absolute;
+			right: 100%;
+			top: 50%;
+			height: (72/20) * 1em;
+			width: 13.6rem;
+			float: left;
+			background:
+			{
+				image: url('#{$svg-dir}forms/opencraft_exclamation.svg');
+				repeat: no-repeat;
+				size: 100% 100%;
+			}
+			content: '';
+			transform: translate(0, -50%);
+		}
+	}
+}

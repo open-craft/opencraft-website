@@ -6,6 +6,13 @@
 {
 	position: relative;
 	height: 100%;
+	
+	&__page-logo
+	{
+		display: inline-block;
+		margin-left: 3.5rem;
+		vertical-align: middle;
+	}
 
 	&__logo
 	{
@@ -14,6 +21,12 @@
 		left: 0;
 		padding-top: 1.5rem;
 		padding-left: 4.5rem;
+
+		& > a
+		{
+			display: inline-block;
+			vertical-align: middle;
+		}
 	}
 
 	&__menu

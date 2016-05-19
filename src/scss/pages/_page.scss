@@ -1,0 +1,145 @@
+/**
+ * PAGE
+ */
+
+.page
+{	
+	background:
+	{
+		image: url('#{$jpg-dir}opencraft_host_background-header.jpg');
+		position: center top;
+		repeat: no-repeat;
+	}	
+	
+	.site-header
+	{
+		height: 75rem;
+	}
+
+	&-title
+	{
+		padding-top: 31rem;
+
+		.icon__table
+		{	
+			display: inline-block;
+			height: 6rem;
+			width: 9.1rem;
+			margin-right: 3.6rem;
+			fill: map-get($colors, white);
+			vertical-align: middle;
+		}
+
+		&__text
+		{
+			display: inline-block;
+			font:
+			{
+				family: $font-body-family;
+				size: 8rem;
+			}
+			vertical-align: middle;
+		}
+
+		&__catchline
+		{
+			// LINE-HEIGHT FROM PSD: 40px, so 4rem, without unit: 4
+			line-height: (4/( strip-unit( map-get($font-size-title, h4) ) ) );
+			// line-height: 40/unitless(map-get($font-size-title, h4));
+		}
+	}
+
+	&-content
+	{
+		max-width: $psd-width;
+		margin-left: auto;
+		margin-right: auto;
+		margin-bottom: 8rem;
+		margin-top: 8rem;
+		
+		&__header
+		{
+			position: absolute;
+			left: 0;
+			right: 0;
+			top: -9rem;
+
+			& > p
+			{
+				margin-bottom: ((60/20) * 1em);
+				margin-top: ((60/20) * 1em);
+				font:
+				{
+					size: 2rem;
+				}
+				line-height: (26/20);
+			}
+		}
+
+		&__wrapper
+		{
+			margin-top: 5rem;
+
+			&__stroke
+			{
+				@extend %position-absolute;
+				left: 50%;
+				height: 100%;
+				width: 1px;
+				background:
+				{
+					color: rgba(map-get($colors, black), 0.2);
+				}
+				transform: translate(-50%, 0);
+			}
+		}
+
+		&__inner
+		{
+			position: relative;
+			padding-bottom: 8rem;
+			padding-top:8.3rem;
+
+			&__wrapper
+			{
+				display: table;
+				width: 100%;
+				margin-bottom: 5rem;
+				padding-left: percentage(100/ strip-unit($container-width));
+				padding-right: percentage(100/ strip-unit($container-width));
+				table-layout: fixed;
+				
+				&:first-child
+				{
+					margin-bottom: 0;
+				}
+
+				&:last-child
+				{
+					margin-top: 10rem;
+				}
+			}
+
+			@extend %box-shadow;
+			border-radius: 0.5rem;
+
+			&__right, &__left
+			{
+				display: table-cell;
+				width: 50%;
+				vertical-align: middle;
+			}
+
+			&__left
+			{
+				padding-right: 5rem;
+			}
+
+			&__right
+			{
+				padding-left: 3.5rem;
+			}
+		}
+	}	
+}
+

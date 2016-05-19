@@ -62,12 +62,13 @@ module.exports = {
                     './node_modules/svg4everybody/dist/svg4everybody.min.js',
                     './node_modules/jquery/dist/jquery.min.js',
                     './node_modules/wallop/js/Wallop.min.js',
+                    './node_modules/icheck/icheck.js',
                     src + '/js/app.js',
                     // src + '/js/canvas.js'
                     // src + '/js/form.js',
                     src + '/js/slider.js',
                     src + '/js/map.js',
-                    // src + '/js/home.js'
+                    src + '/js/form.js'
                 ],
                 file: fileJS
             }

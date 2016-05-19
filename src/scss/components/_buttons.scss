@@ -6,12 +6,17 @@
 {
 	padding: ((11/strip-unit($base-font-size)) * 1em) ((20/strip-unit($base-font-size)) * 1em);
 	min-width: 20rem;
-	background-color: transparent;
 	border: 2px solid currentColor;
 	border-radius: (5/strip-unit($base-font-size)) * 1em;
 	cursor: pointer;
 	line-height: (23/strip-unit($base-font-size));
 	outline: none;
+	transition: 0.3s ease;
+
+	&:hover
+	{
+		background-color: currentColor;
+	}
 }
 
 .btn
@@ -22,10 +27,10 @@
 	{
 		position:absolute;
 		border-color: map-get($colors, white);
-		color: map-get($colors, white);
 		left: 50%;
 		bottom: percentage(180/1600);
 		// margin-top: (180/$base-font-size-unitless) * 1em;
+		background-color: transparent;
 		transform: translate(-50%, 0);
 	}
 	
@@ -50,22 +55,22 @@
 
 		}
 
-		&:hover
-		{
-			color: map-get($colors, black);
+		// &:hover
+		// {
+		// 	color: map-get($colors, black);
 
-			&::after
-			{
-				border-radius: 0;
-				opacity: 1;
-				transform: translate(0, 0);
-			}
-		}
+		// 	&::after
+		// 	{
+		// 		border-radius: 0;
+		// 		opacity: 1;
+		// 		transform: translate(0, 0);
+		// 	}
+		// }
 	}
 
 	&--table
 	{
-		
+		background-color: transparent;
 	}
 
 	&--contact
@@ -79,6 +84,7 @@
 		margin-bottom: 2.5rem;
 		margin-left: percentage($contact-margin-size/$contact-width-parent);
 		width: percentage($contact-width-size/$contact-width-parent);
+		background-color: transparent;
 		border-color: rgba( map-get($colors, white), 0.20)
 	}
 }
