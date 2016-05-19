@@ -24,7 +24,7 @@ var app = {
 
         this.is_auto_scrolling = false;
 
-        this._initPlugins();
+        // this._initPlugins();
         this._initEvents();
         
         setTimeout(function(){
@@ -37,30 +37,12 @@ var app = {
         // remove variables
 
     },
-    _initPlugins: function() {
+   /* _initPlugins: function() {
         // console.info('app._initPlugins');
 
         var _this = this;
 
-        // build ScrollMagic scene to play/pause canvas
-        var controller = new ScrollMagic.Controller();
-
-        new ScrollMagic.Scene({
-                triggerElement: '#js-header',
-                triggerHook: 'onLeave',
-                duration: '100%'
-            })
-            .on('enter', function(e) {
-                // play animation in canvas if visible
-                canvas.play();
-            })
-            .on('leave', function(e) {
-                // pause animation in canvas if no longer visible
-                canvas.pause();
-            })
-            // .addIndicators()
-            .addTo(controller);
-    },
+    },*/
     _initEvents: function() {
         // console.info('app._initEvents');
 

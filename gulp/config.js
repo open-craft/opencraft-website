@@ -60,18 +60,29 @@ module.exports = {
                     // './node_modules/feature.js/feature.min.js',
                     // './node_modules/jquery-visibility/jquery-visibility.min.js',
                     './node_modules/svg4everybody/dist/svg4everybody.min.js',
-                    './node_modules/jquery/dist/jquery.min.js',
+                    // './node_modules/jquery/dist/jquery.min.js',
                     './node_modules/wallop/js/Wallop.min.js',
                     './node_modules/icheck/icheck.js',
                     src + '/js/app.js',
                     src + '/js/menu.js',
-                    // src + '/js/form.js',
-                    src + '/js/slider.js',
+                    src + '/js/slider.js'
+                ],
+                file: 'functions.js'
+            },
+            {
+                src: [
+                    src + '/js/home.js',
                     src + '/js/map.js',
+                ],
+                file: 'home.js'
+            },
+            {
+                src: [
+                    './node_modules/icheck/icheck.js',
                     src + '/js/form.js'
                 ],
-                file: fileJS
-            }
+                file: 'form.js'
+            },
         ]
     },
 
