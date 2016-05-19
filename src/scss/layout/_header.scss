@@ -4,9 +4,6 @@
 
 .site-header
 {
-	position: relative;
-	height: 100%;
-
 	&__logo
 	{
 		position: absolute;
@@ -16,39 +13,51 @@
 		padding-left: 4.5rem;
 	}
 
-	&__menu
+	&__nav
 	{
-		position: absolute;
+		position: fixed;
 		top: 0;
 		right: 0;
+		z-index: 1;
+		padding: 3.6rem 4.5rem 3.6rem 0;
+
+		&::before
+		{
+			content: "Menu";
+			display: block;
+			float: right;
+			margin: 1.4rem 0;
+			padding-left: 1rem;
+			border-left: 1px solid rgba(map-get($colors, black),0.2);
+		}
+
+		&.color-white::before
+		{
+			border-left-color: rgba(#fff,0.2);
+		}
+
+		&__container
+		{
+			display: block;
+			float: right;
+			overflow: hidden;
+		}
 	}
 
-	&__inner
+	&__menu
 	{
-		&__title
+		position: relative;
+		@include letter-spacing(30);
+
+		.js &
 		{
+			opacity: 0;
+			visibility: hidden;
 		}
 
-		&__table
+		& > .menu-item
 		{
-			@include size(100%);
-			display: table;
-
-			&--cell
-			{
-				@include size(100%);
-				display: table-cell;
-				vertical-align: middle;
-			}
+			padding: 1.4rem;
 		}
 	}
-}
-
-.site-menu
-{
-	position: fixed;
-	left: 0;
-	right: 0;
-	top: 0;
-	z-index: 1;
 }

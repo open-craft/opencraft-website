@@ -63,7 +63,7 @@ module.exports = {
                     './node_modules/jquery/dist/jquery.min.js',
                     './node_modules/wallop/js/Wallop.min.js',
                     src + '/js/app.js',
-                    // src + '/js/canvas.js'
+                    src + '/js/menu.js',
                     // src + '/js/form.js',
                     src + '/js/slider.js',
                     src + '/js/map.js',
