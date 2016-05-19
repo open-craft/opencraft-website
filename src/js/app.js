@@ -4,7 +4,8 @@ var app = {
     __NAMESPACE__: '.app',
     
     // private
-    _classBodyReady: 'is-ready',
+    _class_body_ready: 'is-ready',
+    _scroll_top: -1,
 
     // public
     is_auto_scrolling: false,
@@ -23,12 +24,13 @@ var app = {
         this.$body = $('body');
 
         this.is_auto_scrolling = false;
+        this._scroll_top = -1;
 
         // this._initPlugins();
         this._initEvents();
         
         setTimeout(function(){
-            _this.$body.addClass(_this._classBodyReady);
+            _this.$body.addClass(_this._class_body_ready);
         }, 2000);
     },
     destroy: function() {
@@ -82,6 +84,13 @@ var app = {
             });
 
         $(window)
+            .on('scroll' + this.__NAMESPACE__, function(e) {
+                if (_this._scroll_top < 0) {
+                    // first scroll event fired by browser, do not propagate
+                    e.stopImmediatePropagation();
+                }
+                _this._scroll_top = $(this).scrollTop();
+            })
             .on('autoScrollComplete' + this.__NAMESPACE__, function() {
                 // console.log('autoScrollComplete.app');
                 _this.is_auto_scrolling = false;

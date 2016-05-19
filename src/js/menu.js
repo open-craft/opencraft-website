@@ -59,7 +59,7 @@ var menu = {
 
         var _this = this;
 
-        var controller = new ScrollMagic.Controller();
+        var controller = new ScrollMagic.Controller({ refreshInterval: 0 });
 
         // build ScrollMagic scene to change menu color regarding sections background color
         $('.js-section-anchor').each(function(i, anchor) {
@@ -98,12 +98,12 @@ var menu = {
 	    		.on('enter', function(e) {
 	    			// console.log('enter section', i);
 
-	    			!app.is_auto_scrolling && _this.update(i);
+	    			!app.is_auto_scrolling && !_this._stay_open && _this.update(i);
 	    		})
 	    		.on('leave', function(e) {
 	    			// console.log('leave section', i);
 
-	    			!app.is_auto_scrolling && _this.update((i - 1));
+	    			!app.is_auto_scrolling && !_this._stay_open && _this.update((i - 1));
 	    		})
 	    		// .addIndicators({ name: 'section ' + i })
 	    		.addTo(controller);
@@ -130,7 +130,7 @@ var menu = {
         	.on('autoScrollComplete' + this.__NAMESPACE__, function() {
         		_this.update(_this._current_index);
         	})
-        	.one('scroll' + this.__NAMESPACE__, function() {
+        	.one('scroll' + this.__NAMESPACE__, function(e) {
         		// hide menu on first scroll
         		_this._stay_open = false;
         		_this.close();

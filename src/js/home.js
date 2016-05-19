@@ -34,7 +34,7 @@ var home = {
         if (typeof canvas !== 'undefined') {
 
             // build ScrollMagic scene to play/pause canvas
-            var controller = new ScrollMagic.Controller();
+            var controller = new ScrollMagic.Controller({ refreshInterval: 0 });
 
             new ScrollMagic.Scene({
                     triggerElement: '#intro',
