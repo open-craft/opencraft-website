@@ -36,11 +36,14 @@ var form = {
 		};
 
 		this.$checkboxes.iCheck(options);
-	},
-
-	/*_initEvents: function(){
-		var _this = this;
-	},*/
+		
+		$( 'input[type="file"]' ).on( 'change', function( e ) {
+	        
+	        var filename = this.value.split( '\\' ).pop();
+	        // Write filename into next sibling element
+	        $('.js-input-file-label').text(filename);
+	    });
+	}
 };
 
 $(function() {
