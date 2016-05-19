@@ -98,12 +98,12 @@ var menu = {
 	    		.on('enter', function(e) {
 	    			// console.log('enter section', i);
 
-	    			!app.is_auto_scrolling && !_this._stay_open && _this.update(i);
+	    			_this.update(i);
 	    		})
 	    		.on('leave', function(e) {
 	    			// console.log('leave section', i);
 
-	    			!app.is_auto_scrolling && !_this._stay_open && _this.update((i - 1));
+	    			_this.update((i - 1));
 	    		})
 	    		// .addIndicators({ name: 'section ' + i })
 	    		.addTo(controller);
