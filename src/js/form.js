@@ -7,6 +7,7 @@ var form = {
 	// PUBLIC
 	// Here go the public variables
 	$selectors: $('.js-checkbox'),
+	$selectorsLabelFile : $('.js-input-file-label'),
 	timer: 3000,
 
 	// DOM public elements
@@ -36,6 +37,14 @@ var form = {
 		// This variable refers to the application itself
 		var _this = this;
 
+		_this.checkbox();
+		_this.inputFile();
+	},
+
+	checkbox: function(){
+		// This variable refers to the application itself
+		var _this = this;
+
 		options = {
 			checkboxClass: 'checkbox',
 			hoverClass: 'checkbox--hover',
@@ -44,7 +53,19 @@ var form = {
 			activeClass: 'checkbox--active',
 		};
 		_this.$selectors.iCheck(options);
+	},
+
+	inputFile: function(){
+		var _this = this;
+
+		$( 'input[type="file"]' ).on( 'change', function( e ) {
+	        
+	        var filename = this.value.split( '\\' ).pop();
+	        // Write filename into next sibling element
+	        _this.$selectorsLabelFile.text(filename);
+	    });
 	}
+
 };
 
 $(function() {

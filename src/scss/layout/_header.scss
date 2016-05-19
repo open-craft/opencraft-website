@@ -11,6 +11,17 @@
 		left: 0;
 		padding-top: 1.5rem;
 		padding-left: 4.5rem;
+
+		& > a
+		{
+			display: inline-block;
+			vertical-align: middle;
+		}
+	}
+
+	&__page-logo
+	{
+		margin-left: 3.5rem;
 	}
 
 	&__nav
