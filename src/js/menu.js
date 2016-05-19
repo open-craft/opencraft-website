@@ -98,12 +98,12 @@ var menu = {
 	    		.on('enter', function(e) {
 	    			// console.log('enter section', i);
 
-	    			_this.update(i);
+	    			!app.is_auto_scrolling && _this.update(i);
 	    		})
 	    		.on('leave', function(e) {
 	    			// console.log('leave section', i);
 
-	    			_this.update((i - 1));
+	    			!app.is_auto_scrolling && _this.update((i - 1));
 	    		})
 	    		// .addIndicators({ name: 'section ' + i })
 	    		.addTo(controller);
@@ -205,12 +205,8 @@ var menu = {
 
     	// console.log(previous_index, index);
 
-    	if (this._stay_open || this._is_hovered) {
-    		return this.close();
-    	}
-
-    	if (app.is_auto_scrolling) {
-    		return this.close();
+    	if (this._stay_open || this._is_hovered || app.is_auto_scrolling) {
+    		return;
     	}
 
     	var $item = this._$items.eq(index);
