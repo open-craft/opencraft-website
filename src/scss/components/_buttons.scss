@@ -13,12 +13,8 @@
 	cursor: pointer;
 	line-height: (23/strip-unit($base-font-size));
 	outline: none;
+	text-align: center;
 	transition: 0.3s ease;
-
-	&:hover
-	{
-		background-color: currentColor;
-	}
 }
 
 .btn
@@ -27,52 +23,42 @@
 
 	&--header
 	{
-		position:absolute;
-		border-color: map-get($colors, white);
+		position: absolute;
 		left: 50%;
 		bottom: percentage(180/1600);
 		// margin-top: (180/$base-font-size-unitless) * 1em;
 		background-color: transparent;
+		border-color: map-get($colors, white);
 		transform: translate(-50%, 0);
-	}
-	
-	&.is-animated
-	{
-		// position: relative;
-		overflow: hidden;
-		transition: 0.3s ease;
-		// z-index: 2;
-
-		&::before
-		{
-			@extend %position-absolute;
-			display: block;
-			background-color: map-get($colors, white);
-			border-radius: 25%;
-			content: '';
-			opacity: 0;
-			transform: translate(-100%, 0);
-			transition: 0.3s ease;
-			z-index: 1;
-
-		}
-
-		// &:hover
-		// {
-		// 	color: map-get($colors, black);
-
-		// 	&::after
-		// 	{
-		// 		border-radius: 0;
-		// 		opacity: 1;
-		// 		transform: translate(0, 0);
-		// 	}
-		// }
 	}
 
 	&--table
 	{
 		background-color: transparent;
+	}
+
+	&--white
+	{
+		border-color: map-get($colors, white);
+		color: map-get($colors, white);
+
+		&:hover
+		{
+			background-color: map-get($colors, white);
+			color: currentColor;
+		}
+	}
+
+	&--cyan-strong
+	{
+		border-color: map-get($colors, cyan-strong);
+		color: map-get($colors, white);
+
+		&:hover
+		{
+			background-color: map-get($colors, white);
+			color: currentColor;
+		}
 	}
 
 	&--contact

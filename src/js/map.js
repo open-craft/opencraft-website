@@ -49,7 +49,7 @@ var map = {
         var _this = this;
 
         // build ScrollMagic scene to display markers when map is visible
-        var controller = new ScrollMagic.Controller();
+        var controller = new ScrollMagic.Controller({ refreshInterval: 0 });
 
         new ScrollMagic.Scene({
                 triggerElement: '#js-map-anchor',
