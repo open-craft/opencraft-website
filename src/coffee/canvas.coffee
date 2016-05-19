@@ -347,4 +347,5 @@ canvas = () ->
   window.canvas = @
   return
   
-fnReady canvas
+# fnReady canvas
+canvas()
