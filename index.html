@@ -1,80 +1,86 @@
 <!DOCTYPE html>
 <!--[if IE 9]>
-<html lang="fr" class="ie9">
+<html lang="fr" class="ie9 no-js no-touch">
 <![endif]-->
 <!--[if !(IE 9)]><!-->
-<html lang="fr">
+<html lang="fr" class="no-js no-touch">
 <!--<![endif]-->
 <head>
 	<meta charset="UTF-8">
 	<title>Open Craft</title>
 	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
 
+	<script src="dist/js/min/feature.min.js"></script>
+	<script>
+		document.documentElement.className=document.documentElement.className.replace('no-js','js');
+		if(feature.touch){document.documentElement.className=document.documentElement.className.replace('no-touch','touch');}
+	</script>
+
 	<link rel="stylesheet" type="text/css" href="dist/css/global.css">
 </head>
 <body class="background-white">
-	<main class="site-content">
+	<!-- HEADER -->
+	<header id="js-header" class="site-header color-white">
 
-		<!-- HEADER -->
-		<header id="js-header" class="site-header color-white">
+		<div class="col-xs-2 site-header__logo">
+			<a href="#">
+				<svg class="icon__logo icon__logo--header" role="img">
+					<use xlink:href="dist/svg/icons.svg#opencraft_logo"/>
+				</svg>
+			</a>
+		</div>
 
-			<!-- MENU -->
-			<nav class="site-menu col-xs-12 text-xs-right color-white">
-				<ul class="menu-inline">
-					<li>
-						<a href="#clients">
+		<!-- MENU -->
+		<nav id="js-site-nav" class="site-header__nav text-xs-right color-white">
+			<div class="site-header__nav__container">
+				<ul id="js-site-menu" class="site-header__menu menu-inline">
+					<li class="menu-item js-site-menu-item">
+						<a href="#clients" data-scrollto="#clients">
 							Clients		
 						</a>
-					</li>
-					<li>
-						<a href="#your-need">
+					</li><li class="menu-item js-site-menu-item">
+						<a href="#your-need" data-scrollto="#your-need">
 							Your need		
 						</a>
-					</li>
-					<li>
-						<a href="#portfolio">
+					</li><li class="menu-item js-site-menu-item">
+						<a href="#portfolio" data-scrollto="#portfolio">
 							Portfolio		
 						</a>
-					</li>
-					<li>
-						<a href="#testimonials">
+					</li><li class="menu-item js-site-menu-item">
+						<a href="#testimonials" data-scrollto="#testimonials">
 							Testimonials		
 						</a>
-					</li>
-					<li>
-						<a href="">
+					</li><li class="menu-item js-site-menu-item">
+						<a href="#contact" data-scrollto="#contact">
 							Contact		
 						</a>
-					</li>
-					<li>
-						<a href="">
-							Information		
+					</li><li class="menu-item js-site-menu-item">
+						<a href="#informations" data-scrollto="#informations">
+							Informations		
 						</a>
 					</li>
 				</ul>
-			</nav>
-
-			<div class="col-xs-2 site-header__logo">
-				<a href="#">
-					<svg class="icon__logo icon__logo--header" role="img">
-						<use xlink:href="dist/svg/icons.svg#opencraft_logo"/>
-					</svg>
-				</a>
 			</div>
+		</nav>
+	</header>
 
-			<nav class="col-xs-10 site-header__menu text-xs-right"></nav>
+	<main class="site-content">
 
-			<div class="site-header__inner container h-xs-100">
-				<div class="site-header__inner__title h-xs-100">
+		<!-- INTRO -->
+		<section id="intro" class="section-intro site-section h-xs-100 color-white">
+
+			<div class="section-intro__inner container h-xs-100">
+				<div class="section-intro__title h-xs-100">
 					
-					<div class="site-header__inner__table">
-						<div class="site-header__inner__table--cell text-xs-center">
+					<div class="section-intro__table">
+						<div class="section-intro__table--cell text-xs-center">
 							<h1>
 								Deliver online courses on Open edX.<br>
 								Get a team of proven experts<br>
 								to host it and customize it for you.
 							</h1>
-							<button class="btn btn--header color-white is-animated">Get started</button>
+
+							<button class="btn btn--header is-animated" data-scrollto="#clients">Get started</button>
 						</div>
 					</div>
 					
@@ -83,20 +89,20 @@
 
 			<!-- CANVAS -->
 			<canvas class="canvas background-cyan-light-moderate" id="nCanvasRender"></canvas>
-		</header>
-		<!--  -->
+		</section>
+
+		<hr class="visually-hidden js-section-anchor" data-color-up="white" data-color-down="black">
 		
 		<!--  CLIENTS -->
-		<section id="clients" class="site-section row container__inner">
+		<section id="clients" class="section-clients site-section row container__inner js-section">
 			
-			<div class="section-introduction col-xs-8 col-xs-offset-2">
+			<div class="section-clients__header col-xs-8 col-xs-offset-2">
 				<h2 class="section-title">
 					OpenCraft<br>
 					works with
 				</h2>
 			</div>
 
-			
 			<div class="col-xs-4 col-xs-offset-6 paragraph-container">
 				<p class="paragraph color-gray-dark">
 					We are the leading development provider on Open edX since its release in 2013, besides edx.org.
@@ -104,7 +110,6 @@
 				</p>
 			</div>
 			
-
 			<div class="row">
 				<div class="col-xs-8 col-xs-offset-2">
 					
@@ -173,69 +178,67 @@
 				</div>
 			</div>
 		</section>
-		<!--  -->
 		
 		<!-- YOUR NEED -->
-		<section id="your-need" class="section-need site-section has-overlap row position-relative">
+		<section id="your-need" class="section-need site-section has-overlap row position-relative js-section">
 		
-				<div class="col-xs-8 col-xs-offset-2">
-					<img class="section-need__img-header" src="img/jpg/opencraft_img_need.jpg" alt="" width="800" height="400">
-					<h2 class="section-title your-need">
-						Your need<br>
-						with Open edX
-					</h2>
-				</div>
+			<div class="col-xs-8 col-xs-offset-2">
+				<img class="section-need__img-header" src="img/jpg/opencraft_img_need.jpg" alt="" width="800" height="400">
+				<h2 class="section-title your-need">
+					Your need<br>
+					with Open edX
+				</h2>
+			</div>
 
-				<div class="col-xs-12">
-					<div class="container__table">
-						<div class="container__table__cell background-cyan-moderate color-white text-xs-center">
-							<div class="container__table__cell__img">
-								<svg class="icon__table" role="img">
-									<use xlink:href="dist/svg/icons.svg#opencraft_icon_table-01"/>
-								</svg>
-							</div>
-							<h3 class="container__table__cell__title">Host</h3>
-							<p class="container__table__cell__text">
-								Setup your own production instance.<br>
-								Self-service and enterprise offerings
-							</p>
-							<button class="btn btn--table color-white">Launch your site</button>
+			<div class="col-xs-12">
+				<div class="container__table">
+					<div class="container__table__cell background-cyan-moderate color-white text-xs-center">
+						<div class="container__table__cell__img">
+							<svg class="icon__table" role="img">
+								<use xlink:href="dist/svg/icons.svg#opencraft_icon_table-01"/>
+							</svg>
 						</div>
-						<div class="container__table__cell background-cyan-dark-moderate color-white text-xs-center">
-							<div class="container__table__cell__img">
-								<svg class="icon__table" role="img">
-									<use xlink:href="dist/svg/icons.svg#opencraft_icon_table-02"/>
-								</svg>
-							</div>
-							<h3 class="container__table__cell__title">Customize & Extend</h3>
-							<p class="container__table__cell__text">
-								Custom development<br>
-								Theme, custom interactive exercises
-							</p>
-							<button class="btn btn--table color-white">Get a quote</button>
+						<h3 class="container__table__cell__title">Host</h3>
+						<p class="container__table__cell__text">
+							Setup your own production instance.<br>
+							Self-service and enterprise offerings
+						</p>
+						<button class="btn btn--table color-white">Launch your site</button>
+					</div>
+					<div class="container__table__cell background-cyan-dark-moderate color-white text-xs-center">
+						<div class="container__table__cell__img">
+							<svg class="icon__table" role="img">
+								<use xlink:href="dist/svg/icons.svg#opencraft_icon_table-02"/>
+							</svg>
 						</div>
-						<div class="container__table__cell background-cyan-very-dark-grayish color-white text-xs-center">
-							<div class="container__table__cell__img">
-								<svg class="icon__table" role="img">
-									<use xlink:href="dist/svg/icons.svg#opencraft_icon_table-03"/>
-								</svg>
-							</div>
-							<h3 class="container__table__cell__title">Get Help</h3>
-							<p class="container__table__cell__text">
-								Get in-depth answers<br>
-								Suport, guidance & code reviews
-							</p>
-							<button class="btn btn--table color-white">Ask a question</button>
+						<h3 class="container__table__cell__title">Customize & Extend</h3>
+						<p class="container__table__cell__text">
+							Custom development<br>
+							Theme, custom interactive exercises
+						</p>
+						<button class="btn btn--table color-white">Get a quote</button>
+					</div>
+					<div class="container__table__cell background-cyan-very-dark-grayish color-white text-xs-center">
+						<div class="container__table__cell__img">
+							<svg class="icon__table" role="img">
+								<use xlink:href="dist/svg/icons.svg#opencraft_icon_table-03"/>
+							</svg>
 						</div>
+						<h3 class="container__table__cell__title">Get Help</h3>
+						<p class="container__table__cell__text">
+							Get in-depth answers<br>
+							Suport, guidance & code reviews
+						</p>
+						<button class="btn btn--table color-white">Ask a question</button>
 					</div>
 				</div>
-				<div class="row__background background-gray-very-light col-xs-12"></div>
 			</div>
+
+			<div class="row__background background-gray-very-light col-xs-12"></div>
 		</section>
-		<!--  -->
 		
 		<!-- PROJECTS -->
-		<section id="portfolio" class="clearfix section-projects background-gray-very-light position-relative">
+		<section id="portfolio" class="clearfix section-projects background-gray-very-light position-relative js-section">
 			
 			<div class="site-section">
 				<h2 class="col-xs-offset-2 col-xs-4 section-title">
@@ -304,10 +307,11 @@
 				</div>
 			</div>
 		</section>
-		<!--  -->
+		
+		<hr class="visually-hidden js-section-anchor" data-color-up="black" data-color-down="white">
 		
 		<!-- TESTIMONIALS -->
-		<section id="testimonials" class="section-testimonials position-relative clearfix">
+		<section id="testimonials" class="section-testimonials position-relative clearfix js-section">
 			
 			<div class="site-section">
 				<h2 class="col-xs-offset-2 col-xs-4 section-title color-white">
@@ -390,140 +394,141 @@
 			</div>
 
 		</section>
-		<!--  -->
+
+		<hr class="visually-hidden js-section-anchor" data-color-up="white" data-color-down="black">
 		
 		<!-- CONTACT -->
-		<section id="contact" class="section-contacts site-section row background-cyan-very-very-dark-desaturated color-white position-relative clearfix">
-				<div class="clearfix">
-					<div class="col-xs-8 col-xs-offset-2">
-						<h2 class="section-title">
-							Contact
-						</h2>
-					</div>
-					
-					<div class="col-xs-12">
-						<div id="js-map" class="map" data-width="1062" data-height="690">
-							<img class="map__background fluid" src="img/svg/opencraft_map.svg" alt="Opencraft Map" width="900" height="585">
-							<ul>
-								<li class="map__marker js-map-marker" data-coordinates="267,164">
-									<i class="map__marker__dot"></i>
-									<div class="map__marker__info">
-										<p class="map__marker__info__title">Vancouver, Canada</p>
-										<p class="map__marker__info__content">Braden MacDonald</p>
-									</div>
-								</li>
-								<li class="map__marker js-map-marker" data-coordinates="342,243">
-									<i class="map__marker__dot"></i>
-									<div class="map__marker__info">
-										<p class="map__marker__info__title">Houston, USA</p>
-										<p class="map__marker__info__content">Jonathan Piacenti</p>
-									</div>
-								</li>
-								<li class="map__marker js-map-marker" data-coordinates="270,534">
-									<i class="map__marker__dot"></i>
-									<div class="map__marker__info">
-										<p class="map__marker__info__title">Saarbrücken, Germany</p>
-										<p class="map__marker__info__content">Tim Krones</p>
-									</div>
-								</li>
-								<li class="map__marker js-map-marker" data-coordinates="247,548">
-									<i class="map__marker__dot"></i>
-									<div class="map__marker__info">
-										<p class="map__marker__info__title">Kiel, Germany</p>
-										<p class="map__marker__info__content">Sven Marnarch</p>
-									</div>
-								</li>
-								<li class="map__marker js-map-marker" data-coordinates="254,556">
-									<i class="map__marker__dot"></i>
-									<div class="map__marker__info">
-										<p class="map__marker__info__title">Berlin, Germany</p>
-										<p class="map__marker__info__content">Xavier Antoviaque</p>
-									</div>
-								</li>
-								<li class="map__marker js-map-marker" data-coordinates="282,558">
-									<i class="map__marker__dot"></i>
-									<div class="map__marker__info">
-										<p class="map__marker__info__title">Domžale, Slovenia</p>
-										<p class="map__marker__info__content">Matjaz Gregoric</p>
-									</div>
-								</li>								
-								<li class="map__marker js-map-marker" data-coordinates="277,628">
-									<i class="map__marker__dot"></i>
-									<div class="map__marker__info">
-										<p class="map__marker__info__title">Aksay, Russia</p>
-										<p class="map__marker__info__content">Колпаков Евгений</p>
-									</div>
-								</li>
-								<li class="map__marker js-map-marker" data-coordinates="394,806">
-									<i class="map__marker__dot"></i>
-									<div class="map__marker__info">
-										<p class="map__marker__info__title">Bangkok, Thailand</p>
-										<p class="map__marker__info__content">Omar Khan</p>
-									</div>
-								</li>
-								<li class="map__marker js-map-marker" data-coordinates="534,908">
-									<i class="map__marker__dot"></i>
-									<div class="map__marker__info">
-										<p class="map__marker__info__title">Paradise, Australia</p>
-										<p class="map__marker__info__content">Jill Vogel</p>
-									</div>
-								</li>
-							</ul>
-						</div>
-					</div>
+		<section id="contact" class="section-contacts site-section row background-cyan-very-very-dark-desaturated color-white position-relative clearfix js-section">
+			<div class="clearfix">
+				<div class="col-xs-8 col-xs-offset-2">
+					<h2 class="section-title">
+						Contact
+					</h2>
 				</div>
-
-				<div id="js-map-anchor" class="clearfix">
-					<div class="col-xs-4 col-xs-offset-2 color-white">
-						<p class="paragraph paragraph--contact">
-							OpenCraft GmbH
-							c/o Dr Jan Timmann<br>
-							Unter den Linden 28a<br>
-							10117 Berlin<br>
-							Germany
-						</p>
+					
+				<div class="col-xs-12">
+					<div id="js-map" class="map" data-width="1062" data-height="690">
+						<img class="map__background fluid" src="img/svg/opencraft_map.svg" alt="Opencraft Map" width="900" height="585">
+						<ul>
+							<li class="map__marker js-map-marker" data-coordinates="267,164">
+								<i class="map__marker__dot"></i>
+								<div class="map__marker__info">
+									<p class="map__marker__info__title">Vancouver, Canada</p>
+									<p class="map__marker__info__content">Braden MacDonald</p>
+								</div>
+							</li>
+							<li class="map__marker js-map-marker" data-coordinates="342,243">
+								<i class="map__marker__dot"></i>
+								<div class="map__marker__info">
+									<p class="map__marker__info__title">Houston, USA</p>
+									<p class="map__marker__info__content">Jonathan Piacenti</p>
+								</div>
+							</li>
+							<li class="map__marker js-map-marker" data-coordinates="270,534">
+								<i class="map__marker__dot"></i>
+								<div class="map__marker__info">
+									<p class="map__marker__info__title">Saarbrücken, Germany</p>
+									<p class="map__marker__info__content">Tim Krones</p>
+								</div>
+							</li>
+							<li class="map__marker js-map-marker" data-coordinates="247,548">
+								<i class="map__marker__dot"></i>
+								<div class="map__marker__info">
+									<p class="map__marker__info__title">Kiel, Germany</p>
+									<p class="map__marker__info__content">Sven Marnarch</p>
+								</div>
+							</li>
+							<li class="map__marker js-map-marker" data-coordinates="254,556">
+								<i class="map__marker__dot"></i>
+								<div class="map__marker__info">
+									<p class="map__marker__info__title">Berlin, Germany</p>
+									<p class="map__marker__info__content">Xavier Antoviaque</p>
+								</div>
+							</li>
+							<li class="map__marker js-map-marker" data-coordinates="282,558">
+								<i class="map__marker__dot"></i>
+								<div class="map__marker__info">
+									<p class="map__marker__info__title">Domžale, Slovenia</p>
+									<p class="map__marker__info__content">Matjaz Gregoric</p>
+								</div>
+							</li>								
+							<li class="map__marker js-map-marker" data-coordinates="277,628">
+								<i class="map__marker__dot"></i>
+								<div class="map__marker__info">
+									<p class="map__marker__info__title">Aksay, Russia</p>
+									<p class="map__marker__info__content">Колпаков Евгений</p>
+								</div>
+							</li>
+							<li class="map__marker js-map-marker" data-coordinates="394,806">
+								<i class="map__marker__dot"></i>
+								<div class="map__marker__info">
+									<p class="map__marker__info__title">Bangkok, Thailand</p>
+									<p class="map__marker__info__content">Omar Khan</p>
+								</div>
+							</li>
+							<li class="map__marker js-map-marker" data-coordinates="534,908">
+								<i class="map__marker__dot"></i>
+								<div class="map__marker__info">
+									<p class="map__marker__info__title">Paradise, Australia</p>
+									<p class="map__marker__info__content">Jill Vogel</p>
+								</div>
+							</li>
+						</ul>
 					</div>
-					
-					<div class="col-xs-4">
-						<button class="btn color-white btn--contact">contact@opencraft.com</button>
-						<button class="btn color-white btn--contact">schedule a meeting</button>
-					</div>
-				</div>
-
-				<!-- CONTACT FORM -->
-				<div class="form form--contact clearfix">
-					<form action="">
-						<div class="col-xs-4 col-xs-offset-2">
-					  						
-	  						<div class="field field--contact field--contact--left">
-	  							<label class="label label--required label--contact" for="name">Name</label>
-	  							<input class="input input--contact" type="text" name="name" id="name" value="" required />
-	  						</div>
-					
-							<div class="field field--contact field--contact--left">
-								<label class="label label--required label--contact label--contact--left" for="email">Email Address</label>
-								<input class="input input--contact input--contact--left" type="email" name="email" id="email" value="" required />
-							</div>
-					
-						</div>
-						<div class="col-xs-4">
-							
-							<div class="field field--contact field--contact--right">
-								<label class="label label--required label--contact" for="message">Your message</label>
-								<textarea class="textarea textarea--contact" name="message" id="message" cols="30" rows="10" required></textarea>
-							</div>
-					
-							<button class="btn color-white btn--contact" type="submit">Submit</button>
-							
-						</div>
-					</form>
 				</div>
 			</div>
+
+			<div id="js-map-anchor" class="clearfix">
+				<div class="col-xs-4 col-xs-offset-2 color-white">
+					<p class="paragraph paragraph--contact">
+						OpenCraft GmbH
+						c/o Dr Jan Timmann<br>
+						Unter den Linden 28a<br>
+						10117 Berlin<br>
+						Germany
+					</p>
+				</div>
+				
+				<div class="col-xs-4">
+					<button class="btn color-white btn--contact">contact@opencraft.com</button>
+					<button class="btn color-white btn--contact">schedule a meeting</button>
+				</div>
+			</div>
+
+			<!-- CONTACT FORM -->
+			<div class="form form--contact clearfix">
+				<form action="">
+					<div class="col-xs-4 col-xs-offset-2">
+				  						
+  						<div class="field field--contact field--contact--left">
+  							<label class="label label--required label--contact" for="name">Name</label>
+  							<input class="input input--contact" type="text" name="name" id="name" value="" required />
+  						</div>
+				
+						<div class="field field--contact field--contact--left">
+							<label class="label label--required label--contact label--contact--left" for="email">Email Address</label>
+							<input class="input input--contact input--contact--left" type="email" name="email" id="email" value="" required />
+						</div>
+				
+					</div>
+					<div class="col-xs-4">
+						
+						<div class="field field--contact field--contact--right">
+							<label class="label label--required label--contact" for="message">Your message</label>
+							<textarea class="textarea textarea--contact" name="message" id="message" cols="30" rows="10" required></textarea>
+						</div>
+				
+						<button class="btn color-white btn--contact" type="submit">Submit</button>
+						
+					</div>
+				</form>
+			</div>
 		</section>
-		<!--  -->
+
+		<hr class="visually-hidden js-section-anchor" data-color-up="black" data-color-down="black">
 		
 		<!-- INFORMATIONS -->
-		<section id="informations" class="w-xs-100 section-informations site-section">
+		<section id="informations" class="w-xs-100 section-informations site-section js-section">
 			<div class="row">
 				<div class="col-xs-8 col-xs-offset-2">
 					<div class="container__inner">
@@ -610,6 +615,7 @@
 
 	<script src="//code.jquery.com/jquery-2.2.3.min.js"></script>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.18.4/TweenMax.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.18.4/plugins/ScrollToPlugin.min.js"></script>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js"></script>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/debug.addIndicators.min.js"></script>
 	<!-- <script src="//cdnjs.cloudflare.com/ajax/libs/stats.js/r11/Stats.js"></script> -->

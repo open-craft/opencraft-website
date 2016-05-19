@@ -19,10 +19,33 @@
 	}
 }
 
-// INTRODUCTION
-.section-introduction
+.section-intro
 {
-	margin-top: 12rem;
+	&__title
+	{
+	}
+
+	&__table
+	{
+		@include size(100%);
+		display: table;
+
+		&--cell
+		{
+			@include size(100%);
+			display: table-cell;
+			vertical-align: middle;
+		}
+	}
+}
+
+// CLIENTS
+.section-clients
+{
+	&__header
+	{
+		margin-top: 12rem;
+	}
 }
 
 // NEED

@@ -377,6 +377,11 @@ $overlap: 8.6rem;
 
 	&__list
 	{
+		@include from('hd')
+		{
+			margin-left: -8rem;
+		}
+
 		&__item
 		{
 			// padding-left: 2.2rem;

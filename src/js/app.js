@@ -7,9 +7,10 @@ var app = {
     _classBodyReady: 'is-ready',
 
     // public
-    $body: null,
+    is_auto_scrolling: false,
 
     // DOM public elements
+    $body: null,
 
     // DOM private elements
 
@@ -21,8 +22,10 @@ var app = {
         
         this.$body = $('body');
 
+        this.is_auto_scrolling = false;
+
         this._initPlugins();
-        // this._initEvents();
+        this._initEvents();
         
         setTimeout(function(){
             _this.$body.addClass(_this._classBodyReady);
@@ -57,13 +60,52 @@ var app = {
             })
             // .addIndicators()
             .addTo(controller);
-    }/*,
+    },
     _initEvents: function() {
         // console.info('app._initEvents');
 
         var _this = this;
 
-    }*/
+        $(document)
+            .on('click', '[data-scrollto]', function(e) {
+                e.preventDefault();
+
+                var selector = $(this).data('scrollto');
+
+                var $element = $(selector);
+                if ($element.length) {
+                    var offset = $element.offset().top;
+                    TweenLite.to(
+                        window, 
+                        0.75,
+                        {
+                            scrollTo: {
+                                y: offset,
+                                onAutoKillScope: _this,
+                                onAutoKill: function() {
+                                    $(window).trigger('autoScrollComplete');
+                                }
+                            },
+                            ease: Power1.easeInOut,
+                            callbackScope: _this,
+                            onStart: function() {
+                                this.is_auto_scrolling = true;
+                            },
+                            onComplete: function() {
+                                $(window).trigger('autoScrollComplete');
+                            }
+                        }
+                    );
+                }
+            });
+
+        $(window)
+            .on('autoScrollComplete' + this.__NAMESPACE__, function() {
+                // console.log('autoScrollComplete.app');
+                _this.is_auto_scrolling = false;
+            });
+
+    }
 };
 
 $(function() {
