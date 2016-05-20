@@ -15,6 +15,17 @@
 	// 	padding-bottom: 100%;
 	// 	content:'';
 	// }
+
+	&--collapse
+	{
+		@include at('xs')
+		{
+		    display: inline-block;
+		    padding-bottom: 50%;
+			width: 50%;
+		}
+	}
+
 	&__inner
 	{
 		@extend %position-absolute;

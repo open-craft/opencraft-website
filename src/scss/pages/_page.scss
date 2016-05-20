@@ -64,6 +64,11 @@
 			right: 0;
 			top: -9rem;
 
+			@include at('xs')
+			{
+				top: -12rem;
+			}
+
 			& > p
 			{
 				margin-bottom: ((60/20) * 1em);
@@ -91,6 +96,11 @@
 					color: rgba(map-get($colors, black), 0.2);
 				}
 				transform: translate(-50%, 0);
+
+				@include at('xs')
+				{
+					display: none;
+				}
 			}
 		}
 
@@ -108,10 +118,21 @@
 				padding-left: percentage(100/ strip-unit($container-width));
 				padding-right: percentage(100/ strip-unit($container-width));
 				table-layout: fixed;
+
+				@include to('xs')
+				{
+					display: block;
+					width: 100%;
+				}
 				
 				&:first-child
 				{
 					margin-bottom: 0;
+
+					@include at('xs')
+					{
+						margin-bottom: 5rem;
+					}
 				}
 
 				&:last-child
@@ -128,6 +149,13 @@
 				display: table-cell;
 				width: 50%;
 				vertical-align: middle;
+
+				@include to('xs')
+				{
+					display: inline-block;
+					width: 100%;
+					vertical-align: baseline;
+				}
 			}
 
 			&__left

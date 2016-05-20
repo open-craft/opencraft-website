@@ -69,6 +69,31 @@
     vertical-align: bottom;
 }
 
+.valign
+{
+    @include from('xs')
+    {
+        &-xs
+        {
+            &-none
+            {
+                vertical-align: baseline;
+            }
+        }
+    }
+    
+    @include from('sm')
+    {
+        &-sm
+        {
+            &-middle
+            {
+                vertical-align: middle;
+            }
+        }
+    }
+}
+
 .overflow-hidden
 {
 	overflow: hidden;
@@ -156,6 +181,25 @@
 .no-margin
 {
     margin: 0;
+}
+
+.no-margin
+{
+    &-xs
+    {
+        @include from('xs')
+        {
+            margin: 0;
+        }
+    }
+
+    &-sm
+    {
+        @include from('sm')
+        {
+            margin: 0;
+        }
+    }
 }
 
 .margin-center

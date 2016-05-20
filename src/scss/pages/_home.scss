@@ -46,6 +46,28 @@
 	{
 		margin-top: 12rem;
 	}
+
+	&__table
+	{
+		display: table;
+
+		@include at('xs')
+		{
+			display: block;
+			// Prevent white-space inline-block
+			font-size: 0;
+		}
+
+		&__cell
+		{
+			display: table-cell;
+
+			@include at('xs')
+			{
+				display: inline-block;
+			}
+		}
+	}
 }
 
 // NEED
