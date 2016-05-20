@@ -8,6 +8,7 @@
 	@extend %position-absolute;
 	z-index: -1;
 
+
 	&__testimonials
 	{
 		background:
@@ -15,7 +16,15 @@
 			image: url('#{$png-dir}opencraft_background_testimonials.png');
 			position: center;
 			size: cover;
+
 		}	
+		@include at('xs')
+		{
+			.js &
+			{
+				display: none;
+			}
+		}
 	}
 }
 
