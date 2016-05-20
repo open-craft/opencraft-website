@@ -90,7 +90,8 @@
 
 			@include at('xs')
 			{
-				display: inline-block;
+				display: block;
+				float: left;
 			}
 		}
 	}
@@ -101,6 +102,7 @@
 {
 	$overlap: 20rem;
 
+	z-index: 1;
 	margin-top: $overlap + 23rem;
 
 	@include at('xs')
@@ -124,13 +126,13 @@
 
 	&__header
 	{
-		padding-bottom: 18rem;
-		padding-top: 6rem;
+		padding-top: 2rem;
+		padding-bottom: 3rem;
 
-		@include at('xs')
+		@include from('sm')
 		{
-			padding-bottom: 0;
-			padding-top: 0;
+			padding-top: 6rem;
+			padding-bottom: 18rem;
 		}
 	}
 }
@@ -138,47 +140,50 @@
 // PROJECTS
 .section-projects
 {
-	$margin: -9rem;
-
-	margin-top: $margin;
-	padding-top: abs($margin);
-	padding-bottom: 12.6rem;
-	z-index: -1;
+	padding-bottom: 6rem;
 
 	& > .site-section
 	{
-		padding-top: 11.5rem;
+		padding-top: 0;
 
-		@include at('xs')
+		@include from('sm')
 		{
-			padding-top: 8.5rem;
+			padding-top: 11.5rem;
 		}
 	}
 
-	@include at('xs')
+	@include from('sm')
 	{
-		padding-top: 0;
+		$margin: -9rem;
+
+		margin-top: $margin;
+		padding-top: abs($margin);
+		padding-bottom: 12.6rem;
 	}
 }
 
 // TESTIMONIALS
 .section-testimonials
 {
-	padding-top: 12rem;
-	padding-bottom: 39rem;
+	padding-bottom: 8rem;
 
-	@include at('xs')
+	@include from('sm')
 	{
-		padding-top: 0rem;
+		padding-top: 12rem;
+		padding-bottom: 39rem;
 	}
 }
 
 // CONTACTS
 .section-contacts
 {
-	margin-top: -23rem;
 	padding-top: 2.4rem;
 	padding-bottom: 6.8rem;
+
+	@include from('sm')
+	{
+		margin-top: -23rem;
+	}
 }
 
 .form--contact
@@ -189,12 +194,12 @@
 // INFORMATIONS
 .section-informations
 {
-	margin-top: 16.9rem;
-	padding-top: 9rem;
+	padding-bottom: 6rem;
 
-	@include at('xs')
+	@include from('sm')
 	{
-		margin-top: 0;
-		padding-top: 0;
+		margin-top: 16.9rem;
+		padding-top: 9rem;
+		padding-bottom: 0;
 	}
 }

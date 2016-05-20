@@ -24,12 +24,17 @@
 	&--header
 	{
 		position: absolute;
+		bottom: 13rem;
 		left: 50%;
-		bottom: percentage(180/1600);
 		// margin-top: (180/$base-font-size-unitless) * 1em;
 		background-color: transparent;
 		border-color: map-get($colors, white);
 		transform: translate(-50%, 0);
+
+		@include from('sm')
+		{
+			bottom: percentage(180/1600);
+		}
 	}
 
 	&--table

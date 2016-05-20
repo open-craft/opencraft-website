@@ -52,15 +52,16 @@ $overlap: 8.6rem;
 
 			@include at('xs')
 			{
-				display: inline-block;
+				display: block;
 				width: 100%;
+				padding-top: 9rem;
+				padding-bottom: 9rem;
 			}
 
 			&__title
 			{
 				margin-top: 0.5em;
 				margin-bottom: 0.5em;
-
 			}
 
 			&__text
@@ -190,7 +191,11 @@ $overlap: 8.6rem;
 .informations-article
 {
 	display: inline-block;
-	margin-bottom: 13rem;
+
+	@include from('sm')
+	{
+		margin-bottom: 13rem;
+	}
 }
 
 .screen
@@ -219,16 +224,20 @@ $overlap: 8.6rem;
 
 				@include to('xs')
 				{
-					display: inline-block;
-					// From Bootstrap
-					padding-left: 16.66667%;
-					padding-right: 16.66667%;
+					display: block;
 				}
 			}
 		}
 
 		&__slider
 		{
+			@include at('xs')
+			{
+				margin-top: 6rem;
+				padding-left: 3.5rem;
+				padding-right: 3.5rem;
+			}
+
 			.js &
 			{
 				display: none;
@@ -278,6 +287,9 @@ $overlap: 8.6rem;
     	@include at('xs')
     	{
 			margin-bottom: 1em;
+			// From Bootstrap
+			padding-left: 16.66667%;
+			padding-right: 16.66667%;
     	}
 
     	&__item
@@ -321,17 +333,21 @@ $overlap: 8.6rem;
     		background-color: rgba(map-get($colors, black), 0.15);
     		border-radius: 9px;
     		vertical-align: middle;
-    		transition: background-color 0.3s ease;
 
-    		&:hover,
-    		&:focus
+    		.no-touch &
     		{
-    			background-color: rgba(map-get($colors, black), 0.5);
-    		}
+    			transition: background-color 0.3s ease;
+
+	    		&:hover,
+	    		&:focus
+	    		{
+	    			background-color: rgba(map-get($colors, black), 0.5);
+	    		}
+	    	}
 
     		&.slider__dot--is-current
     		{
-    			background-color: map-get($colors, black);
+    			background-color: map-get($colors, black) !important;
     		}
     	}
     }
@@ -341,13 +357,29 @@ $overlap: 8.6rem;
 .testimonials
 {
 	&__slide
-	{	
-		padding: 8rem 7rem 4rem 7rem;
+	{
+		margin-bottom: 3.5rem;
+		padding: 3rem 0rem 3rem 0rem;
 
-		@include to('xs')
+		.js &
 		{
-			padding: 3rem 0rem 3rem 0rem;
-			margin-bottom: 3.5rem;
+			display: block;
+		}
+
+		@include from('sm')
+		{
+			padding: 8rem 7rem 4rem 7rem;
+			margin-bottom: 0;
+
+			.js &
+			{
+				display: none;
+
+				&--is-current
+				{
+					display: block;
+				}
+			}
 		}
 
 		&__text

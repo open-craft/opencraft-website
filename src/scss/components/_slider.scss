@@ -6,14 +6,11 @@
 {	
 	.js &
 	{
-		@include from('sm')
-		{
-			display: none;
+		display: none;
 
-			&--is-current
-			{
-				display: block;
-			}
+		&--is-current
+		{
+			display: block !important;
 		}
 	}
 
