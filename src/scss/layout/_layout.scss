@@ -344,6 +344,11 @@ $overlap: 8.6rem;
 	{	
 		padding: 8rem 7rem 4rem 7rem;
 
+		@include to('xs')
+		{
+			margin-bottom: 8rem;
+		}
+
 		&__text
 		{
 			position: relative;
@@ -430,6 +435,32 @@ $overlap: 8.6rem;
 		@include from('hd')
 		{
 			margin-left: -8rem;
+		}
+
+		&__wrapper
+		{
+			display: table;
+
+			@include to('xs')
+			{
+				display: block;
+			    margin-left: 8.33333%;
+    			margin-right: 8.33333%;
+			}
+
+			&__inner
+			{
+				display: table-cell;
+				vertical-align: middle;
+				
+				.js &
+				{
+					@include to('xs')
+					{
+						display: none;
+					}
+				}
+			}
 		}
 
 		&__item
