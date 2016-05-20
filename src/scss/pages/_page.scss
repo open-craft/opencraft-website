@@ -146,26 +146,36 @@
 
 			&__right, &__left
 			{
-				display: table-cell;
-				width: 50%;
-				vertical-align: middle;
+				display: inline-block;
+				width: 100%;
+				vertical-align: baseline;
 
-				@include to('xs')
+				@include from('sm')
 				{
-					display: inline-block;
-					width: 100%;
-					vertical-align: baseline;
+					display: table-cell;
+					width: 50%;
+					vertical-align: middle;
 				}
 			}
 
 			&__left
 			{
-				padding-right: 5rem;
+				padding-right: 0;
+
+				@include from('sm')
+				{
+					padding-right: 5rem;
+				}
 			}
 
 			&__right
 			{
-				padding-left: 3.5rem;
+				padding-left: 0;
+
+				@include from('sm')
+				{
+					padding-left: 3.5rem;
+				}
 			}
 		}
 	}	
