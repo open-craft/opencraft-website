@@ -135,13 +135,18 @@
 
 		&__info
 		{
-			display: block;
+			display: none;
 			margin-top: $circle-offset;
 			margin-left: abs($circle-offset);
 			padding-left: 1rem;
-			opacity: 0;
-			visibility: hidden;
 			// transition: all 0.3s ease;
+			
+			@include from('sm')
+			{
+				display: block;
+				opacity: 0;
+				visibility: hidden;
+			}
 
 			&__title,
 			&__content
@@ -164,8 +169,13 @@
 
 		&__dot:hover + &__info
 		{
-			opacity: 1;
-			visibility: visible;
+			display: block;
+
+			@include from('sm')
+			{
+				opacity: 1;
+				visibility: visible;
+			}
 		}
 	}
 }
