@@ -8,6 +8,11 @@
 	margin-top: -4.5rem;
 	margin-bottom: 3.7rem;
 	@include letter-spacing(30);
+
+	@include at('xs')
+	{
+		margin-top: 0;
+	}
 }
 
 .paragraph

@@ -75,6 +75,11 @@
 	// background-repeat: no-repeat;
 	// background-position: -6px -44px;
 
+	@include at('xs')
+	{
+		margin-top: 0;
+	}
+
 	&__background
 	{
 		opacity: 0.5;

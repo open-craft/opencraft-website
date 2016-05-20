@@ -66,6 +66,11 @@
 	&__header
 	{
 		margin-top: 12rem;
+
+		@include at('xs')
+		{
+			margin-top: 0;
+		}
 	}
 
 	&__table
@@ -127,6 +132,11 @@
 	{
 		padding-top: 11.5rem;
 	}
+
+	@include at('xs')
+	{
+		padding-top: 0;
+	}
 }
 
 // TESTIMONIALS
@@ -134,6 +144,11 @@
 {
 	padding-top: 12rem;
 	padding-bottom: 39rem;
+
+	@include at('xs')
+	{
+		padding-top: 0rem;
+	}
 }
 
 // CONTACTS
@@ -154,4 +169,10 @@
 {
 	margin-top: 16.9rem;
 	padding-top: 9rem;
+
+	@include at('xs')
+	{
+		margin-top: 0;
+		padding-top: 0;
+	}
 }
