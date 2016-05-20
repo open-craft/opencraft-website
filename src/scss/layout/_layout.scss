@@ -282,20 +282,28 @@ $overlap: 8.6rem;
 
     	&__item
     	{
-    		color: map-get($colors, gray);
 			font-size: 1.8rem;
 			line-height: (35/18);
 
-			&.active
+			&__button
+			{
+				display: block;
+				@extend %button-reset;
+    			color: rgba(map-get($colors, black), 0.35);
+				text-align: left;
+				transition: color 0.3s ease;
+	    	}
+
+	    	&:hover &__button,
+	    	&__button:focus
+			{
+				color: rgba(map-get($colors, black), 0.65);
+			}
+
+			&.active &__button
     		{
     			color: map-get($colors, black);
     		}
-
-			&__button
-			{
-				@extend %button-reset;
-				text-align: left;
-	    	}
     	}
     }
 
@@ -310,9 +318,16 @@ $overlap: 8.6rem;
     		@include size(18px);
     		@extend %button-reset;
     		margin: 0 0.5em;
-    		background-color: map-get($colors, gray);
+    		background-color: rgba(map-get($colors, black), 0.15);
     		border-radius: 9px;
     		vertical-align: middle;
+    		transition: background-color 0.3s ease;
+
+    		&:hover,
+    		&:focus
+    		{
+    			background-color: rgba(map-get($colors, black), 0.5);
+    		}
 
     		&.slider__dot--is-current
     		{
@@ -468,33 +483,44 @@ $overlap: 8.6rem;
 			&__button
 			{
 				$font-size: 1.8rem;
-
+				
+				display: block;
+				position: relative;
 				@extend %button-reset;
-				color: map-get($colors, cyan-slightly-desaturated);
-				font:
-				{
-					size: $font-size;
-				}
+				color: rgba(map-get($colors, white), 0.35);
+				font-size: $font-size;
 				text-align: left;
+				transition: color 0.3s ease;
+
+				&::before
+				{
+					content: '';
+					opacity: 0;
+					visibility: hidden;
+					position: absolute;
+					top: ($font-size * $base-line-height / 2);
+					right: 100%;
+					margin-right: 2.2rem;
+					height: 1px;
+					width: 1000rem;
+					background-color: currentColor;
+					transition: 0.3s ease;
+				}
+
+				&:hover,
+				&:focus
+				{
+					color: rgba(map-get($colors, white), 0.65);
+				}
 
 				&.slider__button--is-current
 				{
-					position: relative;
 					color: map-get($colors, white);
 
 					&::before
 					{
-						position: absolute;
-						top: ($font-size * $base-line-height / 2);
-						right: 100%;
-						margin-right: 2.2rem;
-						height: 1px;
-						width: 1000rem;
-						background: 
-						{
-							color: map-get($colors, white);
-						}
-						content: '';
+						opacity: 1;
+						visibility: visible;
 					}
 				}
 			}
