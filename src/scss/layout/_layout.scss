@@ -40,15 +40,27 @@ $overlap: 8.6rem;
 		table-layout: fixed;
 		width: 100%;
 
+		@include at('xs')
+		{
+			display: block;
+		}
+
 		&__cell
 		{
 			display: table-cell;
 			padding: 6rem 2rem;
 
+			@include at('xs')
+			{
+				display: inline-block;
+				width: 100%;
+			}
+
 			&__title
 			{
 				margin-top: 0.5em;
 				margin-bottom: 0.5em;
+
 			}
 
 			&__text
@@ -194,7 +206,23 @@ $overlap: 8.6rem;
 	{
 		&__list
 		{
+			display: table;
 			margin: 1em 0;
+
+			@include to('sm')
+			{
+				display: block;
+			}
+
+			&__item
+			{
+				display: table-cell;
+
+				@include to('sm')
+				{
+					display: inline-block;
+				}
+			}
 		}
 	}
 
