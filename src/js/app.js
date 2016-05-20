@@ -107,6 +107,9 @@ var app = {
             .on('autoScrollComplete' + this.__NAMESPACE__, function() {
                 // console.log('autoScrollComplete.app');
                 _this.is_auto_scrolling = false;
+            })
+            .on('resize' + this.__NAMESPACE__, function() {
+                _this.resize();
             });
 
     },
@@ -118,7 +121,7 @@ var app = {
         this.viewport.width = $(window).width();
         this.viewport.height = $(window).height();
     },
-    
+
 };
 
 $(function() {

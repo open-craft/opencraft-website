@@ -359,7 +359,8 @@ $overlap: 8.6rem;
 	&__slide
 	{
 		margin-bottom: 3.5rem;
-		padding: 3rem 0rem 3rem 0rem;
+		padding: 3rem 0;
+		vertical-align: middle;
 
 		.js &
 		{
@@ -368,16 +369,17 @@ $overlap: 8.6rem;
 
 		@include from('sm')
 		{
-			padding: 8rem 7rem 4rem 7rem;
+			padding: 8rem 7rem 4rem;
 			margin-bottom: 0;
+			vertical-align: middle;
 
 			.js &
 			{
 				display: none;
 
-				&--is-current
+				&.slider--is-current
 				{
-					display: block;
+					display: table-cell !important;
 				}
 			}
 		}

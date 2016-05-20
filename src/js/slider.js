@@ -64,16 +64,6 @@ var slider = {
 
 			var slider = new Wallop(slider_container, options);
 
-			// build slider nav dots
-			var $nav = $('.js-slider-nav', slider_container);
-			if ($nav.length) {
-				var _dots = [];
-				for (var _i = 0, _nb = slider.allItemsArray.length; _i < _nb; _i++) {
-					_dots.push('<button class="slider__dot js-slide-dot' + ( _i === 0 ? ' ' + _this._dotCurrent : '' ) + '"></button>');
-				}
-				$nav.html(_dots.join(''));
-			}
-
 			// https://developer.mozilla.org/fr/docs/Web/API/Window/requestAnimationFrame
 			// Request animation frame
 			var rafId = null;
@@ -82,7 +72,7 @@ var slider = {
 
 			// AUTOPLAY
 			// http://codepen.io/peduarte/pen/RapQBB
-			var _autoplay = function(reset){
+			var _autoplay = function(reset) {
 
 				// If reset is not set when _autoplay is called
 				if (typeof reset === 'undefined') {
@@ -125,7 +115,7 @@ var slider = {
 			};
 
 			// PAUSE ON HOVER
-			$(slider_container)
+			var $slider_container = $(slider_container)
 				.on('mouseenter', function() {
 
 					// If there is a current animation. (ID) 
@@ -146,14 +136,23 @@ var slider = {
 
 			// DOTS
 			// http://codepen.io/peduarte/pen/bVbZLK?editors=0010
+			
+			// build slider nav dots
+			var $nav = $('.js-slider-nav', slider_container);
+			if ($nav.length) {
+				var _dots = [];
+				for (var _i = 0, _nb = slider.allItemsArray.length; _i < _nb; _i++) {
+					_dots.push('<button class="slider__dot js-slide-dot' + (_i === 0 ? ' ' + _this._dotCurrent : '') + '"></button>');
+				}
 
-			var $paginationDots = $('.js-slide-dot', slider_container);
+				$nav
+					.html(_dots.join(''))
+					.on('click', '.js-slide-dot', function() {
+					    slider.goTo($(this).index());
+					});
+			}
 
-			$paginationDots.on('click', function() {
-			    slider.goTo($(this).index());
-			});
-
-			// BUTTON
+			// BUTTONS
 			var $paginationButtons = $('.js-slide-button', slider_container);
 			var $paginationButtonsWrapper = $('.js-slide-button-wrapper', slider_container);
 
@@ -162,7 +161,6 @@ var slider = {
 				// console.log($(this).index());
 			    slider.goTo($(this).index());
 			});
-
 
 			// CHANGE
 			slider.on('change', function(event, callback) {
@@ -174,11 +172,41 @@ var slider = {
 
 				// https://api.jquery.com/eq/
 				// Reduce the set of matched elements to the one at the specified index.
-	  			$paginationDots.eq(event.detail.currentItemIndex).addClass(_this._dotCurrent);
+				if ($nav.length) {
+	  				$nav.find('.js-slide-dot:eq(' + event.detail.currentItemIndex + ')').addClass(_this._dotCurrent);
+	  			}
 
 	  			$paginationButtons.eq(event.detail.currentItemIndex).addClass(_this._buttonCurrent);
 
 			});
+
+			var force_height = $slider_container.data('force-height');
+
+			if (force_height !== undefined && force_height !== 'false') {
+				// RESIZE
+				// set each slide same height from the tallest one
+				var _resize = function() {
+					var maxheight = 0;
+
+					var $items = $(slider.allItemsArray);
+					if (app.viewport.width >= 768) {
+						$items
+							.each(function() {
+								maxheight = Math.max($(this).css('height', 'auto').outerHeight(), maxheight);
+							})
+							.outerHeight(maxheight);
+					} else {
+						$items.outerHeight('auto');
+					}
+				};
+
+				$(window)
+					.on('resize.slider', function() {
+						_resize();
+					})
+					.trigger('resize.slider');
+			}
+
 		});
 	}
 };
