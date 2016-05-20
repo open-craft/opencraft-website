@@ -91,18 +91,35 @@
 
 	margin-top: $overlap + 23rem;
 
+	@include at('xs')
+	{
+		margin-top: 20rem;
+	}
+
+
 	&__img-header
 	{
 		display: block;
 		@include size(100%, auto);
 		margin-top: -$overlap;
 		@extend %box-shadow;
+
+		@include at('xs')
+		{
+			margin-top: -7rem;
+		}
 	}
 
 	&__header
 	{
-		padding-top: 6rem;
 		padding-bottom: 18rem;
+		padding-top: 6rem;
+
+		@include at('xs')
+		{
+			padding-bottom: 0;
+			padding-top: 0;
+		}
 	}
 }
 
@@ -119,6 +136,11 @@
 	& > .site-section
 	{
 		padding-top: 11.5rem;
+
+		@include at('xs')
+		{
+			padding-top: 8.5rem;
+		}
 	}
 
 	@include at('xs')
