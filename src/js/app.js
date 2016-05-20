@@ -8,6 +8,10 @@ var app = {
     _scroll_top: -1,
 
     // public
+    viewport: {
+        width: 0,
+        height: 0
+    },
     is_auto_scrolling: false,
 
     // DOM public elements
@@ -25,6 +29,8 @@ var app = {
 
         this.is_auto_scrolling = false;
         this._scroll_top = -1;
+
+        this.resize();
 
         this._initPlugins();
         this._initEvents();
@@ -103,7 +109,16 @@ var app = {
                 _this.is_auto_scrolling = false;
             });
 
-    }
+    },
+
+    resize: function() {
+        this._resetViewportDimensions();
+    },
+    _resetViewportDimensions: function() {
+        this.viewport.width = $(window).width();
+        this.viewport.height = $(window).height();
+    },
+    
 };
 
 $(function() {

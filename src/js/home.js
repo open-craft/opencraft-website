@@ -42,12 +42,12 @@ var home = {
                     duration: '100%'
                 })
                 .on('enter', function(e) {
-                    // play animation in canvas if visible
-                    canvas.play();
+                    // play animation in canvas if visible, except mobile
+                    app.viewport.width >= 768 && canvas.play();
                 })
                 .on('leave', function(e) {
-                    // pause animation in canvas if no longer visible
-                    canvas.pause();
+                    // pause animation in canvas if no longer visible, except mobile
+                    app.viewport.width >= 768 && canvas.pause();
                 })
                 // .addIndicators()
                 .addTo(controller);
