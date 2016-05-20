@@ -30,6 +30,18 @@
 
 .section-intro
 {
+	.site-section
+	{
+		position: relative;
+		z-index: 1;
+	}
+
+	&__inner
+	{
+		padding-left: 2.5rem;
+		padding-right: 2.5rem;
+	}
+
 	&__title
 	{
 	}
