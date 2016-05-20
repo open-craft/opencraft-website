@@ -33,6 +33,7 @@
     "remodal": "^1.0.7",
     "require-dir": "^0.3.0",
     "svg4everybody": "^2.0.3",
+    "tabslet": "vdw/Tabslet",
     "typesettings": "^3.0.1",
     "typi": "^2.1.1",
     "wallop": "^2.2.4"

@@ -62,7 +62,8 @@ module.exports = {
                     './node_modules/svg4everybody/dist/svg4everybody.min.js',
                     // './node_modules/jquery/dist/jquery.min.js',
                     './node_modules/wallop/js/Wallop.min.js',
-                    './node_modules/icheck/icheck.js',
+                    './node_modules/icheck/icheck.min.js',
+                    './node_modules/tabslet/jquery.tabslet.min.js',
                     src + '/js/app.js',
                     src + '/js/menu.js',
                     src + '/js/slider.js'

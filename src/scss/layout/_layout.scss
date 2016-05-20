@@ -221,6 +221,14 @@ $overlap: 8.6rem;
 				}
 			}
 		}
+
+		&__slider
+		{
+			.js &
+			{
+				display: none;
+			}
+		}
 	}
 
 	&__img
@@ -260,34 +268,33 @@ $overlap: 8.6rem;
 
     &__list
     {
+    	margin-bottom: 7.8rem; // height of the slider dots navigation
+
     	&__item
     	{
-			font:
-			{
-				size: 1.8rem;
-			}
+    		color: map-get($colors, gray);
+			font-size: 1.8rem;
 			line-height: (35/18);
+
+			&.active
+    		{
+    			color: map-get($colors, black);
+    		}
 
 			&__button
 			{
 				@extend %button-reset;
-				color: map-get($colors, gray);
 				text-align: left;
-
-	    		&.slider__button--is-current
-	    		{
-	    			color: map-get($colors, black);
-	    		}
 	    	}
     	}
     }
 
     &__nav
     {
-    	margin-bottom: 17.2rem;
+    	padding: 2.4rem 0 2.8rem;
     	text-align: center;
 
-    	&__item
+    	.slider__dot
     	{
     		display: inline-block;
     		@include size(18px);

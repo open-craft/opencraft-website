@@ -26,7 +26,7 @@ var app = {
         this.is_auto_scrolling = false;
         this._scroll_top = -1;
 
-        // this._initPlugins();
+        this._initPlugins();
         this._initEvents();
         
         setTimeout(function(){
@@ -39,12 +39,19 @@ var app = {
         // remove variables
 
     },
-   /* _initPlugins: function() {
+    _initPlugins: function() {
         // console.info('app._initPlugins');
 
         var _this = this;
 
-    },*/
+        // tabslet
+        // http://vdw.github.io/Tabslet/
+        
+        $('.js-tabs').tabslet({
+            container: '.js-tabs-container'
+        });
+
+    },
     _initEvents: function() {
         // console.info('app._initEvents');
 

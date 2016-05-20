@@ -27,7 +27,6 @@ var slider = {
 
 		// WALLOP
 		_this._initSlider(0);
-
 	},
 
 	/*_initEvents: function(){
@@ -64,6 +63,16 @@ var slider = {
 		$(this.selector).each(function(i, slider_container) {
 
 			var slider = new Wallop(slider_container, options);
+
+			// build slider nav dots
+			var $nav = $('.js-slider-nav', slider_container);
+			if ($nav.length) {
+				var _dots = [];
+				for (var _i = 0, _nb = slider.allItemsArray.length; _i < _nb; _i++) {
+					_dots.push('<button class="slider__dot js-slide-dot' + ( _i === 0 ? ' ' + _this._dotCurrent : '' ) + '"></button>');
+				}
+				$nav.html(_dots.join(''));
+			}
 
 			// https://developer.mozilla.org/fr/docs/Web/API/Window/requestAnimationFrame
 			// Request animation frame
@@ -172,10 +181,8 @@ var slider = {
 			});
 		});
 	}
-}
+};
 
 $(function() {
-
     slider.init();
-
 });

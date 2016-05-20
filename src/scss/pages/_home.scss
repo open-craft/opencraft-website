@@ -73,8 +73,11 @@
 // PROJECTS
 .section-projects
 {
-	padding-top: 9rem;
-	margin-top: -9rem;
+	$margin: -9rem;
+
+	margin-top: $margin;
+	padding-top: abs($margin);
+	padding-bottom: 12.6rem;
 	z-index: -1;
 
 	& > .site-section
