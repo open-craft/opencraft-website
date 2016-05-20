@@ -331,6 +331,7 @@ $overlap: 8.6rem;
 
 		@include to('xs')
 		{
+			padding: 3rem 0rem 3rem 0rem;
 			margin-bottom: 8rem;
 		}
 
@@ -371,6 +372,11 @@ $overlap: 8.6rem;
 					content: open-quote;
 					top: 0;
 					left: 0;
+
+					@include at('xs')
+					{
+						left: 10px;
+					}
 				}
 
 				&::after
@@ -378,6 +384,11 @@ $overlap: 8.6rem;
 					content: close-quote;
 					bottom: 0;
 					right: 0;
+
+					@include at('xs')
+					{
+						right: 10px;
+					}
 				}
 			}
 		}
