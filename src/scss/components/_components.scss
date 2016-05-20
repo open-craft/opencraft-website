@@ -55,14 +55,8 @@
 // CANVAS
 .canvas
 {
-	display: none;
 	@extend %position-absolute;
 	@include size(100%);
-
-	@include from('sm')
-	{
-		display: block;
-	}
 }
 
 // MAP MARKERS
