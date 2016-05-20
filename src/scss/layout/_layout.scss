@@ -196,7 +196,9 @@ $overlap: 8.6rem;
 .screen
 {
 	position: relative;
+	overflow: hidden;
 	@extend %box-shadow;
+	border-radius: 3px;
 
 	&__wrapper
 	{
@@ -234,12 +236,14 @@ $overlap: 8.6rem;
 		}
 	}
 
-	&__img
+	&__slide
 	{
-		display: block;
-		width: 100%;
-		height: auto;
-		min-height: 35.3rem;
+		img
+		{
+			display: block;
+			width: 100%;
+			height: auto;
+		}
 	}
 
 	&__bar
@@ -247,8 +251,6 @@ $overlap: 8.6rem;
 		position: relative;
 		@include size(100%, 3.2rem);
 		border-bottom: 1px solid rgba( map-get($colors, cyan-moderate), 0.1);
-		border-top-left-radius: 3px;
-		border-top-right-radius: 3px;
 
 		&__button
 		{
