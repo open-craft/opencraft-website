@@ -205,7 +205,7 @@ $overlap: 8.6rem;
 			display: table;
 			margin: 1em 0;
 
-			@include to('sm')
+			@include to('xs')
 			{
 				display: block;
 			}
@@ -215,9 +215,12 @@ $overlap: 8.6rem;
 				display: table-cell;
 				vertical-align: middle;
 
-				@include to('sm')
+				@include to('xs')
 				{
 					display: inline-block;
+					// From Bootstrap
+					padding-left: 16.66667%;
+					padding-right: 16.66667%;
 				}
 			}
 		}
@@ -260,6 +263,11 @@ $overlap: 8.6rem;
 
     &__list
     {
+    	@include at('xs')
+    	{
+			margin-bottom: 1em;
+    	}
+
     	&__item
     	{
 			font:

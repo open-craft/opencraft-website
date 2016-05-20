@@ -183,6 +183,25 @@
     margin: 0;
 }
 
+.no-margin
+{
+    &-xs
+    {
+        @include from('xs')
+        {
+            margin: 0;
+        }
+    }
+
+    &-sm
+    {
+        @include from('sm')
+        {
+            margin: 0;
+        }
+    }
+}
+
 .margin-center
 {
 	margin: 0 auto;
