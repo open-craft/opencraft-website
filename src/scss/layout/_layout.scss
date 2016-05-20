@@ -347,7 +347,7 @@ $overlap: 8.6rem;
 		@include to('xs')
 		{
 			padding: 3rem 0rem 3rem 0rem;
-			margin-bottom: 8rem;
+			margin-bottom: 3.5rem;
 		}
 
 		&__text
@@ -455,8 +455,8 @@ $overlap: 8.6rem;
 			@include to('xs')
 			{
 				display: block;
-			    margin-left: 8.33333%;
-    			margin-right: 8.33333%;
+			    margin-left: 3.5rem;
+    			margin-right: 3.5rem;
 			}
 
 			&__inner
