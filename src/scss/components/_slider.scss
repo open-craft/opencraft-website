@@ -4,11 +4,17 @@
 
 .slider
 {	
-	display: none;
-
-	&--is-current
+	.js &
 	{
-		display: block;
+		@include from('sm')
+		{
+			display: none;
+
+			&--is-current
+			{
+				display: block;
+			}
+		}
 	}
 
 	&__button
