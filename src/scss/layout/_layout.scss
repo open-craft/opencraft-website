@@ -196,6 +196,7 @@ $overlap: 8.6rem;
 .screen
 {
 	position: relative;
+	@extend %box-shadow;
 
 	&__wrapper
 	{
@@ -212,6 +213,7 @@ $overlap: 8.6rem;
 			&__item
 			{
 				display: table-cell;
+				vertical-align: middle;
 
 				@include to('sm')
 				{
@@ -223,19 +225,15 @@ $overlap: 8.6rem;
 
 	&__img
 	{
-		padding-top: 3.2rem;
-		@extend %box-shadow;
+		display: block;
 		width: 100%;
+		height: auto;
 		min-height: 35.3rem;
-		max-width: 100%;
 	}
 
 	&__bar
 	{
-		position: absolute;
-		left: 0;
-		right: 0;
-		top: 0;
+		position: relative;
 		@include size(100%, 3.2rem);
 		border-bottom: 1px solid rgba( map-get($colors, cyan-moderate), 0.1);
 		border-top-left-radius: 3px;
@@ -254,18 +252,16 @@ $overlap: 8.6rem;
 			@for $i from 1 through 3 {
 		      	&:nth-child(#{$i}) 
 		      	{ 
-
-		       		left: $i * 10px; 
-
+		       		left: $i * 10px;
 		      	}	
 		    }
-
 		}
 	}
-    &__list{
 
-    	&__item{
-
+    &__list
+    {
+    	&__item
+    	{
 			font:
 			{
 				size: 1.8rem;

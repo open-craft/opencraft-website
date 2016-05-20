@@ -10,7 +10,6 @@ var slider = {
 	timer: 3000,
 
 	// DOM public elements
-	$body: null,
 
 	// DOM private elements
 	_$currentSlide: null,
@@ -19,9 +18,8 @@ var slider = {
 
 	// FUNCTIONS
 	init: function() {
-		this.$body = $('body');
 		this._initPlugins();
-		this._initEvents();
+		// this._initEvents();
 	},
 	
 	_initPlugins: function(){
@@ -32,9 +30,9 @@ var slider = {
 
 	},
 
-	_initEvents: function(){
+	/*_initEvents: function(){
 		var _this = this;
-	},
+	},*/
 
 	_initSlider: function (timer){
 		// This variable refers to the application itself
@@ -152,7 +150,7 @@ var slider = {
 
 			$paginationButtonsWrapper.on('click', function() {
 
-				console.log($(this).index());
+				// console.log($(this).index());
 			    slider.goTo($(this).index());
 			});
 
