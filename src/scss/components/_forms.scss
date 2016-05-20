@@ -14,6 +14,7 @@
 	color: inherit;
 	line-height: (23/strip-unit($base-font-size));
 	outline: 0;
+	transition: border-color 0.3s ease;
 }
 
 // VALUE FROM PSD
@@ -63,12 +64,21 @@ $contact-width-parent: 440;
 	&--contact
 	{
 		border-color: rgba(map-get($colors, white), 0.2);
+
+		&:focus
+		{
+			border-color: rgba(map-get($colors, white), 0.75);
+		}
 	}
 
 	&--host
 	{
 		border-color: rgba(map-get($colors, black), 0.2);
 
+		&:focus
+		{
+			border-color: rgba(map-get($colors, black), 0.75);
+		}
 		
 		&--file
 		{
@@ -102,9 +112,14 @@ $contact-width-parent: 440;
 					z-index: -1;
 
 				}
-
+			}
+			
+			&:focus + &__label
+			{
+				border-color: rgba(map-get($colors, black), 0.75);
 			}
 		}
+
 		&--domain-name
 		{
 			display: inline-block;
@@ -219,11 +234,21 @@ $contact-width-parent: 440;
 	&--contact
 	{
 		border-color: rgba(map-get($colors, white), 0.2);
+
+		&:focus
+		{
+			border-color: rgba(map-get($colors, white), 0.75);
+		}
 	}
 
 	&--host
 	{
 		border-color: rgba(map-get($colors, black), 0.2);
+
+		&:focus
+		{
+			border-color: rgba(map-get($colors, black), 0.75);
+		}
 	}
 }
 
@@ -252,10 +277,14 @@ $contact-width-parent: 440;
 		style: solid;
 		width: 2px;
 	}
+	transition: border-color 0.3s ease;
 
 	&--hover{}
 	
-	&--focus{}
+	&--focus
+	{
+		border-color: rgba(map-get($colors, black), 0.75);
+	}
 	
 	&--checked
 	{

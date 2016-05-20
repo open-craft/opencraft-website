@@ -42,7 +42,8 @@
 		border-color: map-get($colors, white);
 		color: map-get($colors, white);
 
-		&:hover
+		&:hover,
+		&:focus
 		{
 			background-color: map-get($colors, white);
 			color: currentColor;
@@ -54,7 +55,8 @@
 		border-color: map-get($colors, cyan-strong);
 		color: map-get($colors, white);
 
-		&:hover
+		&:hover,
+		&:focus
 		{
 			background-color: map-get($colors, white);
 			color: currentColor;
@@ -80,6 +82,11 @@
 			width: 100%;
 			margin-right: auto;
 			margin-left: auto;
+		}
+
+		&:focus
+		{
+			border-color: rgba(map-get($colors, white), 0.75);
 		}
 	}
 }
