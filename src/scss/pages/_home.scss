@@ -57,20 +57,30 @@
 
 	&__img-header
 	{
-
+		display: block;
 		@include size(100%, auto);
-		margin-bottom: 6rem;
 		margin-top: -$overlap;
 		@extend %box-shadow;
+	}
+
+	&__header
+	{
+		padding-top: 6rem;
+		padding-bottom: 18rem;
 	}
 }
 
 // PROJECTS
 .section-projects
 {
-	padding-top: 20.5rem;
+	padding-top: 9rem;
 	margin-top: -9rem;
 	z-index: -1;
+
+	& > .site-section
+	{
+		padding-top: 11.5rem;
+	}
 }
 
 // TESTIMONIALS
@@ -96,5 +106,6 @@
 // INFORMATIONS
 .section-informations
 {
-	margin-top: 25.9rem;
+	margin-top: 16.9rem;
+	padding-top: 9rem;
 }
