@@ -206,7 +206,12 @@
 	& > p
 	{
 		position: relative;
-		margin: ((35/16) * 1em) 0 ((35/16) * 1em) 14rem;
+		margin: ((35/16) * 1em) 0 ((35/16) * 1em) 7rem;
+
+		@include from('sm')
+		{
+			margin-left: 14rem;
+		}
 
 		&::before
 		{
@@ -214,8 +219,8 @@
 			position: absolute;
 			right: 100%;
 			top: 50%;
-			height: (72/20) * 1em;
-			width: 13.6rem;
+			height: 1.6em;
+			width: 6.6rem;
 			float: left;
 			background:
 			{
@@ -225,6 +230,12 @@
 			}
 			content: '';
 			transform: translate(0, -50%);
+
+			@include from('sm')
+			{
+				width: 13.6rem;
+				height: ((72/20) * 1em);
+			}
 		}
 	}
 }

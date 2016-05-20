@@ -156,16 +156,22 @@ $contact-width-parent: 440;
 				input
 				{
 					border-color: map-get($colors, red);
+
+					@include at('xs')
+					{
+						padding-left: 2.7em;
+					}
 				}
 
 				&::before,
 				{
-					position: absolute;
-					right: calc(100% - 28px);
-					top: 50%;
 					display: block;
-					height: 2.7rem;
+					position: absolute;
+					top: 50%;
+					right: 100%;
 					width: 2.8rem;
+					height: 2.7rem;
+					margin-right: -28px;
 					background:
 					{
 						image: url('#{$svg-dir}forms/opencraft_error.svg');
@@ -177,13 +183,23 @@ $contact-width-parent: 440;
 
 					@include from('sm')
 					{
-						right: calc(100% + 17px);
+						margin-right: 17px;
 					}
 				}
 			}
 
 			&.valid
 			{
+				position: relative;
+
+				input
+				{
+					@include at('xs')
+					{
+						padding-left: 2.9em;
+					}
+				}
+
 				&::before
 				{
 					position: absolute;

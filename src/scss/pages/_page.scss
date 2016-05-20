@@ -52,10 +52,12 @@
 	&-content
 	{
 		max-width: $psd-width;
-		margin-left: auto;
-		margin-right: auto;
-		margin-bottom: 8rem;
-		margin-top: 8rem;
+		margin: 8rem auto 0;
+
+		@include from('sm')
+		{
+			margin-bottom: 8rem;
+		}
 		
 		&__header
 		{
@@ -108,7 +110,14 @@
 		{
 			position: relative;
 			padding-bottom: 8rem;
-			padding-top:8.3rem;
+			padding-top: 13rem;
+			@extend %box-shadow;
+
+			@include from('sm')
+			{
+				padding-top: 8.3rem;
+				border-radius: 0.5rem;
+			}
 
 			&__wrapper
 			{
@@ -141,10 +150,8 @@
 				}
 			}
 
-			@extend %box-shadow;
-			border-radius: 0.5rem;
-
-			&__right, &__left
+			&__right, 
+			&__left
 			{
 				display: inline-block;
 				width: 100%;
