@@ -15,6 +15,16 @@
 		{
 			display: table;
 			width: 100%;
+		}
+
+		@include at('md')
+		{
+			padding-left: 7rem;
+			padding-right: 7rem;
+		}
+
+		@include from('lg')
+		{
 			padding-left: 0;
 			padding-right: 0;
 		}
