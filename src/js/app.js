@@ -54,7 +54,8 @@ var app = {
         // http://vdw.github.io/Tabslet/
         
         $('.js-tabs').tabslet({
-            container: '.js-tabs-container'
+            container: '.js-tabs-container',
+            animation: true
         });
 
     },
@@ -65,35 +66,37 @@ var app = {
 
         $(document)
             .on('click', '[data-scrollto]', function(e) {
+                var selector = $(this).data('scrollto'),
+                    $element = $(selector);
+                    
+                if (!$element.length) {
+                    return;
+                }
+
                 e.preventDefault();
 
-                var selector = $(this).data('scrollto');
-
-                var $element = $(selector);
-                if ($element.length) {
-                    var offset = $element.offset().top;
-                    TweenLite.to(
-                        window, 
-                        0.75,
-                        {
-                            scrollTo: {
-                                y: offset,
-                                onAutoKillScope: _this,
-                                onAutoKill: function() {
-                                    $(window).trigger('autoScrollComplete');
-                                }
-                            },
-                            ease: Power1.easeInOut,
-                            callbackScope: _this,
-                            onStart: function() {
-                                this.is_auto_scrolling = true;
-                            },
-                            onComplete: function() {
+                var offset = $element.offset().top;
+                TweenLite.to(
+                    window, 
+                    0.75,
+                    {
+                        scrollTo: {
+                            y: offset,
+                            onAutoKillScope: _this,
+                            onAutoKill: function() {
                                 $(window).trigger('autoScrollComplete');
                             }
+                        },
+                        ease: Power1.easeInOut,
+                        callbackScope: _this,
+                        onStart: function() {
+                            this.is_auto_scrolling = true;
+                        },
+                        onComplete: function() {
+                            $(window).trigger('autoScrollComplete');
                         }
-                    );
-                }
+                    }
+                );
             });
 
         $(window)

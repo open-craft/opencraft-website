@@ -93,6 +93,7 @@ $overlap: 8.6rem;
 // SECTION TITLE
 .section-title
 {
+	display: inline-block;
  	position: relative;
  	margin-bottom: (9/strip-unit(map-get($font-size-title, h2))) * 1em;
  	padding: (20/60) * 1em 0;
@@ -113,8 +114,9 @@ $overlap: 8.6rem;
 			size: 5.5rem;
 		}
 		line-height: 1;
-		opacity: 0.2;
-		transform: rotate(-90deg);
+		opacity: 0;
+		transform: rotate(-90deg) translate3d(50%,0,0);
+		transition: all 0.5s ease-out;
 	}
 
  	&::after
@@ -127,7 +129,21 @@ $overlap: 8.6rem;
 		background-color: currentColor;
 		border-radius: 0.3rem;
 		content: '';
- 	} 
+ 	}
+
+ 	&.is-visible
+ 	{
+ 		&::before
+ 		{
+ 			opacity: 0.2;
+			transform: rotate(-90deg) translate3d(0,0,0);
+ 		}
+
+ 		&::after
+ 		{
+
+ 		}
+ 	}
 }
 
 .site-content

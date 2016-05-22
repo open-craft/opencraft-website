@@ -52,15 +52,12 @@ var map = {
         var controller = new ScrollMagic.Controller({ refreshInterval: 0 });
 
         new ScrollMagic.Scene({
-                triggerElement: '#js-map-anchor',
-                triggerHook: 'onEnter',
-                offset: -250,
-                reverse: false
+                triggerElement: this.$el[0]
             })
             .on('enter', function(e) {
                 _this._showMarkers(150);
             })
-            // .addIndicators()
+            // .addIndicators({ name: 'map' })
             .addTo(controller);
     },
     /*_initEvents: function() {
