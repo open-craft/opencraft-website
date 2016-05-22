@@ -37,9 +37,13 @@ var menu = {
         this._is_hovered = false;
         this._current_index = -1;
 
-        TweenLite.set('#js-site-menu', { x: this._menu_width, autoAlpha: 1 });
+        if (!app.is_mobile) {
+            TweenLite.set('#js-site-menu', { x: this._menu_width, autoAlpha: 1 });
 
-        this.open(0.5);
+            this.open(0.5);
+        } else {
+            TweenLite.set('#js-site-nav-container', { xPercent: 100, autoAlpha: 1 });
+        }
 
         this._initPlugins();
         this._initEvents();
@@ -115,18 +119,29 @@ var menu = {
 
         var _this = this;
 
-        this.$el.hover(
-        	function() {
-        		_this._is_hovered = true;
-        		_this.open();
-        	},
-        	function() {
-        		_this._is_hovered = false;
-        		_this.close();
-        	}
-        );
+        this.$el
+            .hover(
+            	function() {
+            		_this._is_hovered = !app.is_mobile;
+            		_this.open();
+            	},
+            	function() {
+            		_this._is_hovered = false;
+            		_this.close();
+            	}
+            )
+            .on('click' + this.__NAMESPACE__, function(e) {
+                if (!app.is_mobile) {
+                    return;
+                }
+
+                _this.toggle();
+            });
 
         $(window)
+            .on('autoScrollStart' + this.__NAMESPACE__, function() {
+                app.is_mobile && _this.close();
+            })
         	.on('autoScrollComplete' + this.__NAMESPACE__, function() {
         		_this.update(_this._current_index);
         	})
@@ -135,6 +150,13 @@ var menu = {
         		_this._stay_open = false;
         		_this.close();
         	})
+    },
+    toggle: function() {
+        if (this._is_open) {
+            return this.close();
+        }
+
+        return this.open();
     },
     open: function(delay) {
     	// console.info('menu.open');
@@ -149,21 +171,44 @@ var menu = {
 
     	delay = parseFloat(delay);
 
-    	var vars = {
-    		x: 0,
-    		force3D: true,
-    		ease: Power2.easeOut
-    	};
+        TweenLite.killTweensOf('#js-site-menu');
+        TweenLite.killTweensOf(this._$items);
 
-    	if (delay > 0) {
-    		vars.delay = delay;
-    	}
+    	if (!app.is_mobile) {
 
-    	TweenLite.killTweensOf('#js-site-menu');
-    	TweenLite.killTweensOf(this._$items);
+            var vars = {
+        		x: 0,
+        		force3D: true,
+        		ease: Power2.easeOut
+        	};
 
-    	TweenLite.to('#js-site-menu', 0.8, vars);
-    	TweenLite.to(this._$items, 0.8, { autoAlpha: 1 });
+        	if (delay > 0) {
+        		vars.delay = delay;
+        	}
+
+        	TweenLite.to('#js-site-menu', 0.8, vars);
+        	TweenLite.to(this._$items, 0.8, { autoAlpha: 1 });
+
+        } else {
+
+            // MOBILE
+            
+            TweenLite.to(
+                '#js-site-nav-container',
+                0.4,
+                {
+                    xPercent: 0,
+                    force3D: true,
+                    ease: Power2.easeOut
+                }
+            );
+
+            // disable scroll while menu is open
+            app.disableScroll();
+
+        }
+
+        $('body').addClass('menu--is-open');
 
     	this._is_open = true;
     },
@@ -179,21 +224,44 @@ var menu = {
 
     	TweenLite.killTweensOf('#js-site-menu');
 
-    	TweenLite.to(
-        	'#js-site-menu',
-        	0.4,
-        	{
-        		x: this._menu_width,
-        		force3D: true,
-        		ease: Sine.easeIn,
-        		onComplete: function() {
-        			// TweenLite.set(this._$items, { autoAlpha: 0 });
+    	if (!app.is_mobile) {
 
-        			this.update(this._current_index);
-        		},
-        		onCompleteScope: this
-        	}
-        );
+            TweenLite.to(
+            	'#js-site-menu',
+            	0.4,
+            	{
+            		x: this._menu_width,
+            		force3D: true,
+            		ease: Sine.easeIn,
+            		onComplete: function() {
+            			// TweenLite.set(this._$items, { autoAlpha: 0 });
+
+            			this.update(this._current_index);
+            		},
+            		onCompleteScope: this
+            	}
+            );
+
+        } else {
+
+            // MOBILE
+            
+            TweenLite.to(
+                '#js-site-nav-container',
+                0.4,
+                {
+                    xPercent: 100,
+                    force3D: true,
+                    ease: Sine.easeIn
+                }
+            );
+
+            // eanble scroll now menu is closed
+            app.enableScroll();
+
+        }
+
+        $('body').removeClass('menu--is-open');
 
         this._is_open = false;
     },
@@ -205,7 +273,7 @@ var menu = {
 
     	// console.log(previous_index, index);
 
-    	if (this._stay_open || this._is_hovered || app.is_auto_scrolling) {
+    	if (this._stay_open || this._is_hovered || app.is_auto_scrolling || app.is_mobile) {
     		return;
     	}
 

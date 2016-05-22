@@ -43,16 +43,41 @@
 		top: 0;
 		right: 0;
 		z-index: 2;
-		padding: 3.6rem 4.5rem 3.6rem 0;
+
+		@include from('sm')
+		{
+			padding: 3.6rem 4.5rem 3.6rem 0;
+		}
 
 		&::before
 		{
 			content: "Menu";
 			display: block;
 			float: right;
-			margin: 1.4rem 0;
+			margin: 2rem 0;
+			padding-right: 2.5rem; 
 			padding-left: 1rem;
 			border-left: 1px solid rgba(map-get($colors, black),0.2);
+
+			@include at('xs')
+			{
+				position: absolute;
+				top: 0;
+				right: 0;
+				z-index: 1;
+
+				.menu--is-open &
+				{
+					content: "Close";
+				}
+			}
+
+			@include from('sm')
+			{
+				margin-top: 1.4rem;
+				margin-bottom: 1.4rem;
+				padding-right: 0;
+			}
 		}
 
 		&.color-white::before
@@ -64,24 +89,75 @@
 		{
 			display: block;
 			overflow: hidden;
+
+			@include at('xs')
+			{
+				position: fixed;
+				top: 0;
+				right: 0;
+				bottom: 0;
+				left: 0;
+				background-color: map-get($colors, cyan-light-moderate);
+				color: map-get($colors, white);
+				opacity: 0;
+				visibility: hidden;
+			}
 		}
 	}
 
 	&__menu
 	{
 		position: relative;
-		white-space: nowrap;
+		padding-top: 5.5rem;
+		padding-right: 2.1rem;
 		@include letter-spacing(30);
 
-		.js &
+		@include from('sm')
 		{
-			opacity: 0;
-			visibility: hidden;
+			white-space: nowrap;
+			padding-top: 0;
+			padding-right: 0;
+
+			.js &
+			{
+				opacity: 0;
+				visibility: hidden;
+			}
 		}
 
 		& > .menu-item
 		{
 			padding: 1.4rem;
+
+			@include at('xs')
+			{
+				display: block;
+			}
+
+			& > a
+			{
+				display: block;
+
+				@include from('sm')
+				{
+					&::after
+					{
+						content: "";
+						display: block;
+						@include size(0, 2px);
+						background-color: currentColor;
+						transition: 0.3s ease;
+					}
+
+					.no-touch &:hover
+					{
+						&::after
+						{
+							width: 1.5em;
+						}
+					}
+				}
+			}
 		}
 	}
 }

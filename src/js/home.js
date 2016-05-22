@@ -38,7 +38,7 @@ var home = {
         this._scrollmagic_controller = new ScrollMagic.Controller({
             refreshInterval: 0,
             globalSceneOptions: {
-                offset: -40
+                offset: -80
             }
         });
 
@@ -52,11 +52,11 @@ var home = {
                 })
                 .on('enter', function(e) {
                     // play animation in canvas if visible, except mobile
-                    app.viewport.width >= 768 && canvas.play();
+                    !app.is_mobile && canvas.play();
                 })
                 .on('leave', function(e) {
                     // pause animation in canvas if no longer visible, except mobile
-                    app.viewport.width >= 768 && canvas.pause();
+                    !app.is_mobile && canvas.pause();
                 })
                 // .addIndicators()
                 .addTo(this._scrollmagic_controller);
@@ -88,6 +88,7 @@ var home = {
                         {
                             x: 0,
                             opacity: 1,
+                            force3D: true,
                             onComplete: function() {
                                 $(this.target).addClass('is-visible');
                             }
@@ -110,7 +111,8 @@ var home = {
                     '.js-client',
                     0.75,
                     {
-                        scale: 1
+                        scale: 1,
+                        force3D: true
                     },
                     0.15
                 );
@@ -130,7 +132,8 @@ var home = {
                     0.75,
                     {
                         y: 0,
-                        opacity: 1
+                        opacity: 1,
+                        force3D: true
                     },
                     0.375
                 );
@@ -151,7 +154,8 @@ var home = {
                         0.75,
                         {
                             y: 0,
-                            opacity: 1
+                            opacity: 1,
+                            force3D: true
                         }
                     );
                 })
@@ -175,7 +179,8 @@ var home = {
                         0.75,
                         {
                             x: 0,
-                            opacity: 1
+                            opacity: 1,
+                            force3D: true
                         }
                     );
                 })
@@ -199,7 +204,8 @@ var home = {
                         0.75,
                         {
                             x: 0,
-                            opacity: 1
+                            opacity: 1,
+                            force3D: true
                         }
                     );
                 })

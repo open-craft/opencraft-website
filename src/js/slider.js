@@ -189,7 +189,7 @@ var slider = {
 					var maxheight = 0;
 
 					var $items = $(slider.allItemsArray);
-					if (app.viewport.width >= 768) {
+					if (!app.is_mobile) {
 						$items
 							.each(function() {
 								maxheight = Math.max($(this).css('height', 'auto').outerHeight(), maxheight);

@@ -4,6 +4,8 @@ var app = {
     __NAMESPACE__: '.app',
     
     // private
+    _body_scrollLeft: 0,
+    _body_scrollTop: 0,
     _class_body_ready: 'is-ready',
     _scroll_top: -1,
 
@@ -12,6 +14,7 @@ var app = {
         width: 0,
         height: 0
     },
+    is_mobile: true,
     is_auto_scrolling: false,
 
     // DOM public elements
@@ -27,6 +30,8 @@ var app = {
         
         this.$body = $('body');
 
+        this.is_mobile = true;
+        this.is_touch = feature.touch && !navigator.userAgent.match(/Trident\/7\./);
         this.is_auto_scrolling = false;
         this._scroll_top = -1;
 
@@ -90,7 +95,7 @@ var app = {
                         ease: Power1.easeInOut,
                         callbackScope: _this,
                         onStart: function() {
-                            this.is_auto_scrolling = true;
+                            $(window).trigger('autoScrollStart');
                         },
                         onComplete: function() {
                             $(window).trigger('autoScrollComplete');
@@ -107,6 +112,10 @@ var app = {
                 }
                 _this._scroll_top = $(this).scrollTop();
             })
+            .on('autoScrollStart' + this.__NAMESPACE__, function() {
+                // console.log('autoScrollStart.app');
+                _this.is_auto_scrolling = true;
+            })
             .on('autoScrollComplete' + this.__NAMESPACE__, function() {
                 // console.log('autoScrollComplete.app');
                 _this.is_auto_scrolling = false;
@@ -119,10 +128,48 @@ var app = {
 
     resize: function() {
         this._resetViewportDimensions();
+
+        this.is_mobile = (this.viewport.width < 768);
     },
     _resetViewportDimensions: function() {
         this.viewport.width = $(window).width();
         this.viewport.height = $(window).height();
+    },
+    disableScroll: function() {
+        // lock scroll position, but retain settings for later
+        // http://stackoverflow.com/a/3656618
+        this._body_scrollLeft = self.pageXOffset || document.documentElement.scrollLeft  || document.body.scrollLeft;
+        this._body_scrollTop = self.pageYOffset || document.documentElement.scrollTop  || document.body.scrollTop;
+        $('html').css('overflow', 'hidden');
+        window.scrollTo(this._body_scrollLeft, this._body_scrollTop);
+        // disable scroll on touch devices as well
+        if (this.is_touch) {
+            $(document).on('touchmove.app', function(e) {
+                e.preventDefault();
+            });
+        }
+    },
+    enableScroll: function(_position) {
+        if (typeof _position === 'undefined') {
+            _position = this._body_scrollTop;
+        }
+
+        var resume_scroll = true;
+        if (typeof _position === 'boolean' && _position === false) {
+            resume_scroll = false;
+        }
+
+        // unlock scroll position
+        // http://stackoverflow.com/a/3656618
+        $('html').css('overflow', 'visible');
+        // resume scroll position if possible
+        if (resume_scroll) {
+            window.scrollTo(this._body_scrollLeft, _position);
+        }
+        // enable scroll on touch devices as well
+        if (this.is_touch) {
+            $(document).off('touchmove.app');
+        }
     },
 
 };
