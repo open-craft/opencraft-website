@@ -82,19 +82,29 @@
 	&__marker
 	{
 		$circle-size: 43px;
+		$circle-size-xs: 21px;
 		$dot-size: 10px;
+		$dot-size-xs: 5px;
 
 		$circle-offset: ($circle-size / 2 * -1);
+		$circle-offset-xs: ($circle-size-xs / 2 * -1);
 		$dot-offset: ($dot-size / 2 * -1);
+		$dot-offset-xs: ($dot-size-xs / 2 * -1);
 
 		position: absolute;
 		top: 0;
 		left: 0;
-		margin-top: $dot-offset;
-		margin-left: $dot-offset;
+		margin-top: $dot-offset-xs;
+		margin-left: $dot-offset-xs;
 		opacity: 0;
 		visibility: hidden;
 		transition: opacity 0.3s ease, visibility 0.3s ease;
+
+		@include from('sm')
+		{
+			margin-top: $dot-offset;
+			margin-left: $dot-offset;
+		}
 
 		&.show
 		{
@@ -108,12 +118,17 @@
 			position: absolute;
 			top: 0;
 			left: 0;
-			@include size($dot-size);
+			@include size($dot-size-xs);
 			background-color: #fff;
 			border-radius: 50%;
 			transform: scale(0.6);
 			transition: transform 0.3s ease;
 			-webkit-backface-visibility: hidden;
+
+			@include from('sm')
+			{
+				@include size($dot-size);
+			}
 
 			&::before
 			{
@@ -122,12 +137,19 @@
 				position: absolute;
 				top: 50%;
 				left: 50%;
-				margin-top: $circle-offset;
-				margin-left: $circle-offset;
-				@include size($circle-size);
+				margin-top: $circle-offset-xs;
+				margin-left: $circle-offset-xs;
+				@include size($circle-size-xs);
 				background-color: #fff;
 				border-radius: 50%;
 				transform: scale(0);
+
+				@include from('sm')
+				{
+					margin-top: $circle-offset;
+					margin-left: $circle-offset;
+					@include size($circle-size);
+				}
 			}
 		}
 
@@ -139,8 +161,8 @@
 		&__info
 		{
 			display: none;
-			margin-top: $circle-offset;
-			margin-left: abs($circle-offset);
+			margin-top: $circle-offset-xs;
+			margin-left: abs($circle-offset-xs);
 			padding-left: 1rem;
 			// transition: all 0.3s ease;
 			
@@ -149,6 +171,8 @@
 				display: block;
 				opacity: 0;
 				visibility: hidden;
+				margin-top: $circle-offset;
+				margin-left: abs($circle-offset);
 			}
 
 			&__title,
