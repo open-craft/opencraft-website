@@ -22,10 +22,18 @@
 
 	.icon__logo--footer
 	{
-		display: inline-block;
-		vertical-align: middle;
+		display: block;
 		@include size(12.3rem, 6.2rem);
-		margin-right: 3.8rem;
+		margin: 0 auto 3.8rem;
+
+		@include from('sm')
+		{
+			display: inline-block;
+			vertical-align: middle;
+			margin-right: 3.8rem;
+			margin-bottom: 0; 
+			margin-left: 0;
+		}
 	}
 
 	&__logo,

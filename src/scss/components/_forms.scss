@@ -28,12 +28,7 @@ $contact-width-parent: 440;
 // FIELD
 .field
 {
-	margin-bottom: 0;
-
-	@include from('sm')
-	{
-		margin-bottom: 2.5rem;
-	}
+	margin-bottom: 2.5rem;
 
 	&--contact
 	{

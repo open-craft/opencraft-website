@@ -167,18 +167,22 @@
 
 			&__left
 			{
-				padding-right: 0;
-
 				@include from('sm')
 				{
 					padding-right: 5rem;
+				}
+
+				@include at('xs')
+				{
+					.field
+					{
+						margin-bottom: 0;
+					}
 				}
 			}
 
 			&__right
 			{
-				padding-left: 0;
-
 				@include from('sm')
 				{
 					padding-left: 3.5rem;
