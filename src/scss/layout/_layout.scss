@@ -225,22 +225,25 @@ $overlap: 8.6rem;
 	{
 		&__list
 		{
-			display: table;
 			margin: 1em 0;
 
-			@include to('xs')
+			@include from('sm')
 			{
-				display: block;
+				display: table;
+			}
+
+			@include between('sm','md')
+			{
+				padding-left: 3.5rem;
+				padding-right: 3.5rem;
 			}
 
 			&__item
 			{
-				display: table-cell;
-				vertical-align: middle;
-
-				@include to('xs')
+				@include from('sm')
 				{
-					display: block;
+					display: table-cell;
+					vertical-align: middle;
 				}
 			}
 		}
@@ -493,6 +496,8 @@ $overlap: 8.6rem;
 
 	&__list
 	{
+		padding-right: 2.5rem;
+
 		@include from('hd')
 		{
 			margin-left: -8rem;
@@ -500,13 +505,18 @@ $overlap: 8.6rem;
 
 		&__wrapper
 		{
-			display: table;
+			padding-left: 3.5rem;
+			padding-right: 3.5rem;
 
-			@include to('xs')
+			@include from('sm')
 			{
-				display: block;
-			    margin-left: 3.5rem;
-    			margin-right: 3.5rem;
+				display: table;
+			}
+
+			@include from('lg')
+			{
+				padding-left: 0;
+				padding-right: 0;
 			}
 
 			&__inner

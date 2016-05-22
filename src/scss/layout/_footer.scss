@@ -26,7 +26,7 @@
 		@include size(12.3rem, 6.2rem);
 		margin: 0 auto 3.8rem;
 
-		@include from('sm')
+		@include from('md')
 		{
 			display: inline-block;
 			vertical-align: middle;
