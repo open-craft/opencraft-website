@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<!--[if IE 9]>
+<html lang="fr" class="ie9">
+<![endif]-->
+<!--[if !(IE 9)]><!-->
+<html lang="fr">
+<!--<![endif]-->
+<head>
+	<meta charset="UTF-8">
+	<title>Open Craft - Customize &amp; Extend</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+
+	<script src="dist/js/min/feature.min.js"></script>
+	<script>
+		document.documentElement.className=document.documentElement.className.replace('no-js','js');
+		if(feature.touch&&!navigator.userAgent.match(/Trident\/7\./)){document.documentElement.className=document.documentElement.className.replace('no-touch','touch');}
+	</script>
+	
+	<link rel="stylesheet" type="text/css" href="dist/css/global.css">
+</head>
+<body class="background-cyan-light-moderate page">
+	<main class="site-content">
+
+		<!-- HEADER -->
+		<header id="js-header" class="site-header color-white">
+
+			<div class="col-xs-12 col-sm-6 col-md-4 text-xs-center text-sm-left site-header__logo">
+				<a href="index.html">
+					<svg class="icon__logo icon__logo--header" role="img">
+						<use xlink:href="dist/svg/icons.svg#opencraft_logo"/>
+					</svg>
+				</a>
+
+				<img class="site-header__page-logo" src="img/png/opencraft_client_openedx.png" height="31" width="149">
+			</div>
+
+			<div class="page-title text-xs-center">
+				<svg class="icon__table" role="img">
+					<use xlink:href="dist/svg/icons.svg#opencraft_icon_table-02"/>
+				</svg>
+				<h1 class="page-title__text">Customize & Extend</h1>
+				<p class="page-title__catchline text-xs-center h4">
+					Custom development<br>
+					Theme, plugin/XBlock & core features.
+				</p>
+			</div>
+
+			<nav class="col-xs-10 site-header__menu text-xs-right"></nav>
+
+		</header>
+		<!--  -->
+
+		<div class="page-content clearfix">
+			<div class="page-content__inner col-xs-12 col-sm-10 col-sm-offset-1 background-white">
+
+				<form class="" action="" mathod="post" enctype="multipart/form-data">
+					
+					<div class="page-content__inner__wrapper">
+						<div class="box-alert background-red color-white clearfix">
+							<p>You must filled each required field.</p>
+						</div> 
+					</div>
+					
+					<div class="page-content__wrapper position-relative">
+
+						<div class="page-content__inner__wrapper">
+							<div class="page-content__inner__left">
+								<div class="field field--host">
+									<label class="label" for="your-question">
+										What customization or development do you need?
+									</label>
+									<span class="input--host__wrapper">
+										<textarea class="textarea textarea--host" name="" id="your-question" cols="30" rows="10"></textarea>
+									</span>
+								</div>
+							</div>
+							<div class="page-content__inner__right">
+								<p class="color-gray-dark">
+									Describe the changes you would like to receive a quote on.
+								</p>
+								<p class="color-gray-dark">
+									It is best described either in terms of an issue to be solved, or of and end result / specification to be achieved.
+								</p>
+								<p class="color-gray-dark">
+									Examples:
+								</p>
+								<ul class="color-gray-dark">
+									<li>— "I need to be able to display Dailymotion videos in my course on edx.org"</li>
+									<li>— "I need a responsive theme for my instance of Open edX. I have attached the mockups."</li>
+								</ul>
+							</div>
+						</div>
+
+						<div class="page-content__inner__wrapper">
+							<div class="page-content__inner__left">
+								<div class="field field--host">
+									<label class="label" for="files">
+										Files / images
+									</label>
+									<span class="input--host__wrapper position-relative">
+										<input type="file" class="input--host--file" id="files">
+										<span class="input--host--file__label input input--host js-input-file-label">Select file(s) to upload</span>
+									</span>
+								</div>
+							</div>
+							<div class="page-content__inner__right">
+								<p class="color-gray-dark">
+									Screenshots, mockups, log files, source code&hellip;
+								</p>
+							</div>
+						</div>
+
+						<div class="page-content__inner__wrapper">
+							<div class="page-content__inner__left">
+								<div class="field field--host">
+									<label class="label" for="email">
+										Your email
+									</label>
+									<span class="input--host__wrapper">
+										<input type="email" class="input input--host" id="email" name="">
+									</span>
+								</div>
+							</div>
+							<div class="page-content__inner__right"></div>
+						</div>
+
+						<div class="page-content__inner__wrapper">
+							<div class="page-content__inner__left">
+								<div class="field field--host">
+									<label class="label" for="name">
+										Your first & last name
+									</label>
+									<span class="input--host__wrapper">
+										<input type="text" class="input input--host" id="name" name="">
+									</span>
+								</div>
+							</div>
+							<div class="page-content__inner__right"></div>
+						</div>
+
+						<div class="page-content__wrapper__stroke"></div>
+					</div>
+
+					<div class="page-content__inner__wrapper color-cyan-strong text-xs-center">
+						<button class="btn btn--cyan-strong color-white background-cyan-strong" type="submit">Send</button>
+					</div>
+
+				</form>
+			</div>
+		</div>
+		
+		<!-- FOOTER -->
+		<footer class="site-footer background-cyan-very-very-dark-desaturated color-white">
+			<div class="container__inner site-footer__container">
+				<div class="site-footer__logo text-xs-center text-md-left">
+					<a href="index.html">
+						<svg class="icon__logo icon__logo--footer" role="img">
+							<use xlink:href="dist/svg/icons.svg#opencraft_logo"/>
+						</svg>
+					</a>
+					&copy; OpenCraft 2013-2016
+				</div>
+				<div class="site-footer__copyright text-xs-center text-md-right">
+					<p>
+						edX®, the edX logo, Open edX® and the Open edX logo are trademarks or registered trademarks of edX Inc. All Rights Reserved.
+					</p>	
+				</div>
+			</div>
+		</footer>
+
+	</main>
+
+	<!-- BACKGROUND SITE -->
+	<div class="site-background">
+		<div class="h-xs-100">
+			<div class="row site-background__inner">
+				<div class="col-xs-3 site-background__column"></div>
+				<div class="col-xs-3 site-background__column"></div>
+				<div class="col-xs-3 site-background__column"></div>
+				<div class="col-xs-3 site-background__column"></div>
+			</div>
+		</div>
+	</div>
+
+	<script src="//code.jquery.com/jquery-2.2.3.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.18.4/TweenMax.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js"></script>
+	<!-- <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/debug.addIndicators.min.js"></script> -->
+	<script src="dist/js/min/functions.min.js"></script>
+	<script src="dist/js/min/form.min.js"></script>
+</body>
+</html>

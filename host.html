@@ -56,14 +56,14 @@
 				<header class="page-content__header box-alert col-xs-10 col-xs-offset-1 background-cyan-very-very-dark-desaturated">
 					<p class="color-white">
 						This is the application form for the beta of the self-service hosting offered by OpenCraft.<br>
-						For enterprise or institutional offerings, contact us
+						For enterprise or institutional offerings, <a href="mailto:contact@opencraft.com">contact us</a>.
 					</p>
 				</header>
-				<form class="" action="">
+				<form class="" action="" method="post" enctype="multipart/form-data">
 					
 					<div class="page-content__inner__wrapper">
 						<div class="box-alert background-red color-white clearfix">
-							<p>You must accept the condition</p>
+							<p>You must accept the conditions</p>
 						</div> 
 					</div>
 					
@@ -75,14 +75,14 @@
 										Domain name
 									</label>
 									<span class="input--host__wrapper input--host__wrapper--domain-name valid" data-after-content=".opencraft.hosting" value="">
-										<input class="input input--host input--host--domain-name text-xs-right" id="domain-name" type="text" placeholder="poudlard">
+										<input type="text" class="input input--host input--host--domain-name text-xs-right" id="domain-name" placeholder="poudlard" name="">
 									</span>
 								</div>
 							</div>
 							<div class="page-content__inner__right">
 								<p class="color-gray-dark">
 									The URL the students will visit.(In the future, you will also have the possibility to use your own domain name.)<br>
-									Example : hogwarts.opencraft.hosting
+									Example: "hogwarts.opencraft.hosting"
 								</p>
 							</div>
 						</div>
@@ -94,14 +94,14 @@
 										Instance Name
 									</label>
 									<span class="input--host__wrapper">
-										<input class="input input--host" id="instance-name" type="text">
+										<input type="text" class="input input--host" id="instance-name" name="">
 									</span>
 								</div>
 							</div>
 							<div class="page-content__inner__right">
 								<p class="color-gray-dark">
 									The name of your institution, company or project.<br>
-									Example : Hogwarts Online Learning
+									Example: "Hogwarts Online Learning"
 								</p>
 							</div>
 						</div>
@@ -113,13 +113,13 @@
 										Your full name
 									</label>
 									<span class="input--host__wrapper">
-										<input class="input input--host" id="name" type="text">
+										<input type="text" class="input input--host" id="name" name="">
 									</span>
 								</div>
 							</div>
 							<div class="page-content__inner__right">
 								<p class="color-gray-dark">
-									Example: Albus Dumbledore
+									Example: "Albus Dumbledore"
 								</p>
 							</div>
 						</div>
@@ -131,7 +131,7 @@
 										Your email
 									</label>
 									<span class="input--host__wrapper">
-										<input class="input input--host" id="email" type="text">
+										<input type="email" class="input input--host" id="email" name="">
 									</span>
 								</div>
 							</div>
@@ -149,13 +149,16 @@
 										Public contact email
 									</label>
 									<span class="input--host__wrapper">
-										<input class="input input--host" id="public-email" type="text">
+										<input type="email" class="input input--host" id="public-email" name="">
 									</span>
 								</div>
 							</div>
 							<div class="page-content__inner__right">
 								<p class="color-gray-dark">
-									The email your instance of Open edX will be using to send emails, and where your users should send their support requests. This need to be a valid email
+									The email your instance of Open edX will be using to send emails, and where your users should send their support requests.
+								</p>
+								<p class="color-gray-dark">
+									This need to be a valid email.
 								</p>
 							</div>
 						</div>
@@ -167,33 +170,25 @@
 										Password
 									</label>
 									<span class="input--host__wrapper error">
-										<input class="input input--host" id="password" type="text">
+										<input type="password" class="input input--host" id="password">
 									</span>
 									<span class="message error">
-										please enter at least 8 characters
+										Please enter at least 8 characters
 									</span>
-
+								</div>
+								<div class="field field--host">
+									<label class="label" for="password-confirmation">
+										Password confirmation
+									</label>
+									<span class="input--host__wrapper">
+										<input type="password" class="input input--host" id="password-confirmation">
+									</span>
 								</div>
 							</div>
 							<div class="page-content__inner__right">
 								<p class="color-gray-dark">
 									Pick a password for your OpenCraft accound. You will be able to use it to login and access your account.
 								</p>
-							</div>
-						</div>
-
-						<div class="page-content__inner__wrapper">
-							<div class="page-content__inner__left">
-								<div class="field field--host">
-									<label class="label" for="password-confirmation">
-										Password confirmation
-									</label>
-									<span class="input--host__wrapper">
-										<input class="input input--host" id="password-confirmation" type="text">
-									</span>
-								</div>
-							</div>
-							<div class="page-content__inner__right">
 							</div>
 						</div>
 
@@ -218,34 +213,14 @@
 
 						<div class="page-content__inner__wrapper">
 							<div class="page-content__inner__left">
-								<div class="field field--host">
-									<label class="label" for="file">
-										Upload your file
-									</label>
-									<span class="input--host__wrapper position-relative">
-										<input  class="input--host--file" id="file" type="file">
-										<span class="input--host--file__label input input--host js-input-file-label">Pick up your file</span>
-									</span>
-								</div>
-							</div>
-							<div class="page-content__inner__right">
-								<p class="color-gray-dark">
-									Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur id quia optio.<br> Distinctio eius neque consectetur aliquid quaerat, mollitia laudantium quod eos.
-								</p>
-							</div>
-						</div>
-
-
-						<div class="page-content__inner__wrapper">
-							<div class="page-content__inner__left">
-								<input class="js-checkbox error" required id="checkbox-understand" type="checkbox">
+								<input type="checkbox" class="js-checkbox error" required id="checkbox-understand">
 								
 								<div class="checkbox__wrapper__text">
 									<label class="checkbox__text" for="checkbox-understand">
 										I understand that this is a beta test, that bugs and crashes are expected, and that the instance is provided for free for the duration of the beta-test, without any guarantee.
 									</label>
 									<p class="message error">
-										You must accept the condition
+										You must accept the conditions
 									</p>
 								</div>
 
@@ -256,7 +231,7 @@
 
 						<div class="page-content__inner__wrapper">
 							<div class="page-content__inner__left">
-								<input class="js-checkbox" id="checkbox-email" type="checkbox">
+								<input type="checkbox" class="js-checkbox" id="checkbox-email">
 								
 								<div class="checkbox__wrapper__text">
 									<label class="checkbox__text" for="checkbox-email">
@@ -273,7 +248,7 @@
 					</div>
 
 					<div class="page-content__inner__wrapper color-cyan-strong text-xs-center">
-						<button class="btn btn--cyan-strong color-white background-cyan-strong" type="submit">Apply for the beta test</button>
+						<button type="submit" class="btn btn--cyan-strong color-white background-cyan-strong">Apply for the beta test</button>
 					</div>
 
 				</form>
