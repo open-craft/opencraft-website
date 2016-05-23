@@ -3,13 +3,36 @@
  */
 
 .page
-{	
-	background:
+{
+	&.background-cyan-light-moderate
 	{
-		image: url('#{$jpg-dir}opencraft_host_background-header.jpg');
-		position: center top;
-		repeat: no-repeat;
-	}	
+		background:
+		{
+			image: url('#{$jpg-dir}opencraft_host_background-cyan-light-moderate_header.jpg');
+			position: center top;
+			repeat: no-repeat;
+		}
+	}
+
+	&.background-cyan-dark-moderate
+	{
+		background:
+		{
+			image: url('#{$jpg-dir}opencraft_host_background-cyan-dark-moderate_header.jpg');
+			position: center top;
+			repeat: no-repeat;
+		}
+	}
+
+	&.background-cyan-very-dark-grayish
+	{
+		background:
+		{
+			image: url('#{$jpg-dir}opencraft_host_background-cyan-very-dark-grayish_header.jpg');
+			position: center top;
+			repeat: no-repeat;
+		}
+	}
 	
 	.site-header
 	{

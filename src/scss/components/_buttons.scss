@@ -39,9 +39,35 @@
 		}
 	}
 
-	&--cyan-strong
+	&--cyan-light-moderate
 	{
-		border-color: map-get($colors, cyan-strong);
+		border-color: map-get($colors, cyan-light-moderate);
+		color: map-get($colors, white);
+
+		&:hover,
+		&:focus
+		{
+			background-color: map-get($colors, white);
+			color: currentColor;
+		}
+	}
+
+	&--cyan-dark-moderate
+	{
+		border-color: map-get($colors, cyan-dark-moderate);
+		color: map-get($colors, white);
+
+		&:hover,
+		&:focus
+		{
+			background-color: map-get($colors, white);
+			color: currentColor;
+		}
+	}
+
+	&--cyan-very-dark-grayish
+	{
+		border-color: map-get($colors, cyan-very-dark-grayish);
 		color: map-get($colors, white);
 
 		&:hover,
