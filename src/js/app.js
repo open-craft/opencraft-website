@@ -55,6 +55,10 @@ var app = {
 
         var _this = this;
 
+        // SVG4Everybody
+        // https://github.com/jonathantneal/svg4everybody
+        svg4everybody();
+
         // tabslet
         // http://vdw.github.io/Tabslet/
         
