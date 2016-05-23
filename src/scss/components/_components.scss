@@ -239,6 +239,8 @@
 
 		&::before
 		{
+			$icon-size: 5px 32px;
+
 			display: block;
 			position: absolute;
 			right: 100%;
@@ -250,15 +252,19 @@
 			{
 				image: url('#{$svg-dir}forms/opencraft_exclamation.svg');
 				repeat: no-repeat;
-				size: 100% 100%;
+				size: ((nth($icon-size,1) / 20px) * 1em) ((nth($icon-size,2) / 20px) * 1em);
+				position: center center;
 			}
 			content: '';
 			transform: translate(0, -50%);
 
 			@include from('sm')
 			{
+				$icon-size: 11px 72px;
+
 				width: 13.6rem;
-				height: ((72/20) * 1em);
+				height: ((nth($icon-size,2) / 20px) * 1em);
+				background-size: ((nth($icon-size,1) / 20px) * 1em) ((nth($icon-size,2) / 20px) * 1em);
 			}
 		}
 	}
