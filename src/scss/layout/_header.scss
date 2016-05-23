@@ -108,7 +108,7 @@
 	&__menu
 	{
 		position: relative;
-		padding-top: 5.5rem;
+		padding-top: 6.5rem;
 		padding-right: 2.1rem;
 		@include letter-spacing(30);
 
@@ -132,6 +132,9 @@
 			@include at('xs')
 			{
 				display: block;
+				padding-top: 0;
+				padding-bottom: 0;
+				font-size: 3.6rem;
 			}
 
 			& > a
