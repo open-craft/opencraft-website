@@ -1,8 +1,6 @@
 var slider = {
 
 	// PRIVATE
-	// Here go the private variables
-	_slider_container: null,
 
 	// PUBLIC
 	// Here go the public variables
@@ -11,14 +9,13 @@ var slider = {
 	// DOM public elements
 
 	// DOM private elements
-	_$currentSlide: null,
 	_buttonCurrent: 'slider__button--is-current',
 	_dotCurrent: 'slider__dot--is-current',
 
 	// FUNCTIONS
 	init: function() {
 		this._initPlugins();
-		// this._initEvents();
+		this._initEvents();
 	},
 	
 	_initPlugins: function(){
@@ -28,9 +25,37 @@ var slider = {
 		_this._initSlider();
 	},
 
-	/*_initEvents: function(){
+	_initEvents: function(){
 		var _this = this;
-	},*/
+
+		$('.js-sliders')
+			.on('_before', function() {
+				// console.log('tab change _before');
+		  		// pause sliders when tabs change
+		  		$(_this.selector).trigger('pause.slider');
+			})
+			.on('_after', function() {
+				// console.log('tab change _after');
+		  		// play active slider after tabs change
+		  		var tab_item = $(this).find('li.active');
+		  		if (!tab_item) {
+		  			return;
+		  		}
+
+		  		var tab = tab_item.find('a').attr('href');
+		  		if (!tab) {
+		  			return;
+		  		}
+
+		  		var $slider = $(tab);
+		  		if (!$slider.length) {
+		  			return;
+		  		}
+
+		  		$slider.trigger('play.slider', [true]);
+			})
+			.trigger('_after');
+	},
 
 	_initSlider: function () {
 		// This variable refers to the application itself
@@ -63,7 +88,8 @@ var slider = {
 			// Request animation frame
 			var rafId = null;
 			var lastTime = 0;
-			var isPaused = false;
+			// pause by default, play will be triggered later
+			var isPaused = true;
 
 			// slider can play automatically with this data attribute
 			var timer = $slider_container.data('autoplay');
@@ -86,7 +112,7 @@ var slider = {
 				}
 
 				// If reset is defined
-				if (reset) {
+				if (!!reset) {
 					// If there is a current animation.
 					if (rafId) {
 						// KILL IT!
@@ -121,23 +147,29 @@ var slider = {
 
 			// PAUSE ON HOVER
 			$(slider_container)
-				.on('mouseenter', function() {
-
+				.on('mouseenter.slider', function() {
+					// On mouseenter pause the animation
+					$(this).trigger('pause.slider');
+				})
+				.on('mouseleave.slider', function() {
+					// On mouseleave, resume the animation
+					$(this).trigger('play.slider');
+				})
+				.on('play.slider', function(e, reset) {
+					// set pause to true
+					isPaused = false;
+					// Call _autoplay
+					_autoplay(reset);
+				})
+				.on('pause.slider', function() {
 					// If there is a current animation. (ID) 
 					if (rafId) {
 						// KILL IT!
 						cancelAnimationFrame(rafId);
 					}
-					// On mouseenter pause the animation
+					// then pause the animation
 					isPaused = true;
-				})
-				.on('mouseleave', function() {
-					// On mouseleave, set pause to true
-					isPaused = false;
-					// Call _autoplay
-					_autoplay();
 				});
-
 
 			// DOTS
 			// http://codepen.io/peduarte/pen/bVbZLK?editors=0010
