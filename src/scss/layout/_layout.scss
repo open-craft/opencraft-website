@@ -181,14 +181,14 @@ $overlap: 8.6rem;
 		$border-column: 1px solid rgba(map-get($colors, black), 0.1);
 
 		height: 0;
-		border-right: $border-column;
+		border-left: $border-column;
     	transition: height .6s linear;
     	
 
 
-		&:first-child
+		&:last-child
 		{
-			border-left: $border-column;
+			border-right: $border-column;
 		}
 		
 		// When DOM is ready
