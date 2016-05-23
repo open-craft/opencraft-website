@@ -7,7 +7,6 @@ var slider = {
 	// PUBLIC
 	// Here go the public variables
 	selector: '.js-slider',
-	timer: 3000,
 
 	// DOM public elements
 
@@ -26,22 +25,16 @@ var slider = {
 		var _this = this;
 
 		// WALLOP
-		_this._initSlider(0);
+		_this._initSlider();
 	},
 
 	/*_initEvents: function(){
 		var _this = this;
 	},*/
 
-	_initSlider: function (timer){
+	_initSlider: function () {
 		// This variable refers to the application itself
 		var _this = this;
-
-		// If the argument timer is not set
-		if (typeof timer === 'undefined') {
-			// We set the timer to 3000 by default
-			timer = this.timer;
-		}
 
 		// WALLOP OPTIONS
 		// https://github.com/peduarte/wallop
@@ -64,11 +57,23 @@ var slider = {
 
 			var slider = new Wallop(slider_container, options);
 
+			var $slider_container = $(slider_container);
+
 			// https://developer.mozilla.org/fr/docs/Web/API/Window/requestAnimationFrame
 			// Request animation frame
 			var rafId = null;
 			var lastTime = 0;
 			var isPaused = false;
+
+			// slider can play automatically with this data attribute
+			var timer = $slider_container.data('autoplay');
+			if (timer === undefined || timer == false) {
+				timer = 0;
+			} else if (timer == true) {
+				timer = 3000;
+			} else {
+				timer = parseInt(timer); // in milliseconds
+			}
 
 			// AUTOPLAY
 			// http://codepen.io/peduarte/pen/RapQBB
@@ -115,7 +120,7 @@ var slider = {
 			};
 
 			// PAUSE ON HOVER
-			var $slider_container = $(slider_container)
+			$(slider_container)
 				.on('mouseenter', function() {
 
 					// If there is a current animation. (ID) 
@@ -182,7 +187,7 @@ var slider = {
 
 			var force_height = $slider_container.data('force-height');
 
-			if (force_height !== undefined && force_height !== 'false') {
+			if (force_height !== undefined && force_height != false) {
 				// RESIZE
 				// set each slide same height from the tallest one
 				var _resize = function() {
