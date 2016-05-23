@@ -36,10 +36,7 @@ var home = {
 
         // build ScrollMagic container for later usage
         this._scrollmagic_controller = new ScrollMagic.Controller({
-            refreshInterval: 0,
-            globalSceneOptions: {
-                offset: -80
-            }
+            refreshInterval: 0
         });
 
         if (typeof canvas !== 'undefined') {
@@ -56,9 +53,9 @@ var home = {
                 })
                 .on('leave', function(e) {
                     // pause animation in canvas if no longer visible, except mobile
-                    !app.is_mobile && canvas.pause();
+                    e.scrollDirection === 'FORWARD' && !app.is_mobile && canvas.pause();
                 })
-                // .addIndicators()
+                // .addIndicators({ name: 'canvas' })
                 .addTo(this._scrollmagic_controller);
 
         }
@@ -72,149 +69,113 @@ var home = {
     _buildSections: function() {
         var _this = this;
 
-        // title of section
-        $('.js-section-title').each(function(i, title) {
+        // timeline for each section
+        $('.js-section-intro, .js-section').each(function(i, section) {
 
-            TweenLite.set(title, { x: -40, opacity: 0 });
+            // build timeline with all tweens from current section
+            var tl = new TimelineLite({ paused: true });
 
-            // build ScrollMagic scene to kwow when title is visible
-            new ScrollMagic.Scene({
-                    triggerElement: title
-                })
-                .on('enter', function(e) {
-                    TweenLite.to(
-                        title,
-                        0.75,
-                        {
-                            x: 0,
-                            opacity: 1,
-                            force3D: true,
-                            onComplete: function() {
-                                $(this.target).addClass('is-visible');
+            // add animatable elements to the timeline
+            $('.js-show-when-visible', section).each(function(j, el) {
+                
+                var animation = $(el).data('animation');
+                if (!animation) {
+                    return;
+                }
+
+                switch(animation) {
+                    case 'sectionTitle':
+                        // add tween to timeline
+                        tl.fromTo(
+                            el,
+                            0.75,
+                            {
+                                x: -40,
+                                opacity: 0
+                            },
+                            {
+                                x: 0,
+                                opacity: 1,
+                                force3D: true,
+                                onComplete: function() {
+                                    $(this.target).addClass('is-visible');
+                                }
                             }
-                        }
-                    );
-                })
-                // .addIndicators({ name: 'title ' + i })
-                .addTo(_this._scrollmagic_controller);
+                        );
 
-        });
+                        break;
 
-        // Squares for clients from 2nd section
-        TweenLite.set('.js-client', { scale: 0 });
-        // build ScrollMagic scene to kwow when clients are visible
-        new ScrollMagic.Scene({
-                triggerElement: '#js-clients'
-            })
-            .on('enter', function(e) {
-                TweenMax.staggerTo(
-                    '.js-client',
-                    0.75,
-                    {
-                        scale: 1,
-                        force3D: true
-                    },
-                    0.15
-                );
-            })
-            // .addIndicators({ name: 'clients' })
-            .addTo(_this._scrollmagic_controller);
+                    case 'fadeInRight':
+                        tl.fromTo(
+                            el,
+                            0.75,
+                            {
+                                x: -40,
+                                opacity: 0
+                            },
+                            {
+                                x: 0,
+                                opacity: 1,
+                                force3D: true
+                            },
+                            j ? '-=0.375' : '+=0'
+                        );
 
-        // Cells for "Your need" section (3rd)
-        TweenLite.set('.js-your-need-cell', { y: 40, opacity: 0 });
-        // build ScrollMagic scene to kwow when cells are visible
-        new ScrollMagic.Scene({
-                triggerElement: '#js-your-need-cells'
-            })
-            .on('enter', function(e) {
-                TweenMax.staggerTo(
-                    '.js-your-need-cell',
-                    0.75,
-                    {
-                        y: 0,
-                        opacity: 1,
-                        force3D: true
-                    },
-                    0.375
-                );
-            })
-            // .addIndicators({ name: 'clients' })
-            .addTo(_this._scrollmagic_controller);
+                        break;
 
-        // fadeInUp effect
-        $('.js-fadeInUp').each(function(i, element) {
+                    case 'fadeInUp':
+                        tl.fromTo(
+                            el,
+                            0.75,
+                            {
+                                y: 40,
+                                opacity: 0
+                            },
+                            {
+                                y: 0,
+                                opacity: 1,
+                                force3D: true
+                            },
+                            j ? '-=0.375' : '+=0'
+                        );
 
-            // build ScrollMagic scene to kwow when element is visible
+                        break;
+
+                    case 'zoomIn':
+                        tl.fromTo(
+                            el,
+                            0.75,
+                            {
+                                scale: 0
+                            },
+                            {
+                                scale: 1,
+                                force3D: true
+                            },
+                            j ? '-=0.6' : '+=0'
+                        );
+
+                        break;
+
+                    default:
+                        break;
+                }
+
+            });
+
+            // build ScrollMagic scene to kwow when section is visible
             new ScrollMagic.Scene({
-                    triggerElement: element,
+                    triggerElement: section,
+                    triggerOffset: 80
                 })
                 .on('enter', function(e) {
-                    TweenLite.to(
-                        element,
-                        0.75,
-                        {
-                            y: 0,
-                            opacity: 1,
-                            force3D: true
-                        }
-                    );
+                    tl.play();
                 })
-                // .addIndicators({ name: 'fadeInUp ' + i })
+                // .addIndicators({ name: 'section ' + i })
                 .addTo(_this._scrollmagic_controller);
-
-            TweenLite.set(element, { y: 40, opacity: 0 });
 
         });
 
-        // fadeInLeft effect
-        $('.js-fadeInLeft').each(function(i, element) {
-
-            // build ScrollMagic scene to kwow when element is visible
-            new ScrollMagic.Scene({
-                    triggerElement: element
-                })
-                .on('enter', function(e) {
-                    TweenLite.to(
-                        element,
-                        0.75,
-                        {
-                            x: 0,
-                            opacity: 1,
-                            force3D: true
-                        }
-                    );
-                })
-                // .addIndicators({ name: 'fadeInLeft ' + i })
-                .addTo(_this._scrollmagic_controller);
-
-            TweenLite.set(element, { x: 40, opacity: 0 });
-
-        });
-
-        // fadeInRight effect
-        $('.js-fadeInRight').each(function(i, element) {
-
-            // build ScrollMagic scene to kwow when element is visible
-            new ScrollMagic.Scene({
-                    triggerElement: element
-                })
-                .on('enter', function(e) {
-                    TweenLite.to(
-                        element,
-                        0.75,
-                        {
-                            x: 0,
-                            opacity: 1,
-                            force3D: true
-                        }
-                    );
-                })
-                // .addIndicators({ name: 'fadeInRight ' + i })
-                .addTo(_this._scrollmagic_controller);
-
-            TweenLite.set(element, { x: -40, opacity: 0 });
-
-        });
     }
 };
 

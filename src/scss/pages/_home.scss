@@ -58,6 +58,19 @@
 			vertical-align: middle;
 		}
 	}
+
+	&__cta
+	{
+		position: absolute;
+		bottom: 13rem;
+		left: 0;
+		right: 0;
+
+		@include from('sm')
+		{
+			bottom: percentage(180/1600);
+		}
+	}
 }
 
 // CLIENTS
